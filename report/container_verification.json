@@ -1,0 +1,4 @@
+{
+  "conclusion": "not_run",
+  "reason": "Docker is not installed locally. The repository workflow builds the image, runs the tests and checks packaged ONNX inference on two real gallery frames. Its actual result must be recorded after publication."
+}

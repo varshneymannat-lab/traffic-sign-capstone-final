@@ -1,22 +1,16 @@
-defaults:
-  - model_checkpoint
-  - early_stopping
-  - model_summary
-  - rich_progress_bar
-  - _self_
-
 model_checkpoint:
-  dirpath: ${paths.output_dir}/checkpoints
-  filename: "epoch_{epoch:03d}"
-  monitor: "val/acc"
-  mode: "max"
-  save_last: True
-  auto_insert_metric_name: False
+  _target_: lightning.pytorch.callbacks.ModelCheckpoint
+  dirpath: ${paths.model_dir}/checkpoints
+  filename: best
+  monitor: val/loss
+  mode: min
+  save_top_k: 1
+  save_last: true
 
-early_stopping:
-  monitor: "val/acc"
-  patience: 100
-  mode: "max"
+lr_monitor:
+  _target_: lightning.pytorch.callbacks.LearningRateMonitor
+  logging_interval: epoch
 
-model_summary:
-  max_depth: -1
+metrics_writer:
+  _target_: src.utils.metrics_callback.JsonMetricsWriter
+  output_path: ${paths.log_dir}/metrics.json

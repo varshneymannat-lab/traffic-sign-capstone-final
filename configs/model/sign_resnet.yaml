@@ -1,0 +1,5 @@
+_target_: src.models.sign_classifier.TrafficSignClassifierLitModule
+sign_classes: ${data.sign_classes}
+lr: 0.0003
+weight_decay: 0.0001
+pretrained: true

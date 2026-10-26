@@ -1,0 +1,15 @@
+classes:
+  - stop
+  - no_entry
+  - yield
+  - speed_limit_30
+  - speed_limit_50
+gtsdb_ids: [14, 17, 13, 1, 2]
+mtsd_labels:
+  regulatory--stop--g1: stop
+  regulatory--no-entry--g1: no_entry
+  regulatory--yield--g1: yield
+  regulatory--maximum-speed-limit-30--g1: speed_limit_30
+  regulatory--maximum-speed-limit-50--g1: speed_limit_50
+minimum_training_images_per_class: 500
+minimum_heldout_images_per_class: 20

@@ -1,0 +1,261 @@
+{
+  "crops": [
+    {
+      "image_key": "-1ZXiNNunp0TA-puToNbeQ",
+      "category": "stop",
+      "split": "train",
+      "prepared_crop_size": [
+        60,
+        58
+      ]
+    },
+    {
+      "image_key": "-4Kw4AJqOzZG8q5le7bGlQ",
+      "category": "stop",
+      "split": "train",
+      "prepared_crop_size": [
+        10,
+        12
+      ]
+    },
+    {
+      "image_key": "-53oGBqSn4kQqgrDwnWPvw",
+      "category": "stop",
+      "split": "train",
+      "prepared_crop_size": [
+        30,
+        24
+      ]
+    },
+    {
+      "image_key": "-LtOhSguWQXyerbzUN6HpA",
+      "category": "stop",
+      "split": "train",
+      "prepared_crop_size": [
+        60,
+        56
+      ]
+    },
+    {
+      "image_key": "-Uu9SyEFABUp3SjRoUAVrQ",
+      "category": "stop",
+      "split": "train",
+      "prepared_crop_size": [
+        16,
+        17
+      ]
+    },
+    {
+      "image_key": "-BlWD5yiCO2Yi9BLQsRkkg",
+      "category": "no_entry",
+      "split": "train",
+      "prepared_crop_size": [
+        23,
+        40
+      ]
+    },
+    {
+      "image_key": "-MlU-jgd1aUWgzCSIEi1Yg",
+      "category": "no_entry",
+      "split": "train",
+      "prepared_crop_size": [
+        52,
+        80
+      ]
+    },
+    {
+      "image_key": "-MlU-jgd1aUWgzCSIEi1Yg",
+      "category": "no_entry",
+      "split": "train",
+      "prepared_crop_size": [
+        21,
+        50
+      ]
+    },
+    {
+      "image_key": "-gV4nG-7GAoQOLfuxidvEw",
+      "category": "no_entry",
+      "split": "train",
+      "prepared_crop_size": [
+        27,
+        59
+      ]
+    },
+    {
+      "image_key": "-gV4nG-7GAoQOLfuxidvEw",
+      "category": "no_entry",
+      "split": "train",
+      "prepared_crop_size": [
+        37,
+        37
+      ]
+    },
+    {
+      "image_key": "-1ZXiNNunp0TA-puToNbeQ",
+      "category": "yield",
+      "split": "train",
+      "prepared_crop_size": [
+        79,
+        69
+      ]
+    },
+    {
+      "image_key": "-21_2ziCd0eFiepxxbF6jw",
+      "category": "yield",
+      "split": "train",
+      "prepared_crop_size": [
+        11,
+        23
+      ]
+    },
+    {
+      "image_key": "-4JmB_89NpVL45NYCFuVJg",
+      "category": "yield",
+      "split": "train",
+      "prepared_crop_size": [
+        16,
+        14
+      ]
+    },
+    {
+      "image_key": "-B1KH1KVfNgqa1WfSAaWYg",
+      "category": "yield",
+      "split": "train",
+      "prepared_crop_size": [
+        9,
+        7
+      ]
+    },
+    {
+      "image_key": "-NQmKWfAuPWZt3s7WrwAuQ",
+      "category": "yield",
+      "split": "train",
+      "prepared_crop_size": [
+        14,
+        11
+      ]
+    },
+    {
+      "image_key": "-21_2ziCd0eFiepxxbF6jw",
+      "category": "speed_limit_30",
+      "split": "train",
+      "prepared_crop_size": [
+        16,
+        15
+      ]
+    },
+    {
+      "image_key": "-82y-KcR6EtdxdkOv5zzuA",
+      "category": "speed_limit_30",
+      "split": "train",
+      "prepared_crop_size": [
+        12,
+        10
+      ]
+    },
+    {
+      "image_key": "-ERU5nErUqQn3JZ6sSGofA",
+      "category": "speed_limit_30",
+      "split": "train",
+      "prepared_crop_size": [
+        14,
+        15
+      ]
+    },
+    {
+      "image_key": "0Hdxcclb07xpUIdoszvWTA",
+      "category": "speed_limit_30",
+      "split": "train",
+      "prepared_crop_size": [
+        6,
+        7
+      ]
+    },
+    {
+      "image_key": "0HpGBxPaHHV9uaFBID5rgg",
+      "category": "speed_limit_30",
+      "split": "train",
+      "prepared_crop_size": [
+        11,
+        10
+      ]
+    },
+    {
+      "image_key": "-5ihylTtxA3-CGKOhyhDmQ",
+      "category": "speed_limit_50",
+      "split": "train",
+      "prepared_crop_size": [
+        14,
+        14
+      ]
+    },
+    {
+      "image_key": "-5ihylTtxA3-CGKOhyhDmQ",
+      "category": "speed_limit_50",
+      "split": "train",
+      "prepared_crop_size": [
+        14,
+        14
+      ]
+    },
+    {
+      "image_key": "-7Bt1OY6lXDFhVWl0qexRg",
+      "category": "speed_limit_50",
+      "split": "train",
+      "prepared_crop_size": [
+        83,
+        85
+      ]
+    },
+    {
+      "image_key": "-E0pRusIqLhaIkjlZQGXNg",
+      "category": "speed_limit_50",
+      "split": "train",
+      "prepared_crop_size": [
+        32,
+        47
+      ]
+    },
+    {
+      "image_key": "-MlU-jgd1aUWgzCSIEi1Yg",
+      "category": "speed_limit_50",
+      "split": "train",
+      "prepared_crop_size": [
+        14,
+        15
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "category": "stop",
+      "image_key": "-1ZXiNNunp0TA-puToNbeQ",
+      "file": "ground_truth_stop.jpg",
+      "type": "ground_truth_not_model_prediction"
+    },
+    {
+      "category": "no_entry",
+      "image_key": "-BlWD5yiCO2Yi9BLQsRkkg",
+      "file": "ground_truth_no_entry.jpg",
+      "type": "ground_truth_not_model_prediction"
+    },
+    {
+      "category": "yield",
+      "image_key": "-21_2ziCd0eFiepxxbF6jw",
+      "file": "ground_truth_yield.jpg",
+      "type": "ground_truth_not_model_prediction"
+    },
+    {
+      "category": "speed_limit_30",
+      "image_key": "-82y-KcR6EtdxdkOv5zzuA",
+      "file": "ground_truth_speed_limit_30.jpg",
+      "type": "ground_truth_not_model_prediction"
+    },
+    {
+      "category": "speed_limit_50",
+      "image_key": "-5ihylTtxA3-CGKOhyhDmQ",
+      "file": "ground_truth_speed_limit_50.jpg",
+      "type": "ground_truth_not_model_prediction"
+    }
+  ]
+}

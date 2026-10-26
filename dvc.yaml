@@ -1,0 +1,250 @@
+stages:
+  download:
+    cmd: python scripts/download_gtsrb.py
+    deps:
+      - scripts/download_gtsrb.py
+    outs:
+      - data/raw/gtsrb/archives
+
+  eda:
+    cmd: python scripts/eda_gtsrb.py
+    deps:
+      - scripts/eda_gtsrb.py
+      - data/raw/gtsrb/archives
+    outs:
+      - report/gtsrb_eda:
+          cache: false
+
+  prepare:
+    cmd: python scripts/prepare_gtsrb.py --class-ids 14 17 13 1 2 --train-per-class ${data.train_per_class} --val-per-class ${data.val_per_class} --seed ${seed}
+    deps:
+      - scripts/prepare_gtsrb.py
+      - data/raw/gtsrb/archives
+      - report/gtsrb_eda/exact_duplicate_files.json
+    params:
+      - data
+      - seed
+    outs:
+      - data/gtsrb
+
+  compare:
+    cmd: python scripts/compare_classifiers.py --data-dir data/gtsrb --output-dir outputs/gtsrb_comparison --epochs ${training.epochs} --image-size ${training.image_size} --batch-size ${training.batch_size} --threads ${training.threads} --seed ${seed}
+    deps:
+      - scripts/compare_classifiers.py
+      - src
+      - configs
+      - data/gtsrb
+      - requirements.txt
+    params:
+      - training
+      - seed
+    outs:
+      - outputs/gtsrb_comparison
+
+  export:
+    cmd: python scripts/export_selected.py
+    deps:
+      - scripts/export_selected.py
+      - src
+      - outputs/gtsrb_comparison
+      - data/gtsrb
+    outs:
+      - models/gtsrb
+    metrics:
+      - report/gtsrb_results/onnx_verification.json:
+          cache: false
+
+  classifier_report:
+    cmd: python scripts/build_gtsrb_report.py
+    deps:
+      - scripts/build_gtsrb_report.py
+      - outputs/gtsrb_comparison
+      - data/gtsrb/dataset_summary.json
+      - report/gtsrb_results/onnx_verification.json
+    outs:
+      - report/classification_study/technical_report.md:
+          cache: false
+      - report/classification_study/technical_report.html:
+          cache: false
+      - report/classification_study/technical_report.pdf:
+          cache: false
+      - report/gtsrb_results/comparison.csv:
+          cache: false
+      - report/gtsrb_results/comparison.json:
+          cache: false
+      - report/gtsrb_results/figures:
+          cache: false
+      - report/gtsrb_results/baseline.json:
+          cache: false
+      - report/gtsrb_results/selected_test_predictions.csv:
+          cache: false
+      - report/gtsrb_results/learning_curves.json:
+          cache: false
+      - report/gtsrb_results/dataset_summary.json:
+          cache: false
+      - demo/gtsrb:
+          cache: false
+
+  pretrained_detector:
+    cmd: python scripts/fetch_detector_weights.py
+    deps:
+      - scripts/fetch_detector_weights.py
+      - pipelines/detection/pretrained.json
+    outs:
+      - yolo11n.pt
+
+  audit_detection_source:
+    cmd: python scripts/audit_detection_data.py --mtsd-root data/raw/mtsd/mtsd_v2_fully_annotated --annotations-only --output-dir report/detection_readiness/mtsd_nonpanoramic
+    deps:
+      - scripts/audit_detection_data.py
+      - pipelines/detection/classes.yaml
+      - data/raw/mtsd/mtsd_v2_fully_annotated
+    outs:
+      - report/detection_readiness/mtsd_nonpanoramic:
+          cache: false
+
+  prepare_detection:
+    cmd: python scripts/prepare_mtsd.py --source data/raw/mtsd/mtsd_v2_fully_annotated --candidates report/detection_readiness/mtsd_nonpanoramic/candidate_annotations.csv --minimum-train 300
+    deps:
+      - scripts/prepare_mtsd.py
+      - pipelines/detection/classes.yaml
+      - data/raw/mtsd/mtsd_v2_fully_annotated
+      - report/detection_readiness/mtsd_nonpanoramic/candidate_annotations.csv
+    outs:
+      - data/mtsd
+
+  detection_eda:
+    cmd:
+      - python scripts/eda_mtsd.py
+      - python scripts/review_mtsd_annotations.py
+      - python scripts/build_mtsd_eda_report.py
+    deps:
+      - scripts/eda_mtsd.py
+      - scripts/review_mtsd_annotations.py
+      - scripts/build_mtsd_eda_report.py
+      - data/mtsd
+      - data/raw/mtsd/mtsd_v2_fully_annotated
+      - pipelines/detection/classes.yaml
+      - outputs/mtsd_detection/inference_comparison.json
+    outs:
+      - report/mtsd_eda:
+          cache: false
+      - report/mtsd_annotation_review:
+          cache: false
+
+  train_detectors:
+    cmd:
+      - python scripts/compare_detectors.py
+      - python scripts/finetune_detector.py --device auto
+      - python scripts/select_operating_point.py
+    deps:
+      - scripts/compare_detectors.py
+      - scripts/finetune_detector.py
+      - scripts/select_operating_point.py
+      - scripts/evaluate_detector.py
+      - src/utils/scene_detector.py
+      - pipelines/detection/experiment.yaml
+      - pipelines/detection/refinement.yaml
+      - data/mtsd
+      - yolo11n.pt
+      - requirements-recorded.txt
+    outs:
+      - outputs/mtsd_detection
+
+  export_detector:
+    cmd: python scripts/export_detector.py
+    deps:
+      - scripts/export_detector.py
+      - outputs/mtsd_detection
+      - data/mtsd/dataset_summary.json
+    outs:
+      - models/mtsd
+
+  evaluate_detection:
+    cmd:
+      - python scripts/evaluate_detector.py
+      - python scripts/evaluate_detector.py --model models/mtsd/detector.onnx --output-dir report/mtsd_onnx_results --demo-dir demo/mtsd_onnx
+    deps:
+      - scripts/evaluate_detector.py
+      - src/utils/onnx_classifier.py
+      - src/utils/scene_detector.py
+      - outputs/mtsd_detection
+      - models/mtsd
+      - models/gtsrb
+      - data/mtsd
+    outs:
+      - report/mtsd_results:
+          cache: false
+      - report/mtsd_onnx_results:
+          cache: false
+      - demo/mtsd:
+          cache: false
+      - demo/mtsd_onnx:
+          cache: false
+
+  inference_bundle:
+    cmd: python scripts/package_inference_models.py
+    deps:
+      - scripts/package_inference_models.py
+      - models/mtsd
+      - models/gtsrb
+    outs:
+      - artifacts/inference_models.zip:
+          cache: false
+      - artifacts/manifest.json:
+          cache: false
+
+  gallery_input:
+    cmd: python scripts/make_real_image_demo.py
+    deps:
+      - scripts/make_real_image_demo.py
+      - data/mtsd
+    outs:
+      - demo/mtsd_gallery/input.mp4:
+          cache: false
+      - demo/mtsd_gallery/provenance.json:
+          cache: false
+
+  gallery_inference:
+    cmd: python -m src.detect_signs demo/mtsd_gallery/input.mp4 --output-dir demo/mtsd_gallery/processed
+    deps:
+      - src/detect_signs.py
+      - models/mtsd
+      - demo/mtsd_gallery/input.mp4
+    outs:
+      - demo/mtsd_gallery/processed:
+          cache: false
+
+  gallery_output:
+    cmd: python scripts/make_real_image_demo.py --combine-processed demo/mtsd_gallery/processed/annotated.mp4
+    deps:
+      - scripts/make_real_image_demo.py
+      - demo/mtsd_gallery/input.mp4
+      - demo/mtsd_gallery/processed
+    outs:
+      - demo/mtsd_gallery/real_image_gallery.mp4:
+          cache: false
+
+  report:
+    cmd: python scripts/build_final_report.py
+    deps:
+      - scripts/build_final_report.py
+      - report/gtsrb_results
+      - report/mtsd_results
+      - report/mtsd_onnx_results
+      - report/mtsd_eda
+      - report/mtsd_annotation_review
+      - report/container_verification.json
+      - models/mtsd/metadata.json
+      - outputs/mtsd_detection/comparison.json
+      - data/mtsd/dataset_summary.json
+      - demo/mtsd
+    outs:
+      - report/technical_report.md:
+          cache: false
+      - report/technical_report.html:
+          cache: false
+      - report/technical_report.pdf:
+          cache: false
+      - report/detector_comparison.json:
+          cache: false

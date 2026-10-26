@@ -1,0 +1,32 @@
+name: tests
+
+on:
+  push:
+    paths-ignore:
+      - "report/**"
+      - "**/*.md"
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install -r requirements-recorded.txt
+      - run: pytest -q
+        env:
+          MPLCONFIGDIR: /tmp/matplotlib
+          OMP_NUM_THREADS: "2"
+          MKL_NUM_THREADS: "2"
+
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t traffic-sign-capstone .
+      - run: docker run --rm traffic-sign-capstone python -m pytest -q
+      - run: docker run --rm traffic-sign-capstone python scripts/container_smoke.py

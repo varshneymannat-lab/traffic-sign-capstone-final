@@ -1,0 +1,6 @@
+outs:
+- md5: d28df260627d0e451ffde8fc6abfa204.dir
+  size: 2565769036
+  nfiles: 44625
+  hash: md5
+  path: mtsd_v2_fully_annotated

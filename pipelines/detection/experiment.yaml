@@ -1,0 +1,13 @@
+seed: 42
+model: yolo11n.pt
+image_sizes: [416, 640]
+epochs: 5
+batch_size: 8
+threads: 2
+device: cpu
+freeze_backbone_layers: 10
+learning_rate: 0.001
+weight_decay: 0.0005
+selection_metric: validation_mAP50_95
+deployment_confidence: 0.25
+deployment_iou: 0.7

@@ -1,0 +1,16 @@
+{
+  "images_decoded": 2706,
+  "boxes_checked": 3433,
+  "normalized_boxes_valid": true,
+  "image_keys_disjoint": true,
+  "recorded_source_pixel_hashes_disjoint": true,
+  "similarity_groups_disjoint": true,
+  "prepared_width_range": [
+    640,
+    1280
+  ],
+  "prepared_height_range": [
+    480,
+    1280
+  ]
+}

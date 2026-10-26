@@ -1,0 +1,23 @@
+{
+  "prepared_scenes": 2706,
+  "prepared_boxes": 3433,
+  "all_images_decoded": true,
+  "brightness_mean_gray_range": [
+    46.11083984375,
+    218.627197265625
+  ],
+  "approximate_object_side_pixels_median": {
+    "416": 6.672277505423092,
+    "640": 10.265042316035526
+  },
+  "object_size_caveat": "sqrt(normalized box area) times square size is a relative-size proxy, not actual letterboxed pixel size; aspect ratios change that size.",
+  "group_count_by_split": {
+    "test": 332,
+    "train": 2015,
+    "val": 356
+  },
+  "exclusions": {
+    "dhash_group_overlaps_official_validation": 3
+  },
+  "class_mapping_review": "Spot-checked real training crops: stop includes international text variants; no-entry is the horizontal white bar; yield is the inverted red triangle; speeds are round 30/50 signs. This is not a manual audit of every annotation."
+}

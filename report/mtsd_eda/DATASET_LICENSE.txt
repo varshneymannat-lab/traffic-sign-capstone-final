@@ -1,0 +1,4 @@
+Source: LICENSE.txt distributed in mtsd_v2_fully_annotated_annotation.zip
+Dataset: Mapillary Traffic Sign Dataset v2
+
+This Mapillary Traffic Sign Dataset is provided under the Creative Commons Attribution NonCommercial Share Alike (CC BY-NC-SA) license available here: https://creativecommons.org/licenses/by-nc/4.0/legalcode

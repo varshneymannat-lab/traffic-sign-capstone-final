@@ -1,0 +1,80 @@
+{
+  "source": "MTSD v2 fully annotated, selected official-validation scenes reserved for local test",
+  "selection": "First two unused sorted test image keys per category, before inspecting prediction correctness.",
+  "fps": 10,
+  "frames_per_scene": 20,
+  "scenes": [
+    {
+      "image_path": "images/test/-2k5fP6nR3RmS7FfzwPNxg.jpg",
+      "selection_category": "stop",
+      "ground_truth_classes": [
+        "stop"
+      ]
+    },
+    {
+      "image_path": "images/test/0QVWSpopXAKm_KqytMIBVg.jpg",
+      "selection_category": "stop",
+      "ground_truth_classes": [
+        "no_entry",
+        "stop"
+      ]
+    },
+    {
+      "image_path": "images/test/0H0WS3zptoqTukK6GxAdhg.jpg",
+      "selection_category": "no_entry",
+      "ground_truth_classes": [
+        "no_entry"
+      ]
+    },
+    {
+      "image_path": "images/test/4MJHVMN-n6dhFAJPMPqcYA.jpg",
+      "selection_category": "no_entry",
+      "ground_truth_classes": [
+        "no_entry"
+      ]
+    },
+    {
+      "image_path": "images/test/01MO3qSV10LE1pjQFHX-kw.jpg",
+      "selection_category": "yield",
+      "ground_truth_classes": [
+        "yield"
+      ]
+    },
+    {
+      "image_path": "images/test/0bm4k63pkUtCROhMsj260A.jpg",
+      "selection_category": "yield",
+      "ground_truth_classes": [
+        "yield"
+      ]
+    },
+    {
+      "image_path": "images/test/-AcmoBAQMsDGwzmG9tzAJw.jpg",
+      "selection_category": "speed_limit_30",
+      "ground_truth_classes": [
+        "speed_limit_30"
+      ]
+    },
+    {
+      "image_path": "images/test/02HLzRRAYAC01AOnCUm0pA.jpg",
+      "selection_category": "speed_limit_30",
+      "ground_truth_classes": [
+        "speed_limit_30"
+      ]
+    },
+    {
+      "image_path": "images/test/-KsJhQA4RkIB3FPp_IStgw.jpg",
+      "selection_category": "speed_limit_50",
+      "ground_truth_classes": [
+        "speed_limit_50"
+      ]
+    },
+    {
+      "image_path": "images/test/0or0Y3XMTVNfVQcQ9Oj21A.jpg",
+      "selection_category": "speed_limit_50",
+      "ground_truth_classes": [
+        "speed_limit_50"
+      ]
+    }
+  ],
+  "disclosure": "Repeated real still photographs. Not a continuous-road video or temporal benchmark. Must run the actual inference command to produce annotated output."
+}

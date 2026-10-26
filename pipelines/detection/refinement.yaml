@@ -1,0 +1,8 @@
+epochs: 15
+batch_size: 8
+freeze_backbone_layers: 5
+learning_rate: 0.0005
+weight_decay: 0.0005
+seed: 42
+initialization: validation-selected initial detector checkpoint
+selection_metric: validation_mAP50_95

@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-26T16:32:14.293745+09:00",
+  "annotation_scene_mismatches": 0,
+  "test_images_per_backend": 332,
+  "gallery_frames_decoded": 200,
+  "gallery_minimum_frame_pixel_std": 71.80012545702948,
+  "gallery_detection_rows": 139,
+  "fresh_bundle_files_verified": 5,
+  "fresh_bundle_inference_frames": 2,
+  "tensorboard_event_files": 6,
+  "files": {
+    "report/technical_report.pdf": {
+      "bytes": 1148752,
+      "sha256": "56c315288e7f01de26f11778d3ab9db0a8f5e391e6a25aedd749422624296b7c"
+    },
+    "report/mtsd_eda/Mapillary_EDA_Report.pdf": {
+      "bytes": 3063108,
+      "sha256": "b0c85b57e9230f568bc9f3070f41bed4ef66b300075f28e8793fe140c4a3f958"
+    },
+    "artifacts/inference_models.zip": {
+      "bytes": 55679789,
+      "sha256": "255a86ec72f0d962b73ef94f17fddc663fa7a1297ecdd1250f254cca9b4e9374"
+    },
+    "demo/mtsd_gallery/real_image_gallery.mp4": {
+      "bytes": 1958894,
+      "sha256": "85e94077c4c7e5c3067ebfb6b1448c0ec9748f5c02ea5b7f782d879b9bc6554b"
+    }
+  },
+  "scope": "Local file and inference checks. Not a Docker run, fresh dependency installation, full retraining or GitHub publication verification."
+}

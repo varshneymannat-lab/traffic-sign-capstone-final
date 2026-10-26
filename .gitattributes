@@ -1,0 +1,8 @@
+*.pdf binary
+*.pptx binary
+*.png binary
+*.jpg binary
+*.mp4 binary
+*.zip binary
+*.csv whitespace=cr-at-eol
+dvc.lock -whitespace

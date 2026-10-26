@@ -1,0 +1,82 @@
+{
+  "source": "MTSD v2 fully annotated, selected real scenes",
+  "classes": [
+    "stop",
+    "no_entry",
+    "yield",
+    "speed_limit_30",
+    "speed_limit_50"
+  ],
+  "seed": 42,
+  "minimum_retained_training_images_per_class": 300,
+  "box_counts": {
+    "train": {
+      "yield": 576,
+      "stop": 498,
+      "speed_limit_30": 478,
+      "speed_limit_50": 465,
+      "no_entry": 546
+    },
+    "val": {
+      "stop": 87,
+      "no_entry": 102,
+      "speed_limit_30": 73,
+      "yield": 101,
+      "speed_limit_50": 82
+    },
+    "test": {
+      "stop": 83,
+      "speed_limit_30": 79,
+      "speed_limit_50": 76,
+      "yield": 100,
+      "no_entry": 87
+    }
+  },
+  "image_counts_per_class": {
+    "train": {
+      "yield": 478,
+      "stop": 433,
+      "speed_limit_30": 436,
+      "speed_limit_50": 427,
+      "no_entry": 458
+    },
+    "val": {
+      "stop": 77,
+      "no_entry": 89,
+      "speed_limit_30": 65,
+      "yield": 84,
+      "speed_limit_50": 73
+    },
+    "test": {
+      "stop": 71,
+      "speed_limit_30": 70,
+      "speed_limit_50": 70,
+      "yield": 81,
+      "no_entry": 71
+    }
+  },
+  "split_images": {
+    "test": 332,
+    "train": 2018,
+    "val": 356
+  },
+  "exclusions": [
+    {
+      "image_key": "5iyPwn5BKz-7-MgsqDQNcg",
+      "reason": "dhash_group_overlaps_official_validation"
+    },
+    {
+      "image_key": "ahoE5duE5BVsPofJnALCgw",
+      "reason": "dhash_group_overlaps_official_validation"
+    },
+    {
+      "image_key": "fyUXWpvykYUCuXRGoRafmA",
+      "reason": "dhash_group_overlaps_official_validation"
+    }
+  ],
+  "split_policy": "Official train -> internal group train/validation. Selected official validation -> final local test, never tuning. Hidden official test is unused.",
+  "group_policy": "64-bit full-scene difference-hash connected components at Hamming distance <=4; remove training components overlapping held-out scenes.",
+  "limitations": "Difference hashes screen visual similarity, not proof of independent physical-sign identity. No sequence metadata supplied. Only selected positive scenes, not representative sign-free drives.",
+  "image_preprocessing": "RGB; longest side <=1280 pixels; JPEG quality 95. Boxes normalized from original annotation coordinates.",
+  "selection": "At most 500 official-training and 70 official-validation image keys per class, sampled before inspecting model predictions; all five target boxes retained in each selected scene."
+}

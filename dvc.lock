@@ -1,0 +1,616 @@
+schema: '2.0'
+stages:
+  download:
+    cmd: python scripts/download_gtsrb.py
+    deps:
+    - path: scripts/download_gtsrb.py
+      hash: md5
+      md5: d27dddb86081850ea9adc71f3275c216
+      size: 2779
+    outs:
+    - path: data/raw/gtsrb/archives
+      hash: md5
+      md5: ca3ee2e0a288f2975c5bef7e33e1c21c.dir
+      size: 365375498
+      nfiles: 4
+  eda:
+    cmd: python scripts/eda_gtsrb.py
+    deps:
+    - path: data/raw/gtsrb/archives
+      hash: md5
+      md5: ca3ee2e0a288f2975c5bef7e33e1c21c.dir
+      size: 365375498
+      nfiles: 4
+    - path: scripts/eda_gtsrb.py
+      hash: md5
+      md5: 47b2adf9c289eb3ee23a442a81649078
+      size: 15610
+    outs:
+    - path: report/gtsrb_eda
+      hash: md5
+      md5: b39e9a54dd44deaad7fd0bc7ec7e22be.dir
+      size: 370077
+      nfiles: 8
+  prepare:
+    cmd: python scripts/prepare_gtsrb.py --class-ids 14 17 13 1 2 
+      --train-per-class 500 --val-per-class 150 --seed 42
+    deps:
+    - path: data/raw/gtsrb/archives
+      hash: md5
+      md5: ca3ee2e0a288f2975c5bef7e33e1c21c.dir
+      size: 365375498
+      nfiles: 4
+    - path: report/gtsrb_eda/exact_duplicate_files.json
+      hash: md5
+      md5: 8e174dd4283813a29fa3f16f41118c3c
+      size: 1962
+    - path: scripts/prepare_gtsrb.py
+      hash: md5
+      md5: e97eb08da31081c98bb496eaebd24f21
+      size: 7921
+    params:
+      params.yaml:
+        data:
+          train_per_class: 500
+          val_per_class: 150
+        seed: 42
+    outs:
+    - path: data/gtsrb
+      hash: md5
+      md5: e8a28f99f324e3ac7af08c47a340bf86.dir
+      size: 59051820
+      nfiles: 6072
+  compare:
+    cmd: python scripts/compare_classifiers.py --data-dir data/gtsrb 
+      --output-dir outputs/gtsrb_comparison --epochs 5 --image-size 128 
+      --batch-size 16 --threads 2 --seed 42
+    deps:
+    - path: configs
+      hash: md5
+      md5: 3ee6424608b37cf47d6c435e56a4b2d9.dir
+      size: 2178
+      nfiles: 11
+    - path: data/gtsrb
+      hash: md5
+      md5: e8a28f99f324e3ac7af08c47a340bf86.dir
+      size: 59051820
+      nfiles: 6072
+    - path: requirements.txt
+      hash: md5
+      md5: 9e2979050629220ad02a1c718a9c5797
+      size: 298
+    - path: scripts/compare_classifiers.py
+      hash: md5
+      md5: 1b70810372350fa036d521f97811cd75
+      size: 10218
+    - path: src
+      hash: md5
+      md5: 7fc7fad7bc51c12d135b2768bb507b27.dir
+      size: 24370
+      nfiles: 15
+    params:
+      params.yaml:
+        seed: 42
+        training:
+          epochs: 5
+          image_size: 128
+          batch_size: 16
+          threads: 2
+    outs:
+    - path: outputs/gtsrb_comparison
+      hash: md5
+      md5: 76b0c443ce1871ba796e62b2cc4fe7d7.dir
+      size: 405780485
+      nfiles: 27
+  export:
+    cmd: python scripts/export_selected.py
+    deps:
+    - path: data/gtsrb
+      hash: md5
+      md5: e8a28f99f324e3ac7af08c47a340bf86.dir
+      size: 59051820
+      nfiles: 6072
+    - path: outputs/gtsrb_comparison
+      hash: md5
+      md5: 76b0c443ce1871ba796e62b2cc4fe7d7.dir
+      size: 405780485
+      nfiles: 27
+    - path: scripts/export_selected.py
+      hash: md5
+      md5: 3180da3a7a12c122d58062647fc423f9
+      size: 5659
+    - path: src
+      hash: md5
+      md5: 7fc7fad7bc51c12d135b2768bb507b27.dir
+      size: 24370
+      nfiles: 15
+    outs:
+    - path: models/gtsrb
+      hash: md5
+      md5: 8451109eb6bda447b8ff3860fc9c96a3.dir
+      size: 134212459
+      nfiles: 4
+    - path: report/gtsrb_results/onnx_verification.json
+      hash: md5
+      md5: 0169111d01b01baad8aa4d1b8b0cb964
+      size: 1155
+  report:
+    cmd: python scripts/build_final_report.py
+    deps:
+    - path: data/mtsd/dataset_summary.json
+      hash: md5
+      md5: c8c5ee04c57af48a240133c571242b13
+      size: 2429
+    - path: demo/mtsd
+      hash: md5
+      md5: 626ba534687105a454e7544492e4f36d.dir
+      size: 6418877
+      nfiles: 18
+    - path: models/mtsd/metadata.json
+      hash: md5
+      md5: a923fa063ad3b6d30f9a53f3f5c1e880
+      size: 1502
+    - path: outputs/mtsd_detection/comparison.json
+      hash: md5
+      md5: bee102f9e45ae3f99373a653ffe04aec
+      size: 7339
+    - path: report/container_verification.json
+      hash: md5
+      md5: f5a852b600860c816c36d389afbed8d8
+      size: 252
+    - path: report/gtsrb_results
+      hash: md5
+      md5: d08ac6755e33d7f0872894c43af8d1f4.dir
+      size: 1661377
+      nfiles: 12
+    - path: report/mtsd_annotation_review
+      hash: md5
+      md5: 30c082bd4af212cab0d4334a7e0fcc32.dir
+      size: 686616
+      nfiles: 6
+    - path: report/mtsd_eda
+      hash: md5
+      md5: 259fee2cec46374aac5d4c8e00e4947e.dir
+      size: 4847211
+      nfiles: 14
+    - path: report/mtsd_onnx_results
+      hash: md5
+      md5: 6c8482395e695ebf5aea2671eb94c63c.dir
+      size: 4987566
+      nfiles: 6
+    - path: report/mtsd_results
+      hash: md5
+      md5: a9f93924407e81d17bcb6470fbb38ec1.dir
+      size: 4987258
+      nfiles: 6
+    - path: scripts/build_final_report.py
+      hash: md5
+      md5: c9e6d39d99e2738f8625042630b699f2
+      size: 24946
+    outs:
+    - path: report/detector_comparison.json
+      hash: md5
+      md5: d4156dcc0506f89d35bbcfdb0cccea6f
+      size: 6754
+    - path: report/technical_report.html
+      hash: md5
+      md5: 4e45df2ac8dd2a7c80a001fde3cdbe41
+      size: 18051
+    - path: report/technical_report.md
+      hash: md5
+      md5: df96f64cd271b2518db5c9b9e00b1da2
+      size: 17001
+    - path: report/technical_report.pdf
+      hash: md5
+      md5: b5a80148df69c6c432baff19bc8172fe
+      size: 1148752
+  classifier_report:
+    cmd: python scripts/build_gtsrb_report.py
+    deps:
+    - path: data/gtsrb/dataset_summary.json
+      hash: md5
+      md5: 881ca94c279cfc2af64232efd76d9c6e
+      size: 1546
+    - path: outputs/gtsrb_comparison
+      hash: md5
+      md5: 76b0c443ce1871ba796e62b2cc4fe7d7.dir
+      size: 405780485
+      nfiles: 27
+    - path: report/gtsrb_results/onnx_verification.json
+      hash: md5
+      md5: 0169111d01b01baad8aa4d1b8b0cb964
+      size: 1155
+    - path: scripts/build_gtsrb_report.py
+      hash: md5
+      md5: 91f41a475e29bc6082df8f4636ef88cb
+      size: 33761
+    outs:
+    - path: demo/gtsrb
+      hash: md5
+      md5: 93c85401170854d9e48592513b8283fc.dir
+      size: 26127
+      nfiles: 6
+    - path: report/classification_study/technical_report.html
+      hash: md5
+      md5: c14ea3ab6c80a88be924bcdbb12115ed
+      size: 16891
+    - path: report/classification_study/technical_report.md
+      hash: md5
+      md5: fa6320cd680fb6b103b4955519bcfe44
+      size: 12563
+    - path: report/classification_study/technical_report.pdf
+      hash: md5
+      md5: e3bc0fd8fcbf7f9952802077adc6f10d
+      size: 292554
+    - path: report/gtsrb_results/baseline.json
+      hash: md5
+      md5: aef69b5ed2fd81d339ba60bc6940a81f
+      size: 181
+    - path: report/gtsrb_results/comparison.csv
+      hash: md5
+      md5: 3feace8cfa04499030729b682843c82f
+      size: 596
+    - path: report/gtsrb_results/comparison.json
+      hash: md5
+      md5: 643bd2e565ff4ddf3aae948069cab63b
+      size: 1074689
+    - path: report/gtsrb_results/dataset_summary.json
+      hash: md5
+      md5: 881ca94c279cfc2af64232efd76d9c6e
+      size: 1546
+    - path: report/gtsrb_results/figures
+      hash: md5
+      md5: 5dcaacf3d01570149f382854d4ead4ba.dir
+      size: 349100
+      nfiles: 5
+    - path: report/gtsrb_results/learning_curves.json
+      hash: md5
+      md5: 9175c499773ff8f6cec9fdb453411300
+      size: 1000
+    - path: report/gtsrb_results/selected_test_predictions.csv
+      hash: md5
+      md5: 2125b16a86c139cb910ec65be76a63ff
+      size: 233110
+  pretrained_detector:
+    cmd: python scripts/fetch_detector_weights.py
+    deps:
+    - path: pipelines/detection/pretrained.json
+      hash: md5
+      md5: 87b53cbec48bc524f6223c7f478ae7bd
+      size: 330
+    - path: scripts/fetch_detector_weights.py
+      hash: md5
+      md5: 9aa5785876d988b0c27780471a68103b
+      size: 1130
+    outs:
+    - path: yolo11n.pt
+      hash: md5
+      md5: 261474e91b15f5ef14a63c21ce6c0cbb
+      size: 5613764
+  audit_detection_source:
+    cmd: python scripts/audit_detection_data.py --mtsd-root 
+      data/raw/mtsd/mtsd_v2_fully_annotated --annotations-only --output-dir 
+      report/detection_readiness/mtsd_nonpanoramic
+    deps:
+    - path: data/raw/mtsd/mtsd_v2_fully_annotated
+      hash: md5
+      md5: d28df260627d0e451ffde8fc6abfa204.dir
+      size: 2565769036
+      nfiles: 44625
+    - path: pipelines/detection/classes.yaml
+      hash: md5
+      md5: 546bf2b762432e3425b805942e629cf2
+      size: 409
+    - path: scripts/audit_detection_data.py
+      hash: md5
+      md5: 0893bbca35bc117594ee31f9527f035e
+      size: 9943
+    outs:
+    - path: report/detection_readiness/mtsd_nonpanoramic
+      hash: md5
+      md5: c4a15937ca66b3f98f05585fa9008486.dir
+      size: 644657
+      nfiles: 2
+  prepare_detection:
+    cmd: python scripts/prepare_mtsd.py --source 
+      data/raw/mtsd/mtsd_v2_fully_annotated --candidates 
+      report/detection_readiness/mtsd_nonpanoramic/candidate_annotations.csv 
+      --minimum-train 300
+    deps:
+    - path: data/raw/mtsd/mtsd_v2_fully_annotated
+      hash: md5
+      md5: d28df260627d0e451ffde8fc6abfa204.dir
+      size: 2565769036
+      nfiles: 44625
+    - path: pipelines/detection/classes.yaml
+      hash: md5
+      md5: 546bf2b762432e3425b805942e629cf2
+      size: 409
+    - path: 
+        report/detection_readiness/mtsd_nonpanoramic/candidate_annotations.csv
+      hash: md5
+      md5: 74688dd7602da60432111c99637d9a56
+      size: 624515
+    - path: scripts/prepare_mtsd.py
+      hash: md5
+      md5: ef6966b70e6a7ebfd8a576f41e592005
+      size: 8694
+    outs:
+    - path: data/mtsd
+      hash: md5
+      md5: 586494693894e1b73981ae23477b7dea.dir
+      size: 968222798
+      nfiles: 5415
+  detection_eda:
+    cmd:
+    - python scripts/eda_mtsd.py
+    - python scripts/review_mtsd_annotations.py
+    - python scripts/build_mtsd_eda_report.py
+    deps:
+    - path: data/mtsd
+      hash: md5
+      md5: 586494693894e1b73981ae23477b7dea.dir
+      size: 968222798
+      nfiles: 5415
+    - path: data/raw/mtsd/mtsd_v2_fully_annotated
+      hash: md5
+      md5: d28df260627d0e451ffde8fc6abfa204.dir
+      size: 2565769036
+      nfiles: 44625
+    - path: outputs/mtsd_detection/inference_comparison.json
+      hash: md5
+      md5: 23f5cbf08418940a5eb929aad44adbc8
+      size: 584
+    - path: pipelines/detection/classes.yaml
+      hash: md5
+      md5: 546bf2b762432e3425b805942e629cf2
+      size: 409
+    - path: scripts/build_mtsd_eda_report.py
+      hash: md5
+      md5: cbe4af6e49b0bb1518fe624bb73c0307
+      size: 18952
+    - path: scripts/eda_mtsd.py
+      hash: md5
+      md5: 7420d299b95ec72508c033d41339d789
+      size: 9672
+    - path: scripts/review_mtsd_annotations.py
+      hash: md5
+      md5: 1722fe0cdbe7ec47977e4352e7c25126
+      size: 8832
+    outs:
+    - path: report/mtsd_annotation_review
+      hash: md5
+      md5: 30c082bd4af212cab0d4334a7e0fcc32.dir
+      size: 686616
+      nfiles: 6
+    - path: report/mtsd_eda
+      hash: md5
+      md5: 259fee2cec46374aac5d4c8e00e4947e.dir
+      size: 4847211
+      nfiles: 14
+  train_detectors:
+    cmd:
+    - python scripts/compare_detectors.py
+    - python scripts/finetune_detector.py --device auto
+    - python scripts/select_operating_point.py
+    deps:
+    - path: data/mtsd
+      hash: md5
+      md5: 586494693894e1b73981ae23477b7dea.dir
+      size: 968222798
+      nfiles: 5415
+    - path: pipelines/detection/experiment.yaml
+      hash: md5
+      md5: 89f1e9fad04bf03ad1ad9bfb181dbf1d
+      size: 253
+    - path: pipelines/detection/refinement.yaml
+      hash: md5
+      md5: 09782db7e581338be680e497313cdd7b
+      size: 205
+    - path: requirements-recorded.txt
+      hash: md5
+      md5: aa300273a79f2eb6c7a362df96bdadbf
+      size: 398
+    - path: scripts/compare_detectors.py
+      hash: md5
+      md5: 065cbe51bc0b902a6a1af07cc7990e60
+      size: 5367
+    - path: scripts/evaluate_detector.py
+      hash: md5
+      md5: d23ff5c992eeb7b7143ff3862fd5293f
+      size: 10853
+    - path: scripts/finetune_detector.py
+      hash: md5
+      md5: 8d722df8d2aa316fce169ca5c182a39b
+      size: 5161
+    - path: scripts/select_operating_point.py
+      hash: md5
+      md5: f391fc0685af8fae23d7d57255edbd5c
+      size: 4915
+    - path: src/utils/scene_detector.py
+      hash: md5
+      md5: b87cd320c66282c5c756ca7e9965b60e
+      size: 2279
+    - path: yolo11n.pt
+      hash: md5
+      md5: 261474e91b15f5ef14a63c21ce6c0cbb
+      size: 5613764
+    outs:
+    - path: outputs/mtsd_detection
+      hash: md5
+      md5: 693846d12df2dd6ff562e55d329a40a5.dir
+      size: 67054724
+      nfiles: 117
+  export_detector:
+    cmd: python scripts/export_detector.py
+    deps:
+    - path: data/mtsd/dataset_summary.json
+      hash: md5
+      md5: c8c5ee04c57af48a240133c571242b13
+      size: 2429
+    - path: outputs/mtsd_detection
+      hash: md5
+      md5: 693846d12df2dd6ff562e55d329a40a5.dir
+      size: 67054724
+      nfiles: 117
+    - path: scripts/export_detector.py
+      hash: md5
+      md5: 5e6a81fd6d3bd60fe09254fa5a9c51d8
+      size: 4185
+    outs:
+    - path: models/mtsd
+      hash: md5
+      md5: 8ade123e1a2a601d1dc688844790908c.dir
+      size: 16039474
+      nfiles: 3
+  evaluate_detection:
+    cmd:
+    - python scripts/evaluate_detector.py
+    - python scripts/evaluate_detector.py --model models/mtsd/detector.onnx 
+      --output-dir report/mtsd_onnx_results --demo-dir demo/mtsd_onnx
+    deps:
+    - path: data/mtsd
+      hash: md5
+      md5: 586494693894e1b73981ae23477b7dea.dir
+      size: 968222798
+      nfiles: 5415
+    - path: models/gtsrb
+      hash: md5
+      md5: 8451109eb6bda447b8ff3860fc9c96a3.dir
+      size: 134212459
+      nfiles: 4
+    - path: models/mtsd
+      hash: md5
+      md5: 8ade123e1a2a601d1dc688844790908c.dir
+      size: 16039474
+      nfiles: 3
+    - path: outputs/mtsd_detection
+      hash: md5
+      md5: 693846d12df2dd6ff562e55d329a40a5.dir
+      size: 67054724
+      nfiles: 117
+    - path: scripts/evaluate_detector.py
+      hash: md5
+      md5: d23ff5c992eeb7b7143ff3862fd5293f
+      size: 10853
+    - path: src/utils/onnx_classifier.py
+      hash: md5
+      md5: e97ed0d44dafa2062d9ac9b6b55641ff
+      size: 1412
+    - path: src/utils/scene_detector.py
+      hash: md5
+      md5: b87cd320c66282c5c756ca7e9965b60e
+      size: 2279
+    outs:
+    - path: demo/mtsd
+      hash: md5
+      md5: 626ba534687105a454e7544492e4f36d.dir
+      size: 6418877
+      nfiles: 18
+    - path: demo/mtsd_onnx
+      hash: md5
+      md5: 626ba534687105a454e7544492e4f36d.dir
+      size: 6418877
+      nfiles: 18
+    - path: report/mtsd_onnx_results
+      hash: md5
+      md5: 6c8482395e695ebf5aea2671eb94c63c.dir
+      size: 4987566
+      nfiles: 6
+    - path: report/mtsd_results
+      hash: md5
+      md5: a9f93924407e81d17bcb6470fbb38ec1.dir
+      size: 4987258
+      nfiles: 6
+  inference_bundle:
+    cmd: python scripts/package_inference_models.py
+    deps:
+    - path: models/gtsrb
+      hash: md5
+      md5: 8451109eb6bda447b8ff3860fc9c96a3.dir
+      size: 134212459
+      nfiles: 4
+    - path: models/mtsd
+      hash: md5
+      md5: 8ade123e1a2a601d1dc688844790908c.dir
+      size: 16039474
+      nfiles: 3
+    - path: scripts/package_inference_models.py
+      hash: md5
+      md5: 4c4612cca73e34bf6bbfc525474c2646
+      size: 1716
+    outs:
+    - path: artifacts/inference_models.zip
+      hash: md5
+      md5: 16b20a64de93d0d95a3dc64a1f80858b
+      size: 55679789
+    - path: artifacts/manifest.json
+      hash: md5
+      md5: 1d35918ff1c30bc7d0b005a0f01ecbf9
+      size: 1021
+  gallery_input:
+    cmd: python scripts/make_real_image_demo.py
+    deps:
+    - path: data/mtsd
+      hash: md5
+      md5: 586494693894e1b73981ae23477b7dea.dir
+      size: 968222798
+      nfiles: 5415
+    - path: scripts/make_real_image_demo.py
+      hash: md5
+      md5: a8f81e34713e1bec040d77fb49a4af12
+      size: 4856
+    outs:
+    - path: demo/mtsd_gallery/input.mp4
+      hash: md5
+      md5: 4dae4f90969dbc7843596e0295db6f88
+      size: 2353864
+    - path: demo/mtsd_gallery/provenance.json
+      hash: md5
+      md5: 753b07c8c4f6ba3d0ebf8a87ec73408b
+      size: 2223
+  gallery_inference:
+    cmd: python -m src.detect_signs demo/mtsd_gallery/input.mp4 --output-dir 
+      demo/mtsd_gallery/processed
+    deps:
+    - path: demo/mtsd_gallery/input.mp4
+      hash: md5
+      md5: 4dae4f90969dbc7843596e0295db6f88
+      size: 2353864
+    - path: models/mtsd
+      hash: md5
+      md5: 8ade123e1a2a601d1dc688844790908c.dir
+      size: 16039474
+      nfiles: 3
+    - path: src/detect_signs.py
+      hash: md5
+      md5: 01268aa060a5ff9812bcc501cebf3ebf
+      size: 7196
+    outs:
+    - path: demo/mtsd_gallery/processed
+      hash: md5
+      md5: bac7cd9e7f7880133d5b19dabd8c750e.dir
+      size: 2385773
+      nfiles: 3
+  gallery_output:
+    cmd: python scripts/make_real_image_demo.py --combine-processed 
+      demo/mtsd_gallery/processed/annotated.mp4
+    deps:
+    - path: demo/mtsd_gallery/input.mp4
+      hash: md5
+      md5: 4dae4f90969dbc7843596e0295db6f88
+      size: 2353864
+    - path: demo/mtsd_gallery/processed
+      hash: md5
+      md5: bac7cd9e7f7880133d5b19dabd8c750e.dir
+      size: 2385773
+      nfiles: 3
+    - path: scripts/make_real_image_demo.py
+      hash: md5
+      md5: a8f81e34713e1bec040d77fb49a4af12
+      size: 4856
+    outs:
+    - path: demo/mtsd_gallery/real_image_gallery.mp4
+      hash: md5
+      md5: f18c2de901182a18b97d778a01516bd3
+      size: 1958894

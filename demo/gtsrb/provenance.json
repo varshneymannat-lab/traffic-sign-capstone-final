@@ -1,0 +1,42 @@
+[
+  {
+    "demo_file": "stop.png",
+    "original_image": "images/test/00014/00093.ppm",
+    "split": "official_test",
+    "actual_label": "stop",
+    "predicted_label": "stop",
+    "selection": "First image in saved test order for this actual category; not selected for correctness."
+  },
+  {
+    "demo_file": "no_entry.png",
+    "original_image": "images/test/00017/00031.ppm",
+    "split": "official_test",
+    "actual_label": "no_entry",
+    "predicted_label": "no_entry",
+    "selection": "First image in saved test order for this actual category; not selected for correctness."
+  },
+  {
+    "demo_file": "yield.png",
+    "original_image": "images/test/00013/00026.ppm",
+    "split": "official_test",
+    "actual_label": "yield",
+    "predicted_label": "yield",
+    "selection": "First image in saved test order for this actual category; not selected for correctness."
+  },
+  {
+    "demo_file": "speed_limit_30.png",
+    "original_image": "images/test/00001/00001.ppm",
+    "split": "official_test",
+    "actual_label": "speed_limit_30",
+    "predicted_label": "speed_limit_30",
+    "selection": "First image in saved test order for this actual category; not selected for correctness."
+  },
+  {
+    "demo_file": "speed_limit_50.png",
+    "original_image": "images/test/00002/00034.ppm",
+    "split": "official_test",
+    "actual_label": "speed_limit_50",
+    "predicted_label": "speed_limit_50",
+    "selection": "First image in saved test order for this actual category; not selected for correctness."
+  }
+]

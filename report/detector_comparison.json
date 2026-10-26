@@ -1,0 +1,231 @@
+{
+  "selected_experiment": "yolo11n_640_finetuned",
+  "selected_image_size": 640,
+  "selection_rule": "Highest validation mAP50:95; smaller resolution breaks exact ties. No test predictions used.",
+  "settings": {
+    "seed": 42,
+    "model": "yolo11n.pt",
+    "image_sizes": [
+      416,
+      640
+    ],
+    "epochs": 5,
+    "batch_size": 8,
+    "threads": 2,
+    "device": "cpu",
+    "freeze_backbone_layers": 10,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0005,
+    "selection_metric": "validation_mAP50_95",
+    "deployment_confidence": 0.25,
+    "deployment_iou": 0.7
+  },
+  "dataset": {
+    "source": "MTSD v2 fully annotated, selected real scenes",
+    "classes": [
+      "stop",
+      "no_entry",
+      "yield",
+      "speed_limit_30",
+      "speed_limit_50"
+    ],
+    "seed": 42,
+    "minimum_retained_training_images_per_class": 300,
+    "box_counts": {
+      "train": {
+        "yield": 576,
+        "stop": 498,
+        "speed_limit_30": 478,
+        "speed_limit_50": 465,
+        "no_entry": 546
+      },
+      "val": {
+        "stop": 87,
+        "no_entry": 102,
+        "speed_limit_30": 73,
+        "yield": 101,
+        "speed_limit_50": 82
+      },
+      "test": {
+        "stop": 83,
+        "speed_limit_30": 79,
+        "speed_limit_50": 76,
+        "yield": 100,
+        "no_entry": 87
+      }
+    },
+    "image_counts_per_class": {
+      "train": {
+        "yield": 478,
+        "stop": 433,
+        "speed_limit_30": 436,
+        "speed_limit_50": 427,
+        "no_entry": 458
+      },
+      "val": {
+        "stop": 77,
+        "no_entry": 89,
+        "speed_limit_30": 65,
+        "yield": 84,
+        "speed_limit_50": 73
+      },
+      "test": {
+        "stop": 71,
+        "speed_limit_30": 70,
+        "speed_limit_50": 70,
+        "yield": 81,
+        "no_entry": 71
+      }
+    },
+    "split_images": {
+      "test": 332,
+      "train": 2018,
+      "val": 356
+    },
+    "exclusions": [
+      {
+        "image_key": "5iyPwn5BKz-7-MgsqDQNcg",
+        "reason": "dhash_group_overlaps_official_validation"
+      },
+      {
+        "image_key": "ahoE5duE5BVsPofJnALCgw",
+        "reason": "dhash_group_overlaps_official_validation"
+      },
+      {
+        "image_key": "fyUXWpvykYUCuXRGoRafmA",
+        "reason": "dhash_group_overlaps_official_validation"
+      }
+    ],
+    "split_policy": "Official train -> internal group train/validation. Selected official validation -> final local test, never tuning. Hidden official test is unused.",
+    "group_policy": "64-bit full-scene difference-hash connected components at Hamming distance <=4; remove training components overlapping held-out scenes.",
+    "limitations": "Difference hashes screen visual similarity, not proof of independent physical-sign identity. No sequence metadata supplied. Only selected positive scenes, not representative sign-free drives.",
+    "image_preprocessing": "RGB; longest side <=1280 pixels; JPEG quality 95. Boxes normalized from original annotation coordinates.",
+    "selection": "At most 500 official-training and 70 official-validation image keys per class, sampled before inspecting model predictions; all five target boxes retained in each selected scene."
+  },
+  "experiments": [
+    {
+      "name": "yolo11n_416",
+      "image_size": 416,
+      "validation": {
+        "precision": 0.3146561607078983,
+        "recall": 0.21724417829092987,
+        "mAP50": 0.1640306474811011,
+        "mAP50_95": 0.10486786085396213,
+        "per_class_AP50": [
+          0.22324101250694844,
+          0.077880251516091,
+          0.20400826741957556,
+          0.11866438275071947,
+          0.1963593232121711
+        ],
+        "per_class_AP50_95": [
+          0.14182958920242,
+          0.04464325004579123,
+          0.12355401930101147,
+          0.06886968843867845,
+          0.14544275728190942
+        ],
+        "class_indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "training_seconds": 692.699123125,
+      "parameter_count": 2590815
+    },
+    {
+      "name": "yolo11n_640",
+      "image_size": 640,
+      "validation": {
+        "precision": 0.48120585850020925,
+        "recall": 0.3254375597899786,
+        "mAP50": 0.2884635222084313,
+        "mAP50_95": 0.19433813906213335,
+        "per_class_AP50": [
+          0.4334731925115536,
+          0.2237102040001979,
+          0.38594475399748873,
+          0.21127920943900197,
+          0.18791025109391424
+        ],
+        "per_class_AP50_95": [
+          0.3082551653264375,
+          0.12787058016795116,
+          0.25912757610332265,
+          0.14554769761671013,
+          0.1308896760962454
+        ],
+        "class_indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "training_seconds": 1478.699837833,
+      "parameter_count": 2590815
+    },
+    {
+      "name": "yolo11n_640_finetuned",
+      "image_size": 640,
+      "validation": {
+        "precision": 0.5774967802317164,
+        "recall": 0.323070656797592,
+        "mAP50": 0.33978245722736294,
+        "mAP50_95": 0.23024345750622885,
+        "per_class_AP50": [
+          0.521626435996082,
+          0.2648412998467036,
+          0.3996037433094377,
+          0.2489377726053709,
+          0.2639030343792204
+        ],
+        "per_class_AP50_95": [
+          0.35859664585991,
+          0.16107289546236034,
+          0.2638552701707008,
+          0.17603305785600643,
+          0.19165941818216664
+        ],
+        "class_indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "training_seconds": 2213.371057458,
+      "parameter_count": 2590815,
+      "phase": "additional validation-led fine-tuning, not a new architecture",
+      "initialization": "yolo11n_640",
+      "settings": {
+        "epochs": 15,
+        "batch_size": 8,
+        "freeze_backbone_layers": 5,
+        "learning_rate": 0.0005,
+        "weight_decay": 0.0005,
+        "seed": 42,
+        "initialization": "validation-selected initial detector checkpoint",
+        "selection_metric": "validation_mAP50_95"
+      },
+      "hardware": {
+        "platform": "macOS-26.6.2-arm64-arm-64bit",
+        "training_device": "mps",
+        "validation_device": "cpu",
+        "torch_threads": 2
+      }
+    }
+  ],
+  "hardware": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "device": "cpu",
+    "threads": 2
+  },
+  "note": "Same small detector at two input resolutions; not two different detector architectures. Three classifier architectures are compared separately.",
+  "refinement_note": "Initial resolution comparison completed first. Additional phase uses its validation-selected checkpoint. Final selection among recorded candidates uses validation mAP50:95 only."
+}

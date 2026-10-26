@@ -1,0 +1,10 @@
+.git/
+.venv/
+.dvc/cache/
+.dvc/tmp/
+.dvc/config.local
+__pycache__/
+data/
+models/
+outputs/
+logs/

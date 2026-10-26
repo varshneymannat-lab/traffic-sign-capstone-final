@@ -1,0 +1,39 @@
+{
+  "architecture": "resnet18",
+  "first_test_batch_max_abs_logit_difference": 9.5367431640625e-06,
+  "sessions": {
+    "float32": {
+      "test_samples": 2820,
+      "accuracy": 0.9989361702127659,
+      "macro_f1": 0.9991833102694103,
+      "bytes": 44708253,
+      "forward_latency": {
+        "mean_ms": 9.563117459999972,
+        "median_ms": 9.27650000000213
+      }
+    },
+    "dense_int8": {
+      "test_samples": 2820,
+      "accuracy": 0.9989361702127659,
+      "macro_f1": 0.9991833102694103,
+      "bytes": 44705320,
+      "forward_latency": {
+        "mean_ms": 8.13866084000054,
+        "median_ms": 8.071666500004682
+      }
+    }
+  },
+  "runtime": "1.19.2",
+  "threads": 2,
+  "quantization_scope": "Dynamic INT8 of dense MatMul/Gemm weights only; convolution layers remain float32. Not full-model INT8.",
+  "latency_scope": "CPU ONNX Runtime single-image forward only, 10 warm-ups and 50 repetitions; excludes loading and preprocessing.",
+  "software": {
+    "python": "3.9.6",
+    "torch": "2.8.0",
+    "torchvision": "0.23.0",
+    "lightning": "2.6.0",
+    "scikit-learn": "1.6.1",
+    "onnx": "1.19.1",
+    "onnxruntime": "1.19.2"
+  }
+}

@@ -1,0 +1,250 @@
+{
+  "model_format": ".pt",
+  "test_images": 332,
+  "classes": [
+    "stop",
+    "no_entry",
+    "yield",
+    "speed_limit_30",
+    "speed_limit_50"
+  ],
+  "inference_mode": "sliced",
+  "detection": {
+    "mAP50": 0.48390937948973295,
+    "mAP50_95": 0.33439913318791314,
+    "precision_at_max_f1": 0.6031407465194379,
+    "recall_at_max_f1": 0.46529528645566787,
+    "per_class_AP50": [
+      0.6767003396103128,
+      0.39135711058629363,
+      0.5804015089456969,
+      0.3608713575865262,
+      0.4102165807198349
+    ],
+    "per_class_AP50_95": [
+      0.4849354102526548,
+      0.2415304448475289,
+      0.38303901662445383,
+      0.26076036147836645,
+      0.3017304327365612
+    ],
+    "class_indices": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "fixed_threshold": {
+    "confidence": 0.3433433433433433,
+    "iou": 0.5,
+    "detector_only": {
+      "tp": 197,
+      "fp": 142,
+      "fn": 228,
+      "precision": 0.5811209439528023,
+      "recall": 0.46352941176470586,
+      "f1": 0.5157068062827225
+    },
+    "detector_plus_classifier": {
+      "tp": 221,
+      "fp": 118,
+      "fn": 204,
+      "precision": 0.6519174041297935,
+      "recall": 0.52,
+      "f1": 0.5785340314136126
+    }
+  },
+  "matched_box_classification": {
+    "matching": "Class-agnostic one-to-one maximum-IoU assignment, IoU >=0.5; missed signs excluded only from this crop metric.",
+    "detector_labels": {
+      "samples": 229,
+      "accuracy": 0.8078602620087336,
+      "classification_report": {
+        "stop": {
+          "precision": 0.9090909090909091,
+          "recall": 0.9615384615384616,
+          "f1-score": 0.9345794392523364,
+          "support": 52.0
+        },
+        "no_entry": {
+          "precision": 0.9375,
+          "recall": 0.8823529411764706,
+          "f1-score": 0.9090909090909091,
+          "support": 34.0
+        },
+        "yield": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 51.0
+        },
+        "speed_limit_30": {
+          "precision": 0.5223880597014925,
+          "recall": 0.875,
+          "f1-score": 0.6542056074766355,
+          "support": 40.0
+        },
+        "speed_limit_50": {
+          "precision": 0.7916666666666666,
+          "recall": 0.36538461538461536,
+          "f1-score": 0.5,
+          "support": 52.0
+        },
+        "accuracy": 0.8078602620087336,
+        "macro avg": {
+          "precision": 0.8321291270918136,
+          "recall": 0.8168552036199095,
+          "f1-score": 0.7995751911639761,
+          "support": 229.0
+        },
+        "weighted avg": {
+          "precision": 0.8393446127836404,
+          "recall": 0.8078602620087336,
+          "f1-score": 0.7977093713942264,
+          "support": 229.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          50,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          30,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          51,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          35,
+          5
+        ],
+        [
+          1,
+          0,
+          0,
+          32,
+          19
+        ]
+      ]
+    },
+    "refined_labels": {
+      "samples": 229,
+      "accuracy": 0.9650655021834061,
+      "classification_report": {
+        "stop": {
+          "precision": 0.9615384615384616,
+          "recall": 0.9615384615384616,
+          "f1-score": 0.9615384615384616,
+          "support": 52.0
+        },
+        "no_entry": {
+          "precision": 1.0,
+          "recall": 0.8823529411764706,
+          "f1-score": 0.9375,
+          "support": 34.0
+        },
+        "yield": {
+          "precision": 0.9107142857142857,
+          "recall": 1.0,
+          "f1-score": 0.9532710280373832,
+          "support": 51.0
+        },
+        "speed_limit_30": {
+          "precision": 0.975609756097561,
+          "recall": 1.0,
+          "f1-score": 0.9876543209876543,
+          "support": 40.0
+        },
+        "speed_limit_50": {
+          "precision": 1.0,
+          "recall": 0.9615384615384616,
+          "f1-score": 0.9803921568627451,
+          "support": 52.0
+        },
+        "accuracy": 0.9650655021834061,
+        "macro avg": {
+          "precision": 0.9695725006700616,
+          "recall": 0.9610859728506786,
+          "f1-score": 0.9640711934852488,
+          "support": 229.0
+        },
+        "weighted avg": {
+          "precision": 0.9671214795429302,
+          "recall": 0.9650655021834061,
+          "f1-score": 0.9649711241322072,
+          "support": 229.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          50,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          30,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          51,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          40,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          50
+        ]
+      ]
+    }
+  },
+  "timing": {
+    "mean_ms": 422.9782547650602,
+    "median_ms": 420.3094794999975,
+    "p95_ms": 447.6937687500019,
+    "throughput_images_per_second": 2.3641877300653236,
+    "scope": "Warm image read, detector preprocess/inference/NMS, ONNX crop classification. Excludes model loading, metric computation and output encoding; not continuous-video FPS."
+  },
+  "hardware": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "device": "cpu",
+    "torch_threads": 2,
+    "classifier_onnx_threads": 2,
+    "detector_onnx_threads": null
+  },
+  "test_scope": "Official train -> internal group train/validation. Selected official validation -> final local test, never tuning. Hidden official test is unused.",
+  "limitations": "Selected nonpanoramic positive scenes; difficult target scenes excluded. Crop classifier was trained on GTSRB, not the global MTSD domain. No real-time driving claim."
+}

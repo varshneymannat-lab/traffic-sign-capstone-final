@@ -1,0 +1,7 @@
+_target_: src.data.sign_datamodule.TrafficSignDataModule
+data_dir: ${paths.data_dir}
+annotations_file: ${paths.data_dir}/processed/annotations_split.csv
+image_size: 128
+batch_size: 16
+num_workers: 0
+sign_classes: ["stop", "no_entry", "yield", "speed_limit_30", "speed_limit_50"]

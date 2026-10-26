@@ -1,0 +1,9 @@
+defaults:
+  - data: gtsrb
+  - model: sign_resnet
+  - paths: default
+  - _self_
+
+ckpt_path: models/gtsrb/classifier.ckpt
+output_path: models/gtsrb/classifier.onnx
+opset_version: 17
