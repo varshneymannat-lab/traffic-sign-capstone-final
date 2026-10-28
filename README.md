@@ -4,7 +4,7 @@ This project explores traffic sign detection and classification for driver-assis
 
 The repository includes Hydra configuration, PyTorch Lightning training, TensorBoard logging, a DVC pipeline, a Docker environment, and trained detector/classifier ONNX exports. It is a fork of the required [lightning-hydra-template](https://github.com/Vladimir-125/lightning-hydra-template), retaining the template history and MIT notice.
 
-The original project title is retained. **Real-time operation is a goal, not a verified result:** warm tiled detector-plus-classifier processing averages 435.35 ms per scene on the development CPU. This is not a driving-safety system.
+The original project title is retained. **Real-time operation is a goal, not a verified result.** Performance measurements and limitations are documented in the technical report. This is not a driving-safety system.
 
 ## Why I Selected This Project
 
@@ -37,20 +37,10 @@ These are the five trained Mapillary categories. The exact g1 source labels are 
 
 The project keeps the original detection-and-classification design:
 
-1. **Detection stage:** a lightweight YOLO11n detector is fine-tuned on five-category Mapillary boxes. Whole-image and overlapping-tile inference are compared on the same validation scenes. This replaces the earlier generic COCO class filter.
-2. **Classification stage:** ResNet-18, MobileNetV3-Small and EfficientNet-B0 are fine-tuned on real crops from the same Mapillary scene split. Validation macro-F1 selects ResNet-18. Optional crop refinement changes accepted labels, not boxes, and cannot recover misses.
+1. **Detection stage:** a lightweight YOLO11n detector finds supported signs in full Mapillary scenes, using overlapping tiles to help locate small objects.
+2. **Classification stage:** an optional ResNet-18 classifier refines labels using cropped sign regions. It changes accepted labels, not boxes, and cannot recover missed detections.
 
-The detector already predicts categories. The predeclared default is detector-only; `refine=true` in the video configuration enables the second stage. Both variants are evaluated rather than assuming an extra model always helps.
-
-| Classifier | Validation macro-F1 | Accuracy on 425 test crops | Test macro-F1 |
-| --- | ---: | ---: | ---: |
-| ResNet-18 | 0.9619 | 96.94% (412/425) | 0.9687 |
-| MobileNetV3-Small | 0.9463 | 95.76% | 0.9557 |
-| EfficientNet-B0 | 0.9477 | 96.47% | 0.9633 |
-
-A majority-training-label baseline scores 23.53% accuracy. Crop accuracy does not measure whether a sign is found. The detector scores mAP50 0.4839 and mAP50:95 0.3344 on 332 local test scenes containing 425 targets; actual ONNX results round to the same figures.
-
-At validation-selected confidence 0.343343 and matching IoU 0.50, detector-only precision/recall/F1 are 0.5811/0.4635/0.5157 (TP 197, FP 142, FN 228). Optional Mapillary crop refinement gives 0.6726/0.5365/0.5969 (TP 228, FP 111, FN 197). Its 99.56% accuracy on 229 matched accepted boxes excludes missed signs; it is not the 425-crop or end-to-end score.
+The detector already predicts categories. The default is detector-only; `refine=true` in the video configuration enables the second stage. Experiment design, model comparisons, metric selection and results are presented in the technical report.
 
 The supplied repositories are [credited references](report/reference_projects.md), not sources of imported code, weights or project scores: [road-sign-recognition](https://github.com/ayushgayakwad/road-sign-recognition) and [traffic-sign-detection-recognition](https://github.com/pedramebd/traffic-sign-detection-recognition). Their datasets and categories differ, so headline scores are not directly comparable.
 
@@ -96,33 +86,11 @@ Crop paths are relative to `data/mtsd_crops/raw/`. Classifier boxes use pixel co
 
 The [Mapillary EDA](report/mtsd_eda/Mapillary_EDA_Report.pdf) covers real scenes, class counts, image quality, rectangles, similarity checks and the annotation/small-sign concerns.
 
-| Category | Train scenes | Val scenes | Test scenes | Train crops | Val crops | Test crops |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Stop | 433 | 77 | 71 | 498 | 87 | 83 |
-| No entry | 458 | 89 | 71 | 546 | 102 | 87 |
-| Yield | 478 | 84 | 81 | 576 | 101 | 100 |
-| Speed 30 | 436 | 65 | 70 | 478 | 73 | 79 |
-| Speed 50 | 427 | 73 | 70 | 465 | 82 | 76 |
-| Unique scenes / total crops | 2,018 | 356 | 332 | 2,563 | 445 | 425 |
-
-There are 2,706 scenes and 3,433 targets overall. Scene counts overlap because one photograph can contain several categories. Counts exceed 200 training scenes/category, not 500 for every category or necessarily independent physical signs. Crops are not additional collected photographs. No generated signs or copies inflate counts.
-
-Official training scenes supply internal training/validation; selected official validation scenes supply the local test, not the hidden official test. Crops inherit their source scene/group split. Three training candidates overlapping held-out similarity groups were removed; no exact crop hashes cross splits. Hashes do not prove physical-sign independence. This fixed holdout was inspected in earlier development, so it is not a new blind external evaluation.
-
-Only selected positive nonpanoramic scenes are used; selected ambiguous, occluded or out-of-frame targets were excluded. False alarms on sign-free journeys remain unmeasured. Source annotation ZIP MD5 and selected image-member CRC32/SHA256 were checked, not full image-archive MD5.
+Source scenes are split before creating classifier crops, so crops inherit their scene/group split. The technical report documents the selected subset, split counts, quality checks and evaluation limitations. No generated signs are used.
 
 ### Annotation and Small-Sign Concerns
 
-The [source-label audit](report/mtsd_annotation_review/README.md) checks all scenes and 3,433 retained targets against source categories/coordinates, finding no mapped-target mismatches. Yellow shows selected targets; cyan shows other source categories. The nearby road-bump and priority signs identified during review are source-annotated but outside this task. This does not prove source annotation completeness. Nineteen related regulatory variants and one complementary speed sign remain outside the exact g1 map; broader coverage requires reviewed remapping and retraining.
-
-The reviewed speed-50 boxes shrink from about 57-59 original pixels to 14 after preparation and 7 at whole-scene 640 input. Across all crop splits, 1,583 crops have a shortest side below 16 pixels. Enlarging them cannot reconstruct lost detail.
-
-| Same detector and validation scenes | mAP50 | mAP50:95 | Mean read/detector ms |
-| --- | ---: | ---: | ---: |
-| Whole image | 0.3209 | 0.2198 | 51.5 |
-| Overlapping tiles | 0.4859 | 0.3379 | 410.5 |
-
-SAHI uses 640-pixel tiles, 20% overlap, a whole-image pass and class-aware NMS. Tiling improves aggregate validation quality at about eight times the processing cost; it does not solve every tiny sign. Larger labels improve report readability only.
+The project includes a [source-label audit](report/mtsd_annotation_review/README.md) and tiled inference for small signs. The technical report explains the annotation concerns, checks performed, small-sign comparison and remaining limitations. Neither the audit nor tiling guarantees that every sign is annotated or detected.
 
 ## Quick Demo
 
@@ -140,7 +108,6 @@ Use a new output name each run. The bundle restores the selected detector and cl
 - [Read the technical report](report/technical_report.md).
 - [Open or download the five-page PDF](report/technical_report.pdf).
 - [View the browser version](report/technical_report.html).
-- [Classifier comparisons](report/mtsd_classifier_results/comparison.json), [detector results](report/mtsd_results/evaluation.json) and [actual ONNX results](report/mtsd_onnx_results/evaluation.json).
 
 The report includes introduction, methodology, EDA, experiments, metric selection, results, discussion and limitations. PPT and private speaking notes are delivered separately, not stored in GitHub.
 
@@ -162,14 +129,7 @@ python3 -m pip install -r requirements-recorded.txt
 python3 -m src.train
 ```
 
-For the recorded comparison, use prepared Mapillary scenes/crops and an empty experiment destination:
-
-```bash
-python3 scripts/prepare_mtsd_crops.py
-python3 scripts/compare_classifiers.py --data-dir data/mtsd_crops --output-dir outputs/mtsd_classifier_comparison --epochs 5 --image-size 128 --device auto
-```
-
-All three classifiers use ImageNet-pretrained weights, 128-pixel crops, five epochs, batch 16, AdamW, learning rate 0.0003, weight decay 0.0001 and seed 42. Training uses MPS on the development Mac; scoring and latency use CPU. The comparison selects checkpoints/architecture by validation macro-F1. Standalone training retains validation-loss checkpointing unless overridden by the comparison command.
+Training requires authorised, prepared Mapillary data. Settings are stored in `configs/` and `pipelines/detection/`. The technical report describes the recorded training experiments and comparison procedure.
 
 Standalone TensorBoard logs are in `logs/tensorboard/`; recorded experiment logs are under `outputs/`:
 
@@ -177,15 +137,13 @@ Standalone TensorBoard logs are in `logs/tensorboard/`; recorded experiment logs
 tensorboard --logdir outputs
 ```
 
-Detector settings are in `pipelines/detection/`: initial five-epoch 416/640 runs and a further 15-epoch 640 fine-tune. Initial runs use CPU and the extra run MPS; durations are not a controlled hardware-speed comparison. Pretrained weights are initialization, not additional project traffic-sign datasets.
-
 ## Evaluate
 
 ```bash
 python3 -m src.eval ckpt_path=models/mtsd_classifier/classifier.ckpt
 ```
 
-Accuracy, macro precision/recall/F1 and confusion matrices evaluate supplied crops. Detection uses mAP50, mAP50:95 and fixed-threshold precision/recall/F1. Validation selects checkpoints/settings, not the final test. CPU latency and model size are separate measurements.
+Evaluation commands are shown below. Metric definitions, selection rationale and results are in the technical report.
 
 ```bash
 python3 scripts/evaluate_detector.py
@@ -207,7 +165,7 @@ python3 scripts/export_selected.py
 python3 scripts/export_detector.py
 ```
 
-ONNX is a format, not another architecture. Actual exported inference was evaluated on all 425 crops and 332 scenes. Classifier float32 and dense-layer-only INT8 retain 96.94% crop accuracy; means of 10.15/10.11 ms and sizes 44.708/44.705 MB do not establish meaningful acceleration/compression. Convolutions remain float32; this is not full-detector quantisation or pruning.
+ONNX is an exported model format, not another architecture. Export validation and optimisation findings are documented in the technical report.
 
 ## Video Inference
 
@@ -252,7 +210,7 @@ pytest -q
 
 [Download the 20-second real-image demonstration video](demo/mtsd_gallery/real_image_gallery.mp4).
 
-The [provenance record](demo/mtsd_gallery/provenance.json) identifies ten real local-test photographs repeated across 200 frames. Left is input; right is actual ONNX output. Examples are selected by source category/key, not correctness, and include misses. The [CSV](demo/mtsd_gallery/processed/detections.csv) has 139 frame-detection rows, not unique physical signs. This is a still-image gallery, not a labelled continuous-driving benchmark. Playback rate is not processing speed; real-time moving-road performance remains unverified.
+Left is input; right is actual ONNX output. The clip repeats real Mapillary photographs and includes missed detections. The [provenance record](demo/mtsd_gallery/provenance.json) identifies its source images, and the [CSV](demo/mtsd_gallery/processed/detections.csv) contains predictions. This is a still-image gallery, not a continuous-driving benchmark. Playback rate is not processing speed; measured performance is discussed in the technical report.
 
 ## Docker Environment
 
