@@ -31,8 +31,17 @@ stages:
     cmd: python scripts/compare_classifiers.py --data-dir data/gtsrb --output-dir outputs/gtsrb_comparison --epochs ${training.epochs} --image-size ${training.image_size} --batch-size ${training.batch_size} --threads ${training.threads} --seed ${seed}
     deps:
       - scripts/compare_classifiers.py
-      - src
-      - configs
+      - src/train.py
+      - src/data
+      - src/models
+      - src/utils/video_pipeline.py
+      - configs/train.yaml
+      - configs/model
+      - configs/data/gtsrb.yaml
+      - configs/paths
+      - configs/logger
+      - configs/callbacks
+      - configs/trainer
       - data/gtsrb
       - requirements.txt
     params:
@@ -45,7 +54,9 @@ stages:
     cmd: python scripts/export_selected.py
     deps:
       - scripts/export_selected.py
-      - src
+      - src/data
+      - src/models
+      - src/utils/video_pipeline.py
       - outputs/gtsrb_comparison
       - data/gtsrb
     outs:

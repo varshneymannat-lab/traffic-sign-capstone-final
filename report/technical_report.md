@@ -1,6 +1,6 @@
 Traffic Sign Detection and Classification<br/>Using Real Road Images
 
-Mannat Varshney | Graduation Capstone | Revised 26 October 2026
+Mannat Varshney | Revised 28 October 2026
 
 Abstract
 
@@ -9,6 +9,8 @@ This project develops a five-category traffic-sign inspection system using real 
 1. Introduction and Motivation
 
 Traffic-sign inspection is a practical computer-vision task: a road photograph may contain a small, blurred or partly obscured sign among buildings, vehicles and other objects. The objective is to locate supported signs and label them as stop, no entry, yield, speed limit 30 or speed limit 50. The tool saves annotated images or video and a detection table. It is not a driving controller and does not decide whether a road is safe.
+
+The practical application is assisting manual road-photo review. A local interface runs the exported detector and lets a person accept, correct or reject predictions, add missed supported signs, and save an audit record. It is a functional inspection workflow; reviewer time savings and improved human accuracy have not been measured.
 
 The project retains the existing Lightning/Hydra training structure and classifier comparisons, but adds a real full-scene detection task. Cropped-sign classification answers which category a supplied rectangle contains. Detection must also find the rectangle. GTSRB alone cannot establish full-road performance. MTSD supplies real street photographs and manually annotated boxes [1,2].
 
@@ -19,6 +21,8 @@ The experiments ask: which small classifier performs best under the same trainin
 1.2 Related Work and Project Contribution
 
 GTSRB and GTSDB motivate the distinction between recognition and detection [1]. The MTSD authors study globally varied signs and explicitly provide full scenes with fine-grained labels [2]. DFG demonstrates traffic-sign inventory as an application [3]. This project uses those ideas for a bounded student implementation: a five-class detector, controlled crop baselines, an executable image/video interface, deployment verification and reproducible experiment records. Published paper scores are not reported as this project's results.
+
+Two additional repositories were reviewed during finalisation [5,6]. The first illustrates webcam detections; the second separates detection from crop recognition. Their class counts, datasets and budgets differ. Their reported scores are not comparable baselines here, and no code or weights were imported. Detailed comparison: report/reference_projects.md.
 
 <hr/>
 
@@ -116,9 +120,13 @@ Actual exported-detector inference is also evaluated on all 332 local test scene
 
 The project uses Git for code, DVC for data/model versions, TensorBoard for training curves, Hydra for classifier configuration, and Lightning for the classifier loop. Detection settings are in pipelines/detection/. The image/video command writes annotated media, CSV detections and measured timing. Dataset terms apply separately from code; temporary authorised download links are not committed. Restoring licensed data requires authorised artifact access or regeneration from an authorised download.
 
-A Docker recipe and automated build/test workflow define the execution environment. Local Docker execution is not verified because Docker is unavailable on this machine; CI build status must be checked after upload. The final submission repository is a verified fork of Vladimir-125/lightning-hydra-template, with the upstream MIT notice and initial template commit preserved. Remote artifact access must be documented separately from the source repository.
+Published commit 7e4a976 passes Docker build, container tests and two-frame ONNX inference in the recorded GitHub Actions run. Full retraining inside Docker is unverified. The review interface has separate local tests; CI evidence for later revisions is commit-specific in the repository Actions. The submission is a fork of Vladimir-125/lightning-hydra-template with its MIT notice and history. No shared DVC remote is configured; full training needs authorised data/cache access.
 
-4.3 Difficulties and Limits
+4.3 Human Review and Verification
+
+The localhost interface preserves original predictions separately from pending, accepted, corrected or rejected human decisions. Reviewers can edit categories/coordinates, draw missed boxes, export JSON/CSV and reopen saved JSON. Manual boxes have no model confidence. The full-image-reviewed flag is a reviewer assertion, not verified ground truth. Browser tests exercise actual ONNX inference, review actions and export/reopen on desktop/mobile. These are functional checks, not a measured reviewer-efficiency study.
+
+4.4 Difficulties and Limits
 
 The main difficulties were acquiring real full scenes, protecting splits, preserving label meaning and finding small signs. The mentor identified apparently missing labels and tiny targets. Source-level comparison showed the nearby omitted signs were unsupported categories, while the two speed-50 targets shrink to about 14 pixels at preparation and 7 at whole-scene input. Numbered source views fix report readability; tiled inference measurably improves aggregate detection but does not solve every tiny sign. Near-perfect crop accuracy does not imply reliable scene detection.
 
@@ -130,4 +138,4 @@ The project now uses real cropped and full-scene data, compares three classifier
 
 References and Evidence
 
-[1] Stallkamp et al., GTSRB, IJCNN 2011; Houben et al., GTSDB, IJCNN 2013. github.com/houbensebastian/GermanTrafficSignBenchmarks. [2] Ertler et al., The Mapillary Traffic Sign Dataset for Detection and Classification on a Global Scale, ECCV 2020. mapillary.com/dataset/trafficsign. [3] Tabernik and Skocaj, IEEE T-ITS 2019. vicos.si/resources/dfg/. [4] Akyon et al., Slicing Aided Hyper Inference, ICIP 2022. github.com/obss/sahi. Evidence: report/gtsrb_results/, mtsd_results/, mtsd_onnx_results/, mtsd_eda/, mtsd_annotation_review/.
+[1] Stallkamp et al., GTSRB, IJCNN 2011; Houben et al., GTSDB, IJCNN 2013. github.com/houbensebastian/GermanTrafficSignBenchmarks. [2] Ertler et al., MTSD, ECCV 2020. mapillary.com/dataset/trafficsign. [3] Tabernik and Skocaj, IEEE T-ITS 2019. vicos.si/resources/dfg/. [4] Akyon et al., SAHI, ICIP 2022. github.com/obss/sahi. [5] github.com/ayushgayakwad/road-sign-recognition. [6] github.com/pedramebd/traffic-sign-detection-recognition. Repositories reviewed 28 October 2026. Evidence: report/gtsrb_results/, mtsd_results/, mtsd_onnx_results/, mtsd_annotation_review/, review_workflow.md.

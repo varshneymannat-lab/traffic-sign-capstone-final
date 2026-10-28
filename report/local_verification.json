@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-26T16:32:14.293745+09:00",
+  "checked_at": "2026-10-28T19:24:27.252198+09:00",
   "annotation_scene_mismatches": 0,
   "test_images_per_backend": 332,
   "gallery_frames_decoded": 200,
@@ -10,8 +10,8 @@
   "tensorboard_event_files": 6,
   "files": {
     "report/technical_report.pdf": {
-      "bytes": 1148752,
-      "sha256": "56c315288e7f01de26f11778d3ab9db0a8f5e391e6a25aedd749422624296b7c"
+      "bytes": 1149555,
+      "sha256": "4bf4e80f291c79aa0a7b6381c00c79a068aacbca68b6e3e16c22903c98ddea76"
     },
     "report/mtsd_eda/Mapillary_EDA_Report.pdf": {
       "bytes": 3063108,

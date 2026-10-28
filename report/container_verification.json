@@ -1,4 +1,16 @@
 {
-  "conclusion": "not_run",
-  "reason": "Docker is not installed locally. The repository workflow builds the image, runs the tests and checks packaged ONNX inference on two real gallery frames. Its actual result must be recorded after publication."
+  "conclusion": "success",
+  "verified_on": "2026-10-28",
+  "environment": "GitHub Actions ubuntu-latest",
+  "run_url": "https://github.com/varshneymannat-lab/traffic-sign-capstone-final/actions/runs/40288335988",
+  "run_id": 40288335988,
+  "verified_commit": "7e4a9763dcc1baf5cfabad6446edad8f4e6b94c2",
+  "completed_at": "2026-10-26T07:52:57Z",
+  "container_job_id": 121457232757,
+  "checks": {
+    "docker_build": "success",
+    "container_pytest": "success",
+    "two_frame_onnx_inference": "success"
+  },
+  "scope": "Verified by public GitHub run and jobs APIs. This historical published commit passed build, tests and actual inference. Review-interface local checks are in review_verification.json. Attribute CI coverage to each run's exact commit, not to later changes. Full training was not repeated inside Docker. Docker remains unavailable locally."
 }

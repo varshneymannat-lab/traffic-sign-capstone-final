@@ -1,6 +1,6 @@
 # Final Evidence and Outstanding Checks
 
-Checked 26 October 2026. This distinguishes local evidence from publication and external verification. The older scope-proposal checklist is superseded by this record.
+Checked 28 October 2026. This distinguishes local evidence from publication and external verification. The older scope-proposal checklist is superseded by this record. Model experiments retain their recorded results; the review interface is a separately tested application addition.
 
 | Requirement | Evidence and limits |
 | --- | --- |
@@ -18,9 +18,12 @@ Checked 26 October 2026. This distinguishes local evidence from publication and 
 | DVC | Source subset pointer, pipeline/lock and local cache. No shared DVC remote; training reproduction needs authorised artifact access. |
 | TensorBoard | Classifier and detector event logs retained in experiment outputs. |
 | Required template | Final local submission checkout is a fork of Vladimir-125/lightning-hydra-template. Classifier loop uses Lightning/Hydra; detection uses Ultralytics. |
-| Docker | Recipe and automated build/test/two-frame inference job. Local container execution unverified because Docker is unavailable. |
+| Docker | Published commit 7e4a976 passed build, container tests and two-frame ONNX inference in run 40288335988. For subsequent revisions, check their own commit-specific CI evidence. Full retraining was not repeated in Docker. |
 | Report | Five-page technical report with EDA, comparisons, mentor concerns, results and limitations. |
 | Presentation | PowerPoint and private speaking guide outside Git. |
-| GitHub | Fork exists. A local revision is not assumed uploaded until a successful push and remote files are verified. |
+| GitHub | The original completed release, commit 7e4a976, is published in the required fork. Any later local changes are not assumed uploaded until a successful push and remote verification. |
+| Practical workflow | Local ONNX review interface: accept/correct/reject, box edits, manual additions, JSON save/reopen and CSV export. Original predictions remain separate. Functional desktop/mobile checks include actual inference. |
+| Reference projects | Two supplied repositories reviewed and credited in reference_projects.md. No imported code, weights or benchmark results; datasets/tasks differ. |
+| Operational benefit | Review workflow implemented, but no user study establishes time savings or improved human accuracy. |
 
-Remaining external steps: publish the prepared revision and check the actual CI outcome; configure shared DVC storage if required by the reviewer. Clarify with the mentor if a labelled continuous-road video or a strict 500 training scenes/category is required. Current evidence establishes neither.
+Submission checks: verify the final revision is published and inspect its own CI outcome; configure shared DVC storage if required by the reviewer. Clarify with the mentor if a labelled continuous-road video or a strict 500 training scenes/category is required. Current evidence establishes neither. Functional completion of the scoped application does not guarantee acceptance of every possible interpretation of the example brief.

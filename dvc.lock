@@ -65,11 +65,39 @@ stages:
       --output-dir outputs/gtsrb_comparison --epochs 5 --image-size 128 
       --batch-size 16 --threads 2 --seed 42
     deps:
-    - path: configs
+    - path: configs/callbacks
       hash: md5
-      md5: 3ee6424608b37cf47d6c435e56a4b2d9.dir
-      size: 2178
-      nfiles: 11
+      md5: d27ffeb11b68236744eff614628296cd.dir
+      size: 417
+      nfiles: 1
+    - path: configs/data/gtsrb.yaml
+      hash: md5
+      md5: aae286bb9fa94bd3a897c298f656eae6
+      size: 279
+    - path: configs/logger
+      hash: md5
+      md5: c742048bb6c2ff2360d9a2360d69b567.dir
+      size: 99
+      nfiles: 1
+    - path: configs/model
+      hash: md5
+      md5: 76f0884dffaa6ea3d97294a71949440a.dir
+      size: 519
+      nfiles: 3
+    - path: configs/paths
+      hash: md5
+      md5: fdab1c578525bb884d552cf719998b0c.dir
+      size: 176
+      nfiles: 1
+    - path: configs/train.yaml
+      hash: md5
+      md5: e14a1b30d5828fdd246e29aae0aa7d6b
+      size: 211
+    - path: configs/trainer
+      hash: md5
+      md5: a0b7c9b4f43f51c8bdd2d446ff6fbf3f.dir
+      size: 156
+      nfiles: 1
     - path: data/gtsrb
       hash: md5
       md5: e8a28f99f324e3ac7af08c47a340bf86.dir
@@ -83,11 +111,24 @@ stages:
       hash: md5
       md5: 1b70810372350fa036d521f97811cd75
       size: 10218
-    - path: src
+    - path: src/data
       hash: md5
-      md5: 7fc7fad7bc51c12d135b2768bb507b27.dir
-      size: 24370
-      nfiles: 15
+      md5: d722fac54a70f746fd3dd4b2dcd97ee2.dir
+      size: 4090
+      nfiles: 2
+    - path: src/models
+      hash: md5
+      md5: e06ae277252bc5cd90f4c24690ef1203.dir
+      size: 3198
+      nfiles: 2
+    - path: src/train.py
+      hash: md5
+      md5: fe719f8fe3f91a72d2d69e4fd9a06e2d
+      size: 997
+    - path: src/utils/video_pipeline.py
+      hash: md5
+      md5: fde8f1181fd00450f839647dd637d59b
+      size: 1048
     params:
       params.yaml:
         seed: 42
@@ -119,11 +160,20 @@ stages:
       hash: md5
       md5: 3180da3a7a12c122d58062647fc423f9
       size: 5659
-    - path: src
+    - path: src/data
       hash: md5
-      md5: 7fc7fad7bc51c12d135b2768bb507b27.dir
-      size: 24370
-      nfiles: 15
+      md5: d722fac54a70f746fd3dd4b2dcd97ee2.dir
+      size: 4090
+      nfiles: 2
+    - path: src/models
+      hash: md5
+      md5: e06ae277252bc5cd90f4c24690ef1203.dir
+      size: 3198
+      nfiles: 2
+    - path: src/utils/video_pipeline.py
+      hash: md5
+      md5: fde8f1181fd00450f839647dd637d59b
+      size: 1048
     outs:
     - path: models/gtsrb
       hash: md5
@@ -156,8 +206,8 @@ stages:
       size: 7339
     - path: report/container_verification.json
       hash: md5
-      md5: f5a852b600860c816c36d389afbed8d8
-      size: 252
+      md5: 9f6139296442bf1a3821d2882ba522a2
+      size: 863
     - path: report/gtsrb_results
       hash: md5
       md5: d08ac6755e33d7f0872894c43af8d1f4.dir
@@ -185,8 +235,8 @@ stages:
       nfiles: 6
     - path: scripts/build_final_report.py
       hash: md5
-      md5: c9e6d39d99e2738f8625042630b699f2
-      size: 24946
+      md5: b153f9beea90a1a20e45e8cafb87727f
+      size: 26329
     outs:
     - path: report/detector_comparison.json
       hash: md5
@@ -194,16 +244,16 @@ stages:
       size: 6754
     - path: report/technical_report.html
       hash: md5
-      md5: 4e45df2ac8dd2a7c80a001fde3cdbe41
-      size: 18051
+      md5: 6e809455be98856958f8956d1aee983f
+      size: 19395
     - path: report/technical_report.md
       hash: md5
-      md5: df96f64cd271b2518db5c9b9e00b1da2
-      size: 17001
+      md5: 4f7696de907d4718f89a52776f505203
+      size: 18309
     - path: report/technical_report.pdf
       hash: md5
-      md5: b5a80148df69c6c432baff19bc8172fe
-      size: 1148752
+      md5: 32cba81385f8898472bf023a1bd87a6b
+      size: 1149555
   classifier_report:
     cmd: python scripts/build_gtsrb_report.py
     deps:

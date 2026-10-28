@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-10-28T10:26:07.803Z",
+  "real_model_predictions": 1,
+  "actual_onnx_inference": true,
+  "checks": [
+    "Desktop image load",
+    "Actual ONNX inference",
+    "Correct/reject/reset",
+    "Add missed box",
+    "Manual score remains null",
+    "CSV and JSON export",
+    "JSON review reopen",
+    "Mobile layout without horizontal overflow",
+    "No page errors"
+  ],
+  "note": "Functional browser smoke test. The scripted manual box and label changes are test actions, not verified ground truth or a user-efficiency study."
+}
