@@ -175,7 +175,7 @@ stages:
       nfiles: 6
     - path: scripts/build_final_report.py
       hash: md5
-      md5: 36dc3b47271d3852465ba268c6aab661
+      md5: f47e17601f521c56364451c98a6c48d7
       size: 26021
     outs:
     - path: report/detector_comparison.json
@@ -184,16 +184,16 @@ stages:
       size: 6754
     - path: report/technical_report.html
       hash: md5
-      md5: 26fa7344c439a0d79c73e8db399ddce7
+      md5: 6be5e73c1ec1544b4dca696e5ae818a0
       size: 18969
     - path: report/technical_report.md
       hash: md5
-      md5: 6ecc42eb0cad84d47bb7c956a3a40e71
+      md5: 4076828b10b689b51a72134244ac8682
       size: 17883
     - path: report/technical_report.pdf
       hash: md5
-      md5: cbc987e2c26a8999f260d2e26f976d41
-      size: 1149374
+      md5: e770ae7a87c4e705d073c91b67372512
+      size: 1149319
   classifier_report:
     cmd: python scripts/build_classifier_results.py
     deps:

@@ -4,13 +4,13 @@ Mannat Varshney | Revised 28 October 2026
 
 Abstract
 
-This project develops a five-category traffic-sign review system using only the Mapillary Traffic Sign Dataset (MTSD). Real annotated crops compare pretrained ResNet-18, MobileNetV3-Small and EfficientNet-B0. Full road scenes train a lightweight YOLO11n detector. Both tasks inherit the same protected scene split: 2,018 training, 356 validation and 332 local test scenes. The selected classifier achieves 96.94% accuracy on 425 annotated test crops. Detector mAP@0.50 is 0.4839 and mAP@0.50:0.95 is 0.3344. Actual ONNX inference is checked. Crop accuracy, scene detection quality and processing speed are reported separately.
+This project develops a five-category traffic-sign detection and classification system using only the Mapillary Traffic Sign Dataset (MTSD). Real annotated crops compare pretrained ResNet-18, MobileNetV3-Small and EfficientNet-B0. Full road scenes train a lightweight YOLO11n detector. Both tasks inherit the same protected scene split: 2,018 training, 356 validation and 332 local test scenes. The selected classifier achieves 96.94% accuracy on 425 annotated test crops. Detector mAP@0.50 is 0.4839 and mAP@0.50:0.95 is 0.3344. Actual ONNX inference is checked. Crop accuracy, scene detection quality and processing speed are reported separately.
 
 1. Introduction and Motivation
 
 Traffic-sign inspection is a practical computer-vision task: a road photograph may contain a small, blurred or partly obscured sign among buildings, vehicles and other objects. The objective is to locate supported signs and label them as stop, no entry, yield, speed limit 30 or speed limit 50. The tool saves annotated images or video and a detection table. It is not a driving controller and does not decide whether a road is safe.
 
-The practical application is assisting manual road-photo review. A local interface runs the exported detector and lets a person accept, correct or reject predictions, add missed supported signs, and save an audit record. It is a functional inspection workflow; reviewer time savings and improved human accuracy have not been measured.
+The applied problem is finding small signs within complex road photographs. The project tests whether lightweight models and overlapping inference tiles provide useful recognition and localisation under limited computing resources. It saves annotated images/video and prediction tables. It does not claim a complete road-inventory service or measured operational time savings.
 
 The project retains the Lightning/Hydra classifier structure and uses one dataset in two forms: complete photographs for detection and their annotated sign regions for classification. Classification answers which category a supplied rectangle contains; detection must also find that rectangle. MTSD supplies both real scenes and manually annotated boxes [2]. No synthetic training images or second traffic-sign dataset are used in the final experiments.
 
@@ -120,11 +120,11 @@ Actual ONNX detection on all 332 local test scenes gives mAP50 0.4839, versus Py
 
 The project uses Git for code, DVC for data/model versions, TensorBoard for training curves, Hydra for classifier configuration, and Lightning for the classifier loop. Detection settings are in pipelines/detection/. The image/video command writes annotated media, CSV detections and measured timing. Dataset terms apply separately from code; temporary authorised download links are not committed. Restoring licensed data requires authorised artifact access or regeneration from an authorised download.
 
-Published commit 7e4a976 passes Docker build, container tests and two-frame ONNX inference in the recorded GitHub Actions run. Full retraining inside Docker is unverified. The review interface has separate local tests; CI evidence for later revisions is commit-specific in the repository Actions. The submission is a fork of Vladimir-125/lightning-hydra-template with its MIT notice and history. No shared DVC remote is configured; full training needs authorised data/cache access.
+Published Mapillary-only commit 449ef7a passes Docker build, container tests and two-frame ONNX inference in Actions run 40690970167. Full retraining inside Docker is unverified; later revisions require their own CI evidence. The submission is a fork of Vladimir-125/lightning-hydra-template with its MIT notice and history. No shared DVC remote is configured; full training needs authorised data/cache access.
 
-4.3 Human Review and Verification
+4.3 Application and Software Verification
 
-The localhost interface preserves original predictions separately from pending, accepted, corrected or rejected human decisions. Reviewers can edit categories/coordinates, draw missed boxes, export JSON/CSV and reopen saved JSON. Manual boxes have no model confidence. The full-image-reviewed flag is a reviewer assertion, not verified ground truth. Browser tests exercise actual ONNX inference, review actions and export/reopen on desktop/mobile. These are functional checks, not a measured reviewer-efficiency study.
+The command-line application accepts an image or video, runs whole/tiled detection, optionally classifies accepted crops, and saves annotated media, CSV detections and timing. Scores from the two models are kept separate. The packaged models are hash-checked after fresh extraction and tested on real inputs. Software tests check data handling, training, export and inference utilities; they do not prove predictive reliability. Visual inspection of original images remains necessary because signs are still missed.
 
 4.4 Difficulties and Limits
 
@@ -134,8 +134,8 @@ The study uses selected positive scenes, excludes difficult targets and uses one
 
 5. Conclusion
 
-One Mapillary dataset now supports the complete detection, crop-classification and human-review workflow. The study compares three classifiers and detector settings, saves actual output and verifies ONNX inference. The selected classifier scores 96.94% on 425 annotated crops; local detector mAP50 is 0.4839. These answer different questions. The tool supports human inspection, not autonomous-driving reliability.
+One Mapillary dataset supports the detection, crop-classification and exported-inference workflow. The study compares three classifiers and detector settings, saves actual output and verifies ONNX inference. The selected classifier scores 96.94% on 425 annotated crops; local detector mAP50 is 0.4839. These answer different questions. Small-sign detection remains imperfect; the study does not establish autonomous-driving reliability.
 
 References and Evidence
 
-[1] Stallkamp et al., GTSRB, IJCNN 2011; Houben et al., GTSDB, IJCNN 2013 (related work only, not project data). [2] Ertler et al., MTSD, ECCV 2020. mapillary.com/dataset/trafficsign. [3] Tabernik and Skocaj, IEEE T-ITS 2019. vicos.si/resources/dfg/. [4] Akyon et al., SAHI, ICIP 2022. github.com/obss/sahi. [5] github.com/ayushgayakwad/road-sign-recognition. [6] github.com/pedramebd/traffic-sign-detection-recognition. Repositories reviewed 28 October 2026. Evidence: report/mtsd_classifier_results/, mtsd_results/, mtsd_onnx_results/, mtsd_annotation_review/, review_workflow.md.
+[1] Stallkamp et al., GTSRB, IJCNN 2011; Houben et al., GTSDB, IJCNN 2013 (related work only, not project data). [2] Ertler et al., MTSD, ECCV 2020. mapillary.com/dataset/trafficsign. [3] Tabernik and Skocaj, IEEE T-ITS 2019. vicos.si/resources/dfg/. [4] Akyon et al., SAHI, ICIP 2022. github.com/obss/sahi. [5] github.com/ayushgayakwad/road-sign-recognition. [6] github.com/pedramebd/traffic-sign-detection-recognition. Repositories reviewed 28 October 2026. Evidence: report/mtsd_classifier_results/, mtsd_results/, mtsd_onnx_results/, mtsd_annotation_review/.

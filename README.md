@@ -8,7 +8,7 @@ Locate and identify stop, no entry, yield, speed limit 30 and speed limit 50. De
 
 The application saves annotated images/video, coordinates, scores and elapsed processing time. It is an inspection experiment, not a driving controller or proven real-time road-safety system.
 
-The practical problem is inspecting road-survey images for supported traffic signs. A local human-review workspace now lets a reviewer accept, correct or reject model predictions, add missed supported signs and export an audit record. Reviewers still inspect the full original image. A user-efficiency study has not established saved time or improved human accuracy.
+The practical problem is finding small traffic signs in complex road photographs. This project compares lightweight models and whole-image versus tiled inference, measures classification and localisation errors, and exports working ONNX models. Annotated output can support inspection, but the current results do not establish driving safety, complete sign coverage or operational time savings.
 
 ## Results
 
@@ -33,7 +33,6 @@ At validation-selected confidence 0.343 and matching IoU 0.50, detector-only pre
 - [Detector results](report/mtsd_results/evaluation.json), [ONNX results](report/mtsd_onnx_results/evaluation.json)
 - [Mapillary classifier comparisons](report/mtsd_classifier_results/comparison.json)
 - [Crop quality and dimensions](report/mtsd_classifier_results/crop_quality.json)
-- [Human-review workflow](report/review_workflow.md)
 - [Credited reference-project comparison](report/reference_projects.md)
 
 The 20-second clip repeats ten real held-out photographs. Left is input and right is actual detector output. **It is a still-image gallery, not continuous driving footage or a temporal benchmark.** Examples are selected by source category and key, not correctness. Playback FPS is not processing FPS. Slides and private speaking notes are outside this repository.
@@ -59,15 +58,6 @@ python -m src.predict_image demo/mtsd_crops/stop.png
 ~~~
 
 Use a new empty output directory for each run. Default detection uses overlapping tiles. The option --inference-mode whole is faster but less accurate on recorded validation data. Optional --refine adds the crop classifier. Detector confidence and classifier scores are separate CSV fields.
-
-### Local Review Interface
-
-```bash
-python scripts/restore_inference_models.py
-python -m src.review_app --port 8765
-```
-
-Open [Traffic Sign Review](http://127.0.0.1:8765). Select **Run detector** for the included real-image sample or open your own JPEG/PNG. Review predictions, correct categories or boxes, reject false positives, and draw missed supported signs. Save JSON to reopen a session and CSV for a detection-level audit. The JSON embeds the image and retains image-level review status; review changes do not modify training data or evaluation results. See the [workflow and limits](report/review_workflow.md). Images stay on your computer. This is a single-user localhost tool, not a public hosted service.
 
 ## Real Data
 
@@ -146,7 +136,6 @@ dvc status
 dvc dag
 tensorboard --logdir outputs
 pytest -q
-node --test tests/review_logic.test.mjs
 ~~~
 
 DVC records source data, splits, experiment outputs and models. **No shared DVC remote is configured.** A fresh clone can run the packaged inference demo, but training reproduction needs authorised data and either the original cache or regeneration. The command dvc pull cannot fetch unconfigured storage. A new training run may differ across hardware.
@@ -161,7 +150,7 @@ docker run --rm traffic-sign-capstone
 docker run --rm traffic-sign-capstone python -m pytest -q
 ~~~
 
-The default command restores the included models and processes two actual demo frames. The [published GitHub Actions run](https://github.com/varshneymannat-lab/traffic-sign-capstone-final/actions/runs/40288335988) passed Docker build, container tests and ONNX smoke inference for commit 7e4a976. Docker is unavailable locally and full training was not repeated inside Docker. The review interface has separate local tests. For subsequent revisions, inspect that commit's own Actions result rather than attributing an older run to newer code. See report/container_verification.json for the historical verified commit and scope.
+The default command restores the included models and processes two actual demo frames. The [published Mapillary-only run](https://github.com/varshneymannat-lab/traffic-sign-capstone-final/actions/runs/40690970167) passed Docker build, container tests and ONNX smoke inference for commit 449ef7a. Docker is unavailable locally and full training was not repeated inside Docker. For later revisions, inspect that commit's own Actions result rather than attributing an older run to newer code. The historical container verification record documents an earlier tested commit and its scope.
 
 ## Files
 
@@ -171,8 +160,6 @@ pipelines/detection/     Detector settings and exact label map
 scripts/                 EDA, audits, preparation, training and export
 src/detect_signs.py       Trained five-class image/video application
 src/predict_image.py      Exported crop classifier
-src/review_app.py         Local ONNX inference service for human review
-web/                     Offline review interface and original icon licence
 data/ models/ outputs/   DVC-managed data, models and training logs
 artifacts/               Verified inference bundle for a fresh clone
 report/                  EDA, reviews, results and technical report
