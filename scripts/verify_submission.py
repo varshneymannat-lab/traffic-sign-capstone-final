@@ -77,7 +77,9 @@ def main():
             'tensorboard_event_files':len(list((ROOT/'outputs').rglob('events.out.tfevents.*'))),
             'files':{p:{'bytes':(ROOT/p).stat().st_size,'sha256':hashlib.sha256((ROOT/p).read_bytes()).hexdigest()} for p in files},
             'scope':'Local file and inference checks. Not a Docker run, fresh dependency installation, full retraining or GitHub publication verification.'}
-    (ROOT/'report/local_verification.json').write_text(json.dumps(record,indent=2)+'\n')
+    verification=ROOT/'outputs/verification'
+    verification.mkdir(parents=True,exist_ok=True)
+    (verification/'local_verification.json').write_text(json.dumps(record,indent=2)+'\n')
     print(json.dumps(record,indent=2))
 
 

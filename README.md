@@ -33,7 +33,6 @@ At validation-selected confidence 0.343 and matching IoU 0.50, detector-only pre
 - [Detector results](report/mtsd_results/evaluation.json), [ONNX results](report/mtsd_onnx_results/evaluation.json)
 - [Mapillary classifier comparisons](report/mtsd_classifier_results/comparison.json)
 - [Crop quality and dimensions](report/mtsd_classifier_results/crop_quality.json)
-- [Requirement status](report/final_evidence.md)
 - [Human-review workflow](report/review_workflow.md)
 - [Credited reference-project comparison](report/reference_projects.md)
 
