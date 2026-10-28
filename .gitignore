@@ -17,9 +17,6 @@ data/raw/mtsd/*
 !data/raw/mtsd/mtsd_v2_fully_annotated.dvc
 !data/raw/mtsd/.gitignore
 data/processed/*
-data/gtsrb/raw/
-data/gtsrb/processed/
-data/gtsrb/dataset_summary.json
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 models/*

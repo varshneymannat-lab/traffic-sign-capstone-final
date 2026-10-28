@@ -1,9 +1,9 @@
 defaults:
-  - data: gtsrb
+  - data: mtsd_crops
   - model: sign_resnet
   - paths: default
   - _self_
 
-ckpt_path: models/gtsrb/classifier.ckpt
-output_path: models/gtsrb/classifier.onnx
+ckpt_path: models/mtsd_classifier/classifier.ckpt
+output_path: models/mtsd_classifier/classifier.onnx
 opset_version: 17

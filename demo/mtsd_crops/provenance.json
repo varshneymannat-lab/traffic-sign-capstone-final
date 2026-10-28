@@ -1,0 +1,47 @@
+[
+  {
+    "file": "stop.png",
+    "source_scene": "-2k5fP6nR3RmS7FfzwPNxg",
+    "source_crop": "images/test/-2k5fP6nR3RmS7FfzwPNxg_00000.png",
+    "split": "test",
+    "actual": "stop",
+    "predicted": "stop",
+    "selection": "First saved test crop per class, not selected for correctness"
+  },
+  {
+    "file": "no_entry.png",
+    "source_scene": "0H0WS3zptoqTukK6GxAdhg",
+    "source_crop": "images/test/0H0WS3zptoqTukK6GxAdhg_00005.png",
+    "split": "test",
+    "actual": "no_entry",
+    "predicted": "no_entry",
+    "selection": "First saved test crop per class, not selected for correctness"
+  },
+  {
+    "file": "yield.png",
+    "source_scene": "01MO3qSV10LE1pjQFHX-kw",
+    "source_crop": "images/test/01MO3qSV10LE1pjQFHX-kw_00003.png",
+    "split": "test",
+    "actual": "yield",
+    "predicted": "yield",
+    "selection": "First saved test crop per class, not selected for correctness"
+  },
+  {
+    "file": "speed_limit_30.png",
+    "source_scene": "-AcmoBAQMsDGwzmG9tzAJw",
+    "source_crop": "images/test/-AcmoBAQMsDGwzmG9tzAJw_00001.png",
+    "split": "test",
+    "actual": "speed_limit_30",
+    "predicted": "speed_limit_30",
+    "selection": "First saved test crop per class, not selected for correctness"
+  },
+  {
+    "file": "speed_limit_50.png",
+    "source_scene": "-KsJhQA4RkIB3FPp_IStgw",
+    "source_crop": "images/test/-KsJhQA4RkIB3FPp_IStgw_00002.png",
+    "split": "test",
+    "actual": "speed_limit_50",
+    "predicted": "speed_limit_50",
+    "selection": "First saved test crop per class, not selected for correctness"
+  }
+]

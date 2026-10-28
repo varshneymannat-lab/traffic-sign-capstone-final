@@ -1,5 +1,5 @@
 defaults:
-  - data: gtsrb
+  - data: mtsd_crops
   - model: sign_resnet
   - trainer: default
   - logger: tensorboard

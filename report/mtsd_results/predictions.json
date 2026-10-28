@@ -512,7 +512,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.40993841600000014
+    "processing_seconds": 0.4344730420000005
   },
   {
     "image": "images/test/-AcmoBAQMsDGwzmG9tzAJw.jpg",
@@ -1117,9 +1117,9 @@
       3
     ],
     "crop_scores": [
-      0.9994662404060364
+      0.9989708662033081
     ],
-    "processing_seconds": 0.41133750000000013
+    "processing_seconds": 0.4393265829999997
   },
   {
     "image": "images/test/-KsJhQA4RkIB3FPp_IStgw.jpg",
@@ -1801,16 +1801,16 @@
       0.0010191070614382625
     ],
     "accepted_refined_classes": [
-      3,
-      3,
+      4,
+      4,
       4
     ],
     "crop_scores": [
-      0.7650229930877686,
-      0.5520581603050232,
-      0.9957579970359802
+      0.9998183846473694,
+      0.9996742010116577,
+      0.9999865293502808
     ],
-    "processing_seconds": 0.4423156669999999
+    "processing_seconds": 0.4622968329999999
   },
   {
     "image": "images/test/01MO3qSV10LE1pjQFHX-kw.jpg",
@@ -2639,9 +2639,9 @@
       2
     ],
     "crop_scores": [
-      0.999990701675415
+      0.9998961687088013
     ],
-    "processing_seconds": 0.4132714170000007
+    "processing_seconds": 0.44817320900000013
   },
   {
     "image": "images/test/02HLzRRAYAC01AOnCUm0pA.jpg",
@@ -3468,7 +3468,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41006858300000015
+    "processing_seconds": 0.5018293329999999
   },
   {
     "image": "images/test/0H0WS3zptoqTukK6GxAdhg.jpg",
@@ -4076,7 +4076,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.3998849999999994
+    "processing_seconds": 0.4960181669999999
   },
   {
     "image": "images/test/0QVWSpopXAKm_KqytMIBVg.jpg",
@@ -4918,9 +4918,9 @@
       0
     ],
     "crop_scores": [
-      0.998914361000061
+      0.5896116495132446
     ],
-    "processing_seconds": 0.41888787499999935
+    "processing_seconds": 0.5290639580000001
   },
   {
     "image": "images/test/0bm4k63pkUtCROhMsj260A.jpg",
@@ -5115,10 +5115,10 @@
       2
     ],
     "crop_scores": [
-      0.9999990463256836,
-      0.999998927116394
+      0.9999251365661621,
+      0.9999722242355347
     ],
-    "processing_seconds": 0.40760970799999896
+    "processing_seconds": 0.4962055420000002
   },
   {
     "image": "images/test/0or0Y3XMTVNfVQcQ9Oj21A.jpg",
@@ -5561,7 +5561,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4034699170000007
+    "processing_seconds": 0.4848722910000003
   },
   {
     "image": "images/test/0uRWms58CJ6bFEa2FaW_dA.jpg",
@@ -6087,10 +6087,10 @@
       4
     ],
     "crop_scores": [
-      0.9999039173126221,
-      0.9999039173126221
+      0.9999843835830688,
+      0.9999843835830688
     ],
-    "processing_seconds": 0.4203430000000008
+    "processing_seconds": 0.48307837499999984
   },
   {
     "image": "images/test/1-5i_OYOukZY4RHnJ3buEA.jpg",
@@ -6880,10 +6880,10 @@
       2
     ],
     "crop_scores": [
-      0.9999974966049194,
-      0.9999839067459106
+      0.9998257756233215,
+      0.999958872795105
     ],
-    "processing_seconds": 0.4222166670000007
+    "processing_seconds": 0.4528788749999997
   },
   {
     "image": "images/test/10xPfDhSPZFhPp9qqB5WRw.jpg",
@@ -7610,11 +7610,11 @@
       4
     ],
     "crop_scores": [
-      0.999716579914093,
-      0.9651089310646057,
-      0.9917771816253662
+      0.9998617172241211,
+      0.9715903401374817,
+      0.9574167728424072
     ],
-    "processing_seconds": 0.4248765419999998
+    "processing_seconds": 0.46223612499999867
   },
   {
     "image": "images/test/1Qug7AzcKLiVUgBWVjAiKg.jpg",
@@ -8441,7 +8441,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41800966699999975
+    "processing_seconds": 0.44510266600000037
   },
   {
     "image": "images/test/1XKi4Aev4QIjiVwPNQuH3A.jpg",
@@ -8792,11 +8792,11 @@
       4
     ],
     "crop_scores": [
-      0.9999972581863403,
-      0.9778962135314941,
-      0.9998914003372192
+      0.999921441078186,
+      0.9989615678787231,
+      0.9998892545700073
     ],
-    "processing_seconds": 0.4290702910000004
+    "processing_seconds": 0.4715934999999991
   },
   {
     "image": "images/test/1i0onpPh8crWQTmRg7YY9g.jpg",
@@ -9623,7 +9623,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4141240419999992
+    "processing_seconds": 0.43054383399999985
   },
   {
     "image": "images/test/1kIJImSS1LKaz9Gfa8tSSg.jpg",
@@ -10282,10 +10282,10 @@
       2
     ],
     "crop_scores": [
-      0.9998775720596313,
-      0.9996188879013062
+      0.8365491032600403,
+      0.9920139908790588
     ],
-    "processing_seconds": 0.42311237500000054
+    "processing_seconds": 0.4396750830000009
   },
   {
     "image": "images/test/1zn4_S6DqO2rrIXTlNMeeQ.jpg",
@@ -10547,10 +10547,10 @@
       4
     ],
     "crop_scores": [
-      0.9999624490737915,
-      0.8748067021369934
+      0.9995312690734863,
+      0.950458824634552
     ],
-    "processing_seconds": 0.41617045799999985
+    "processing_seconds": 0.43795049999999947
   },
   {
     "image": "images/test/228aRNnCNX7G6CzyiBWhbw.jpg",
@@ -11100,10 +11100,10 @@
       4
     ],
     "crop_scores": [
-      0.9999520778656006,
-      0.9994730353355408
+      0.9999798536300659,
+      0.7066841125488281
     ],
-    "processing_seconds": 0.41876212500000065
+    "processing_seconds": 0.43569225000000067
   },
   {
     "image": "images/test/23v_CWKgbezZu9WxecymKw.jpg",
@@ -11724,9 +11724,9 @@
       3
     ],
     "crop_scores": [
-      0.99895179271698
+      0.9912646412849426
     ],
-    "processing_seconds": 0.413830625000001
+    "processing_seconds": 0.4253656249999995
   },
   {
     "image": "images/test/2O6VdCoUedrVNeUkUcaOCw.jpg",
@@ -12217,13 +12217,13 @@
     ],
     "accepted_refined_classes": [
       0,
-      4
+      1
     ],
     "crop_scores": [
-      0.9953776597976685,
-      0.5640986561775208
+      0.999014139175415,
+      0.7502911686897278
     ],
-    "processing_seconds": 0.42433283299999935
+    "processing_seconds": 0.42539404200000064
   },
   {
     "image": "images/test/2VobQ0qbFVmTGu4Milm1Yg.jpg",
@@ -13050,7 +13050,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4194259159999998
+    "processing_seconds": 0.43026483300000073
   },
   {
     "image": "images/test/3--9aUsYvuz6qU0QrJhL3Q.jpg",
@@ -13881,12 +13881,12 @@
       0.0010053296573460102
     ],
     "accepted_refined_classes": [
-      0
+      4
     ],
     "crop_scores": [
-      0.7205497026443481
+      0.6614696979522705
     ],
-    "processing_seconds": 0.42238495799999853
+    "processing_seconds": 0.4345205000000014
   },
   {
     "image": "images/test/3BdAjdlkyo7cm1sR7izPog.jpg",
@@ -14251,9 +14251,9 @@
       3
     ],
     "crop_scores": [
-      0.9993165731430054
+      0.9920107126235962
     ],
-    "processing_seconds": 0.411244374999999
+    "processing_seconds": 0.43168983400000016
   },
   {
     "image": "images/test/3KlTWQzhLJQz_F17iDGbeg.jpg",
@@ -14914,9 +14914,9 @@
       2
     ],
     "crop_scores": [
-      0.997016191482544
+      0.9999849796295166
     ],
-    "processing_seconds": 0.4068647910000003
+    "processing_seconds": 0.4294568749999996
   },
   {
     "image": "images/test/3dT_5Oc5HgUNqJqFRTiiqQ.jpg",
@@ -15703,7 +15703,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.3963844999999999
+    "processing_seconds": 0.419686875
   },
   {
     "image": "images/test/3n_VnMoWogiomw_DFOWa5Q.jpg",
@@ -16082,7 +16082,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4099623749999992
+    "processing_seconds": 0.4195304999999987
   },
   {
     "image": "images/test/3s7AX-5AWkka0nSzeu2gRQ.jpg",
@@ -16887,9 +16887,9 @@
       4
     ],
     "crop_scores": [
-      0.9999661445617676
+      0.9999915361404419
     ],
-    "processing_seconds": 0.43474649999999926
+    "processing_seconds": 0.4410030830000018
   },
   {
     "image": "images/test/46uJAkQFkGFg-kJqaKwmHg.jpg",
@@ -17596,7 +17596,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.40534454199999814
+    "processing_seconds": 0.42364599999999797
   },
   {
     "image": "images/test/4MJHVMN-n6dhFAJPMPqcYA.jpg",
@@ -18319,7 +18319,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4101884170000005
+    "processing_seconds": 0.4164258330000017
   },
   {
     "image": "images/test/4VbkLH_AddGVPQ5CpTrNRA.jpg",
@@ -19147,14 +19147,14 @@
     "accepted_refined_classes": [
       4,
       1,
-      2
+      1
     ],
     "crop_scores": [
-      0.9840179085731506,
-      0.9959092140197754,
-      0.9167349338531494
+      0.9998080134391785,
+      0.9995821118354797,
+      0.5348548889160156
     ],
-    "processing_seconds": 0.44245054199999956
+    "processing_seconds": 0.45073525000000103
   },
   {
     "image": "images/test/4lY8qplt5BbC_-Ql5RXRSQ.jpg",
@@ -19981,7 +19981,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4150216659999977
+    "processing_seconds": 0.42513720800000243
   },
   {
     "image": "images/test/4ma2vbyrvDyiMZYAocDSNQ.jpg",
@@ -20328,7 +20328,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.40798595900000123
+    "processing_seconds": 0.42136683300000044
   },
   {
     "image": "images/test/5Ew51X1_jlAJXeOJsQb0Hw.jpg",
@@ -20971,7 +20971,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4115539169999991
+    "processing_seconds": 0.43164279200000166
   },
   {
     "image": "images/test/5Vov3XtQhBLisFAN1sQRZA.jpg",
@@ -21797,12 +21797,12 @@
       0.0021988877560943365
     ],
     "accepted_refined_classes": [
-      2
+      1
     ],
     "crop_scores": [
-      0.5688503980636597
+      0.6354130506515503
     ],
-    "processing_seconds": 0.4318536249999987
+    "processing_seconds": 0.4442449169999989
   },
   {
     "image": "images/test/5bC95qrdCIsXYJlq54PgVw.jpg",
@@ -22632,10 +22632,10 @@
       4
     ],
     "crop_scores": [
-      0.9620770812034607,
-      0.9797271490097046
+      0.9206519722938538,
+      0.9994730353355408
     ],
-    "processing_seconds": 0.4312331250000021
+    "processing_seconds": 0.4707064170000024
   },
   {
     "image": "images/test/5dWHYdYJ81IXOv2cDjAh9g.jpg",
@@ -23368,9 +23368,9 @@
       2
     ],
     "crop_scores": [
-      0.9999608993530273
+      0.9999953508377075
     ],
-    "processing_seconds": 0.4135155000000026
+    "processing_seconds": 0.43152433400000234
   },
   {
     "image": "images/test/5x0wgMagTeYUacQoW0zlHA.jpg",
@@ -24199,9 +24199,9 @@
       0
     ],
     "crop_scores": [
-      0.9999985694885254
+      0.9999914169311523
     ],
-    "processing_seconds": 0.4247097920000016
+    "processing_seconds": 0.43652929199999946
   },
   {
     "image": "images/test/6BQRYQAsy-dus-5ivcHSbw.jpg",
@@ -24500,7 +24500,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4035586250000023
+    "processing_seconds": 0.4135832499999985
   },
   {
     "image": "images/test/6CRwPBIv327vJ0ZSt1N_Xg.jpg",
@@ -25321,9 +25321,9 @@
       2
     ],
     "crop_scores": [
-      0.9853179454803467
+      0.9977268576622009
     ],
-    "processing_seconds": 0.4283917499999994
+    "processing_seconds": 0.4349308750000027
   },
   {
     "image": "images/test/6KLT09gKz4-d8jqEMoVkYQ.jpg",
@@ -25904,9 +25904,9 @@
       4
     ],
     "crop_scores": [
-      0.9998886585235596
+      0.9999945163726807
     ],
-    "processing_seconds": 0.4194429580000012
+    "processing_seconds": 0.43117045799999687
   },
   {
     "image": "images/test/6Q-lybU0h2yoJPEo7Sjh0w.jpg",
@@ -26301,7 +26301,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4102200829999987
+    "processing_seconds": 0.4262752919999997
   },
   {
     "image": "images/test/6TjnWZhZPgBsgrelBZKW-g.jpg",
@@ -26853,7 +26853,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4454437079999991
+    "processing_seconds": 0.42727829100000037
   },
   {
     "image": "images/test/6dkQU8_tVloOq9tsdNCF4w.jpg",
@@ -27656,7 +27656,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41544266700000065
+    "processing_seconds": 0.43319466699999865
   },
   {
     "image": "images/test/7LzlFAg0U7HODtmfbBeQbw.jpg",
@@ -28496,7 +28496,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4125694580000001
+    "processing_seconds": 0.4277518330000021
   },
   {
     "image": "images/test/7UlbNEwKr5tjBoJ7VOseQw.jpg",
@@ -29106,9 +29106,9 @@
       4
     ],
     "crop_scores": [
-      0.99797123670578
+      0.9411320090293884
     ],
-    "processing_seconds": 0.41801329200000126
+    "processing_seconds": 0.43081108299999826
   },
   {
     "image": "images/test/7dh5tcKXvscMAFAooQyAHw.jpg",
@@ -29367,7 +29367,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.40487066600000077
+    "processing_seconds": 0.41889516699999874
   },
   {
     "image": "images/test/7fPKr4zHIQiL7wv7asIbNA.jpg",
@@ -30066,7 +30066,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41062750000000037
+    "processing_seconds": 0.42011054199999975
   },
   {
     "image": "images/test/7l_YxVRT3q4qGbByFTwCJA.jpg",
@@ -30895,9 +30895,9 @@
       0
     ],
     "crop_scores": [
-      0.9998195767402649
+      0.9997774958610535
     ],
-    "processing_seconds": 0.4227786249999994
+    "processing_seconds": 0.4356317090000026
   },
   {
     "image": "images/test/7xrWipcAWoHYbyOP3Vm1WA.jpg",
@@ -31710,9 +31710,9 @@
       2
     ],
     "crop_scores": [
-      0.9998354911804199
+      0.9996918439865112
     ],
-    "processing_seconds": 0.42278883399999856
+    "processing_seconds": 0.4402235420000018
   },
   {
     "image": "images/test/8NCfu8jnmn97rkGfT8bxTw.jpg",
@@ -32543,11 +32543,11 @@
       4
     ],
     "crop_scores": [
-      0.9997701048851013,
-      0.6445131301879883,
-      0.9980725049972534
+      0.999990701675415,
+      0.6278470754623413,
+      0.9999723434448242
     ],
-    "processing_seconds": 0.44022091699999777
+    "processing_seconds": 0.4492363750000017
   },
   {
     "image": "images/test/8PqkTokQe7PcqOJkRJEkmQ.jpg",
@@ -33239,14 +33239,14 @@
     "accepted_refined_classes": [
       3,
       3,
-      4
+      3
     ],
     "crop_scores": [
-      0.9999995231628418,
-      0.9999990463256836,
-      0.4922567903995514
+      0.9992465972900391,
+      0.99949049949646,
+      0.5624927878379822
     ],
-    "processing_seconds": 0.4437141249999996
+    "processing_seconds": 0.44860816599999964
   },
   {
     "image": "images/test/93oY-JkrnWtzaor7S4g8BA.jpg",
@@ -33843,9 +33843,9 @@
       4
     ],
     "crop_scores": [
-      0.9758787751197815
+      0.9950397610664368
     ],
-    "processing_seconds": 0.4225459590000007
+    "processing_seconds": 0.44020062499999923
   },
   {
     "image": "images/test/9Achwigwnaceac31PEL5XQ.jpg",
@@ -34634,9 +34634,9 @@
       1
     ],
     "crop_scores": [
-      0.6454336047172546
+      0.9998573064804077
     ],
-    "processing_seconds": 0.4235789590000003
+    "processing_seconds": 0.4395455840000011
   },
   {
     "image": "images/test/9OAPi_WKm41iSAYnsd3RPg.jpg",
@@ -34919,13 +34919,13 @@
     ],
     "accepted_refined_classes": [
       0,
-      4
+      1
     ],
     "crop_scores": [
-      0.9999901056289673,
-      0.5085887908935547
+      0.9999979734420776,
+      0.8728131651878357
     ],
-    "processing_seconds": 0.42832437500000253
+    "processing_seconds": 0.4447044999999967
   },
   {
     "image": "images/test/A2aUcU2Im5bObHh15H5qOQ.jpg",
@@ -35626,9 +35626,9 @@
       4
     ],
     "crop_scores": [
-      0.648391604423523
+      0.8740453124046326
     ],
-    "processing_seconds": 0.42833820799999955
+    "processing_seconds": 0.427678083
   },
   {
     "image": "images/test/A9r7_J65o_Phqfob1GPsZg.jpg",
@@ -36161,9 +36161,9 @@
       0
     ],
     "crop_scores": [
-      0.9992446899414062
+      0.9999953508377075
     ],
-    "processing_seconds": 0.4069212919999998
+    "processing_seconds": 0.43227966599999945
   },
   {
     "image": "images/test/AFQfnr_e6N-Oe1r7WnQkGw.jpg",
@@ -36368,9 +36368,9 @@
       4
     ],
     "crop_scores": [
-      0.9999691247940063
+      0.9999885559082031
     ],
-    "processing_seconds": 0.41157533399999835
+    "processing_seconds": 0.42263120799999854
   },
   {
     "image": "images/test/AFkarzGhALoVge6-E8eJqw.jpg",
@@ -36932,12 +36932,12 @@
       0.0010350400116294622
     ],
     "accepted_refined_classes": [
-      2
+      1
     ],
     "crop_scores": [
-      0.520234227180481
+      0.6506787538528442
     ],
-    "processing_seconds": 0.4165399999999977
+    "processing_seconds": 0.43267649999999946
   },
   {
     "image": "images/test/AGUsY_hQuYsfHUuPeBK3-w.jpg",
@@ -37124,7 +37124,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.40446883299999925
+    "processing_seconds": 0.41690108399999914
   },
   {
     "image": "images/test/AZGCN0iwI3-HRrv-VxpdjA.jpg",
@@ -37481,9 +37481,9 @@
       4
     ],
     "crop_scores": [
-      0.9999692440032959
+      0.9999874830245972
     ],
-    "processing_seconds": 0.41422733399999956
+    "processing_seconds": 0.43317583299999995
   },
   {
     "image": "images/test/AZfY2cdEQ-4Q3OHOixNOfQ.jpg",
@@ -38201,10 +38201,10 @@
       4
     ],
     "crop_scores": [
-      0.9736165404319763,
-      0.9999547004699707
+      0.9451630115509033,
+      0.99997878074646
     ],
-    "processing_seconds": 0.42922533300000154
+    "processing_seconds": 0.4477261249999991
   },
   {
     "image": "images/test/AhuX9ILgELWXKZBDS0fNLw.jpg",
@@ -38609,9 +38609,9 @@
       3
     ],
     "crop_scores": [
-      0.9986943602561951
+      0.9975503087043762
     ],
-    "processing_seconds": 0.458147916999998
+    "processing_seconds": 0.43269770899999926
   },
   {
     "image": "images/test/AoIU4ZyjMmqowxu1yYzC4g.jpg",
@@ -39144,9 +39144,9 @@
       0
     ],
     "crop_scores": [
-      0.9999997615814209
+      0.9999998807907104
     ],
-    "processing_seconds": 0.44172208399999846
+    "processing_seconds": 0.43086279099999913
   },
   {
     "image": "images/test/B4It6Q3HQAtJH03RpFEA3g.jpg",
@@ -39605,7 +39605,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.5347369999999998
+    "processing_seconds": 0.4217494999999971
   },
   {
     "image": "images/test/B56ymPNAD39jAE5G5XFn-Q.jpg",
@@ -39944,7 +39944,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4266514999999984
+    "processing_seconds": 0.4210392080000034
   },
   {
     "image": "images/test/BAR3JH6bv6FbhVE8Ym1PtA.jpg",
@@ -40771,7 +40771,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4184462919999987
+    "processing_seconds": 0.4340464579999974
   },
   {
     "image": "images/test/BGpbm2N0oa3SaaDx_4ZMOA.jpg",
@@ -41499,10 +41499,10 @@
       1
     ],
     "crop_scores": [
-      0.9999974966049194,
-      0.9997609257698059
+      0.999832034111023,
+      0.9997394680976868
     ],
-    "processing_seconds": 0.44131799999999544
+    "processing_seconds": 0.44643291700000276
   },
   {
     "image": "images/test/BUn3bhG_-ypmPXwBcPtFnw.jpg",
@@ -42346,11 +42346,11 @@
       4
     ],
     "crop_scores": [
-      0.9998070597648621,
-      0.9998077750205994,
-      0.9999016523361206
+      0.9998584985733032,
+      0.9999545812606812,
+      0.9999648332595825
     ],
-    "processing_seconds": 0.4485324999999989
+    "processing_seconds": 0.4656107079999998
   },
   {
     "image": "images/test/BWqLYzpjZ6i3knoBels0DQ.jpg",
@@ -42547,9 +42547,9 @@
       4
     ],
     "crop_scores": [
-      0.9999581575393677
+      0.9999792575836182
     ],
-    "processing_seconds": 0.4118200420000022
+    "processing_seconds": 0.4321622089999977
   },
   {
     "image": "images/test/BmSXi97Gs5fx36kXGyrqfQ.jpg",
@@ -43072,7 +43072,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41425595799999826
+    "processing_seconds": 0.43187933400000134
   },
   {
     "image": "images/test/C0MwoTvpaxW-7clgJebUQg.jpg",
@@ -43914,9 +43914,9 @@
       4
     ],
     "crop_scores": [
-      0.9552486538887024
+      0.9173837304115295
     ],
-    "processing_seconds": 0.42729612499999803
+    "processing_seconds": 0.4442846659999944
   },
   {
     "image": "images/test/COatrZP7KUYGE2BzAz2ByA.jpg",
@@ -44497,9 +44497,9 @@
       0
     ],
     "crop_scores": [
-      0.9999998807907104
+      0.9999990463256836
     ],
-    "processing_seconds": 0.4179383339999987
+    "processing_seconds": 0.435689791999998
   },
   {
     "image": "images/test/CUnsuKxrDGrVAMJm76CpcQ.jpg",
@@ -44871,11 +44871,11 @@
       0
     ],
     "crop_scores": [
-      0.9999998807907104,
-      0.9999988079071045,
-      0.9999997615814209
+      0.999987006187439,
+      0.9999815225601196,
+      0.9999866485595703
     ],
-    "processing_seconds": 0.43023541600000215
+    "processing_seconds": 0.44515791699999596
   },
   {
     "image": "images/test/CVjShm_SIVcKY4vUGimMYQ.jpg",
@@ -45501,14 +45501,14 @@
       0.0010761049343273044
     ],
     "accepted_refined_classes": [
-      3,
-      4
+      4,
+      3
     ],
     "crop_scores": [
-      0.49000629782676697,
-      0.7149638533592224
+      0.5403420329093933,
+      0.6125687956809998
     ],
-    "processing_seconds": 0.42998520799999795
+    "processing_seconds": 0.44547583300000326
   },
   {
     "image": "images/test/CYkJWY9FjKgLbPJOGu8vFw.jpg",
@@ -46335,7 +46335,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.42668133299999766
+    "processing_seconds": 0.44138791700000013
   },
   {
     "image": "images/test/D0warOOAwyIc37bXjn0dCw.jpg",
@@ -47017,9 +47017,9 @@
       0
     ],
     "crop_scores": [
-      0.9995002746582031
+      0.9999961853027344
     ],
-    "processing_seconds": 0.4179859999999991
+    "processing_seconds": 0.42948362499999604
   },
   {
     "image": "images/test/DAD-sSjr7GA0eO6peTTv8w.jpg",
@@ -47461,9 +47461,9 @@
       4
     ],
     "crop_scores": [
-      0.9992689490318298
+      0.9999828338623047
     ],
-    "processing_seconds": 0.41480191699999835
+    "processing_seconds": 0.42702095799999995
   },
   {
     "image": "images/test/DFyKQakCyfR0EfwusowMhQ.jpg",
@@ -47754,7 +47754,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.3957728330000023
+    "processing_seconds": 0.4186958750000045
   },
   {
     "image": "images/test/Du3Pt-H-emoscd4L9vd1ZQ.jpg",
@@ -48317,7 +48317,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.40103366600000356
+    "processing_seconds": 0.4249257080000035
   },
   {
     "image": "images/test/DvESnhqMB5ZeIvY6vENntA.jpg",
@@ -49079,12 +49079,12 @@
       0.0010336037958040833
     ],
     "accepted_refined_classes": [
-      2
+      4
     ],
     "crop_scores": [
-      0.9812963604927063
+      0.9761150479316711
     ],
-    "processing_seconds": 0.41551870800000046
+    "processing_seconds": 0.43744966699999566
   },
   {
     "image": "images/test/E11OrkTcuW1HXLqBGpwZ0w.jpg",
@@ -49513,9 +49513,9 @@
       3
     ],
     "crop_scores": [
-      0.9999984502792358
+      0.999646782875061
     ],
-    "processing_seconds": 0.4259677500000052
+    "processing_seconds": 0.4282810839999982
   },
   {
     "image": "images/test/EURx5Ys9EYkl3SLS966I4w.jpg",
@@ -49864,9 +49864,9 @@
       1
     ],
     "crop_scores": [
-      0.7412369251251221
+      0.9994897842407227
     ],
-    "processing_seconds": 0.4141074580000037
+    "processing_seconds": 0.4262267909999977
   },
   {
     "image": "images/test/EeYkoaVyolrTSQuQSwVlPw.jpg",
@@ -50362,7 +50362,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4038114590000035
+    "processing_seconds": 0.4224334169999935
   },
   {
     "image": "images/test/EmWzXrGkW5QnVfiEPI-6EA.jpg",
@@ -50855,9 +50855,9 @@
       0
     ],
     "crop_scores": [
-      0.9999979734420776
+      0.9999984502792358
     ],
-    "processing_seconds": 0.4021372079999992
+    "processing_seconds": 0.4254077500000051
   },
   {
     "image": "images/test/EoHCaNtYcFh6pUlADjfNmQ.jpg",
@@ -51398,9 +51398,9 @@
       3
     ],
     "crop_scores": [
-      0.9999973773956299
+      0.9998843669891357
     ],
-    "processing_seconds": 0.4182498330000044
+    "processing_seconds": 0.4262916249999975
   },
   {
     "image": "images/test/EoZVlyOcurPs0QMacpp2Aw.jpg",
@@ -52240,7 +52240,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.42141570799999784
+    "processing_seconds": 0.4337346249999996
   },
   {
     "image": "images/test/EsICs7YTRm9saKBvUkyDIA.jpg",
@@ -52571,13 +52571,13 @@
     ],
     "accepted_refined_classes": [
       4,
-      3
+      4
     ],
     "crop_scores": [
-      0.7731741070747375,
-      0.5052474141120911
+      0.9997538924217224,
+      0.9995582699775696
     ],
-    "processing_seconds": 0.42754499999999496
+    "processing_seconds": 0.43642658299999937
   },
   {
     "image": "images/test/EyrJwI8AV0iKVvPFNPPUVw.jpg",
@@ -53324,7 +53324,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4265832079999967
+    "processing_seconds": 0.4286502920000004
   },
   {
     "image": "images/test/FGUaWyVCzueHINXXXwkVTg.jpg",
@@ -54127,13 +54127,13 @@
     ],
     "accepted_refined_classes": [
       4,
-      4
+      1
     ],
     "crop_scores": [
-      0.9915326237678528,
-      0.7015073299407959
+      0.9995636343955994,
+      0.634145975112915
     ],
-    "processing_seconds": 0.43417508399999605
+    "processing_seconds": 0.45033550000000133
   },
   {
     "image": "images/test/FzLRprXe9xvkaL223rJvbQ.jpg",
@@ -54688,7 +54688,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4129326660000032
+    "processing_seconds": 0.42970162499999986
   },
   {
     "image": "images/test/G3vL-9DoiiwQB29ZjQfd_A.jpg",
@@ -55517,9 +55517,9 @@
       4
     ],
     "crop_scores": [
-      0.9998931884765625
+      0.9999606609344482
     ],
-    "processing_seconds": 0.4345140830000034
+    "processing_seconds": 0.4488183329999984
   },
   {
     "image": "images/test/GAUh-8saX7oLXaXWD1KFDA.jpg",
@@ -56296,11 +56296,11 @@
       1
     ],
     "crop_scores": [
-      0.9593623876571655,
-      0.9719645380973816,
-      0.460767924785614
+      0.9992895126342773,
+      0.9995318651199341,
+      0.7631962895393372
     ],
-    "processing_seconds": 0.44093058299999655
+    "processing_seconds": 0.4555995830000015
   },
   {
     "image": "images/test/Gf4BEoV3H4Nw8BTeaR3lvQ.jpg",
@@ -56839,10 +56839,10 @@
       2
     ],
     "crop_scores": [
-      0.9999954700469971,
-      0.9999983310699463
+      0.9998511075973511,
+      0.9993749260902405
     ],
-    "processing_seconds": 0.43741954200000066
+    "processing_seconds": 0.4453930000000028
   },
   {
     "image": "images/test/Gg2SLaeah1_SXe0s5t3CoA.jpg",
@@ -57664,10 +57664,10 @@
       4
     ],
     "crop_scores": [
-      0.9735669493675232,
-      0.9999520778656006
+      0.6241471767425537,
+      0.9999955892562866
     ],
-    "processing_seconds": 0.46723429200000055
+    "processing_seconds": 0.44640366699999845
   },
   {
     "image": "images/test/GgfdTWHiXbIp7lZF1TC_WQ.jpg",
@@ -57826,12 +57826,12 @@
       0.0010266384342685342
     ],
     "accepted_refined_classes": [
-      2
+      1
     ],
     "crop_scores": [
-      0.5852556824684143
+      0.5692607164382935
     ],
-    "processing_seconds": 0.4213267090000059
+    "processing_seconds": 0.42938108299999556
   },
   {
     "image": "images/test/GgpKY-iNkUQF83TmYMQVNw.jpg",
@@ -58220,9 +58220,9 @@
       3
     ],
     "crop_scores": [
-      0.9999372959136963
+      0.9992284774780273
     ],
-    "processing_seconds": 0.5239185000000006
+    "processing_seconds": 0.4281294589999973
   },
   {
     "image": "images/test/H3Y-HG2-PwJGwbZx6kWEfw.jpg",
@@ -58987,9 +58987,9 @@
       1
     ],
     "crop_scores": [
-      0.6240302920341492
+      0.9984947443008423
     ],
-    "processing_seconds": 0.5445789169999955
+    "processing_seconds": 0.43947995899999626
   },
   {
     "image": "images/test/HQkSjBdfL09udGgKpB8Gxw.jpg",
@@ -59816,7 +59816,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4002883329999989
+    "processing_seconds": 0.4340852499999954
   },
   {
     "image": "images/test/Haxfoa21GNMMGOjD2jPgSA.jpg",
@@ -60365,9 +60365,9 @@
       4
     ],
     "crop_scores": [
-      0.9985332489013672
+      0.9999791383743286
     ],
-    "processing_seconds": 0.401440958000002
+    "processing_seconds": 0.43420691600000083
   },
   {
     "image": "images/test/HclXv9xKua3hxzHiw-uhWg.jpg",
@@ -61092,9 +61092,9 @@
       3
     ],
     "crop_scores": [
-      0.9999743700027466
+      0.9996949434280396
     ],
-    "processing_seconds": 0.41016204099999953
+    "processing_seconds": 0.436529084
   },
   {
     "image": "images/test/HmQSE0XITcxRrbVaKj08Rw.jpg",
@@ -61641,7 +61641,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4152825839999963
+    "processing_seconds": 0.42766049999999467
   },
   {
     "image": "images/test/Hsqs6ScsG9tFrHiWRg85Mg.jpg",
@@ -62163,9 +62163,9 @@
       2
     ],
     "crop_scores": [
-      0.9999990463256836
+      0.9999743700027466
     ],
-    "processing_seconds": 0.4329278330000008
+    "processing_seconds": 0.43531537499999473
   },
   {
     "image": "images/test/I4ICKEF4fBuywyrGCKuWiw.jpg",
@@ -62992,7 +62992,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41599779100000234
+    "processing_seconds": 0.434658958
   },
   {
     "image": "images/test/I4pAtgBs02NY8VqOVxSMnA.jpg",
@@ -63381,9 +63381,9 @@
       0
     ],
     "crop_scores": [
-      0.9999936819076538
+      0.9999083280563354
     ],
-    "processing_seconds": 0.41369216700000067
+    "processing_seconds": 0.43085049999999825
   },
   {
     "image": "images/test/I7eH0rzWFl_zO32hdkczRg.jpg",
@@ -63828,9 +63828,9 @@
       1
     ],
     "crop_scores": [
-      0.9992814660072327
+      0.9999353885650635
     ],
-    "processing_seconds": 0.41917983300000117
+    "processing_seconds": 0.43225575000000305
   },
   {
     "image": "images/test/I9wcefIR3ciVLmjO-k0T2w.jpg",
@@ -64051,9 +64051,9 @@
       2
     ],
     "crop_scores": [
-      0.677911102771759
+      0.9913411736488342
     ],
-    "processing_seconds": 0.41561083300000234
+    "processing_seconds": 0.4340444170000026
   },
   {
     "image": "images/test/InLKwFaKMSgQ1k5bFm8ouQ.jpg",
@@ -64857,14 +64857,14 @@
     "accepted_refined_classes": [
       3,
       3,
-      2
+      1
     ],
     "crop_scores": [
-      0.9999164342880249,
-      0.9999791383743286,
-      0.9921286106109619
+      0.9987103939056396,
+      0.9989801049232483,
+      0.5363879203796387
     ],
-    "processing_seconds": 0.4437103329999985
+    "processing_seconds": 0.46440091699999897
   },
   {
     "image": "images/test/IrWR9g6cVlLmMwiEDCAwbA.jpg",
@@ -65453,9 +65453,9 @@
       2
     ],
     "crop_scores": [
-      0.9999988079071045
+      0.9999796152114868
     ],
-    "processing_seconds": 0.42165391700000043
+    "processing_seconds": 0.42215150000000534
   },
   {
     "image": "images/test/ItMQs8-7JMybGYDNq5BkHQ.jpg",
@@ -66209,12 +66209,12 @@
       0.0010287424083799124
     ],
     "accepted_refined_classes": [
-      2
+      1
     ],
     "crop_scores": [
-      0.9134402871131897
+      0.9998200535774231
     ],
-    "processing_seconds": 0.42664908399999746
+    "processing_seconds": 0.42367320800000385
   },
   {
     "image": "images/test/J2YbJ_cbdsOmKNIAo5EPGw.jpg",
@@ -67043,9 +67043,9 @@
       4
     ],
     "crop_scores": [
-      0.9998929500579834
+      0.9999966621398926
     ],
-    "processing_seconds": 0.4193505829999964
+    "processing_seconds": 0.43536141700000286
   },
   {
     "image": "images/test/J9uCu9OlMqsWzuhNiEl_Yw.jpg",
@@ -67224,7 +67224,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4039369169999958
+    "processing_seconds": 0.4194463749999997
   },
   {
     "image": "images/test/JhYtxbmhtVcitBDgBV_58Q.jpg",
@@ -68053,9 +68053,9 @@
       0
     ],
     "crop_scores": [
-      0.982477605342865
+      0.967391312122345
     ],
-    "processing_seconds": 0.43240983299999414
+    "processing_seconds": 0.44375050000000016
   },
   {
     "image": "images/test/JvxPdEdRm8fNaAn2eFp38Q.jpg",
@@ -68730,10 +68730,10 @@
       3
     ],
     "crop_scores": [
-      0.9999995231628418,
-      0.9999879598617554
+      0.9996048808097839,
+      0.9997031092643738
     ],
-    "processing_seconds": 0.43116833300000224
+    "processing_seconds": 0.44559212500000456
   },
   {
     "image": "images/test/K1V173PV2unV6DhIe3TL7g.jpg",
@@ -69075,10 +69075,10 @@
       3
     ],
     "crop_scores": [
-      0.9997261166572571,
-      0.9935374855995178
+      0.9931954145431519,
+      0.8881171345710754
     ],
-    "processing_seconds": 0.4255992079999942
+    "processing_seconds": 0.4364663340000021
   },
   {
     "image": "images/test/KNmYpjGNEv1zMDfniMHNoQ.jpg",
@@ -69657,7 +69657,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.40702075000000093
+    "processing_seconds": 0.42746462500000604
   },
   {
     "image": "images/test/KR3F6556wEfngHWMOfIycw.jpg",
@@ -69988,7 +69988,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.419479208999995
+    "processing_seconds": 0.419231166000003
   },
   {
     "image": "images/test/Ks10nhFgPnF-E7MCsbTvUw.jpg",
@@ -70830,9 +70830,9 @@
       3
     ],
     "crop_scores": [
-      0.9999992847442627
+      0.9986118078231812
     ],
-    "processing_seconds": 0.4453873750000028
+    "processing_seconds": 0.42878737499999886
   },
   {
     "image": "images/test/KsX_rq9-FWhYI1-Q_U-mqQ.jpg",
@@ -71022,10 +71022,10 @@
       4
     ],
     "crop_scores": [
-      0.9999686479568481,
-      0.9999666213989258
+      0.9999862909317017,
+      0.9999849796295166
     ],
-    "processing_seconds": 0.42180529199999484
+    "processing_seconds": 0.4218559159999984
   },
   {
     "image": "images/test/L3MKsUwBoGJRSyzufiRavA.jpg",
@@ -71436,7 +71436,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.40432908300000037
+    "processing_seconds": 0.39885583399999547
   },
   {
     "image": "images/test/LKrGLBac5SBqaqD-aGlBgg.jpg",
@@ -71895,7 +71895,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41041049999999757
+    "processing_seconds": 0.40232866699999903
   },
   {
     "image": "images/test/LUHloxkD12IrZ0deFe-YLQ.jpg",
@@ -72735,7 +72735,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4146365000000003
+    "processing_seconds": 0.4055701250000041
   },
   {
     "image": "images/test/LfY9Gcwln6hINMqkqFuxvA.jpg",
@@ -73469,10 +73469,10 @@
       3
     ],
     "crop_scores": [
-      0.9999881982803345,
-      0.8812348246574402
+      0.9999984502792358,
+      0.8692740201950073
     ],
-    "processing_seconds": 0.42943116600000053
+    "processing_seconds": 0.4287293329999997
   },
   {
     "image": "images/test/M2k3wEKiF-fB2Rpwsci4oA.jpg",
@@ -73765,9 +73765,9 @@
       0
     ],
     "crop_scores": [
-      0.3708089590072632
+      0.9920315742492676
     ],
-    "processing_seconds": 0.4196698330000004
+    "processing_seconds": 0.42285516599999795
   },
   {
     "image": "images/test/MCMUd4JjRWahE5uYyPDRig.jpg",
@@ -74289,9 +74289,9 @@
       3
     ],
     "crop_scores": [
-      0.9999668598175049
+      0.9978896975517273
     ],
-    "processing_seconds": 0.3025773749999985
+    "processing_seconds": 0.30041850000000636
   },
   {
     "image": "images/test/MRCislOok4Vgx3K92w0-JA.jpg",
@@ -74990,7 +74990,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4090356670000048
+    "processing_seconds": 0.4190664589999997
   },
   {
     "image": "images/test/MRP2LRqc5PZtJwInluzaMg.jpg",
@@ -75834,11 +75834,11 @@
       2
     ],
     "crop_scores": [
-      0.9997912049293518,
-      0.9923490285873413,
-      0.9828009605407715
+      0.9998656511306763,
+      0.9987602233886719,
+      0.9993733763694763
     ],
-    "processing_seconds": 0.45563637499999743
+    "processing_seconds": 0.4610409579999981
   },
   {
     "image": "images/test/MUvXsJfvosx1fKsi-_3hNg.jpg",
@@ -76380,10 +76380,10 @@
       4
     ],
     "crop_scores": [
-      0.9998136162757874,
-      0.9999538660049438
+      0.9999918937683105,
+      0.9999947547912598
     ],
-    "processing_seconds": 0.4304530839999998
+    "processing_seconds": 0.44522912499999734
   },
   {
     "image": "images/test/MeHpphU_SdzFWl2SyKFB8Q.jpg",
@@ -76745,9 +76745,9 @@
       2
     ],
     "crop_scores": [
-      0.9999970197677612
+      0.9999804496765137
     ],
-    "processing_seconds": 0.41863695800000045
+    "processing_seconds": 0.4301562919999995
   },
   {
     "image": "images/test/MpYDeEB9sE-gxzmp-c_SVw.jpg",
@@ -77587,7 +77587,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.42027595899999426
+    "processing_seconds": 0.4351383750000011
   },
   {
     "image": "images/test/MvpYfPA_WTOQKIcluYLxNw.jpg",
@@ -77928,9 +77928,9 @@
       3
     ],
     "crop_scores": [
-      0.9999512434005737
+      0.9988873600959778
     ],
-    "processing_seconds": 0.41571041600000314
+    "processing_seconds": 0.42941358299999877
   },
   {
     "image": "images/test/MwNctkMB70X1qOm1fYQGDQ.jpg",
@@ -78708,9 +78708,9 @@
       2
     ],
     "crop_scores": [
-      0.9999992847442627
+      0.9999305009841919
     ],
-    "processing_seconds": 0.420433917000004
+    "processing_seconds": 0.43841374999999516
   },
   {
     "image": "images/test/N74DcSc0G6YI00FtxLebrg.jpg",
@@ -78803,9 +78803,9 @@
       4
     ],
     "crop_scores": [
-      0.999840497970581
+      0.9999843835830688
     ],
-    "processing_seconds": 0.17092600000000147
+    "processing_seconds": 0.16995654200000132
   },
   {
     "image": "images/test/NCoF2_xLDp4zl8C8n0JAnw.jpg",
@@ -79635,10 +79635,10 @@
       3
     ],
     "crop_scores": [
-      0.9996544122695923,
-      0.9986453652381897
+      0.9892125129699707,
+      0.9669205546379089
     ],
-    "processing_seconds": 0.4484243750000019
+    "processing_seconds": 0.4273958330000056
   },
   {
     "image": "images/test/NgghK0JnB7RfL3r8WVOHJA.jpg",
@@ -79966,12 +79966,12 @@
       3
     ],
     "crop_scores": [
-      0.9997439980506897,
-      0.6386466026306152,
-      0.6386466026306152,
-      0.9891241788864136
+      0.9999886751174927,
+      0.7714976668357849,
+      0.7714976668357849,
+      0.9870845675468445
     ],
-    "processing_seconds": 0.44550500000000426
+    "processing_seconds": 0.458719416000001
   },
   {
     "image": "images/test/NnDVsUzV5-my4OzEPr5hqQ.jpg",
@@ -80800,9 +80800,9 @@
       1
     ],
     "crop_scores": [
-      0.9938101172447205
+      0.9992263317108154
     ],
-    "processing_seconds": 0.428873583000005
+    "processing_seconds": 0.44553587499999736
   },
   {
     "image": "images/test/NwHd6q38mF2PJ_I1LF6T4Q.jpg",
@@ -81407,9 +81407,9 @@
       3
     ],
     "crop_scores": [
-      0.9999922513961792
+      0.9968655705451965
     ],
-    "processing_seconds": 0.42213154099999883
+    "processing_seconds": 0.4340813750000052
   },
   {
     "image": "images/test/NyMkfMr0wjt-0iTbxdIqDw.jpg",
@@ -81716,7 +81716,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41147379199999534
+    "processing_seconds": 0.4026017499999952
   },
   {
     "image": "images/test/O2aWIONXc7dknMJc1g7k-g.jpg",
@@ -82146,10 +82146,10 @@
       4
     ],
     "crop_scores": [
-      0.9981749057769775,
-      0.9988226294517517
+      0.9999707937240601,
+      0.9999738931655884
     ],
-    "processing_seconds": 0.430809042000007
+    "processing_seconds": 0.42146720899999934
   },
   {
     "image": "images/test/O5UBphIGZBzQPYKaqqYxfw.jpg",
@@ -82959,12 +82959,12 @@
       0.0010116338962689042
     ],
     "accepted_refined_classes": [
-      4
+      3
     ],
     "crop_scores": [
-      0.9978255033493042
+      0.813361406326294
     ],
-    "processing_seconds": 0.42733629100000314
+    "processing_seconds": 0.4164134170000011
   },
   {
     "image": "images/test/O5ucjgjnJiKPy3geFGajrw.jpg",
@@ -83822,12 +83822,12 @@
       4
     ],
     "crop_scores": [
-      0.9999986886978149,
-      0.9999781847000122,
-      0.9999818801879883,
-      0.9999865293502808
+      0.999935507774353,
+      0.999990701675415,
+      0.9994853734970093,
+      0.9999879598617554
     ],
-    "processing_seconds": 0.4557522500000033
+    "processing_seconds": 0.44970762500000205
   },
   {
     "image": "images/test/O9Dl43vNu89y4AM4A-wmUQ.jpg",
@@ -84190,7 +84190,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4081248749999986
+    "processing_seconds": 0.4042259999999942
   },
   {
     "image": "images/test/OQWfJOMgn2hawi8n2g7QVg.jpg",
@@ -85019,9 +85019,9 @@
       1
     ],
     "crop_scores": [
-      0.6905495524406433
+      0.9541620016098022
     ],
-    "processing_seconds": 0.42711770799999726
+    "processing_seconds": 0.41610279199998956
   },
   {
     "image": "images/test/OXJHQltXWE6MBP0c7nuFtw.jpg",
@@ -85792,7 +85792,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.40961375000000544
+    "processing_seconds": 0.40761541700000237
   },
   {
     "image": "images/test/Oe2dK6TaVtm8gkGTfs6JEg.jpg",
@@ -86635,16 +86635,16 @@
       2,
       4,
       4,
-      2
+      0
     ],
     "crop_scores": [
-      0.999534010887146,
-      0.9976779818534851,
-      0.9999531507492065,
-      0.9999138116836548,
-      0.536682665348053
+      0.9998407363891602,
+      0.9999430179595947,
+      0.9999791383743286,
+      0.9999752044677734,
+      0.5445055961608887
     ],
-    "processing_seconds": 0.46768699999999797
+    "processing_seconds": 0.47049200000000724
   },
   {
     "image": "images/test/OiHQhGMLO4Ve2i6E0vz-zA.jpg",
@@ -87063,10 +87063,10 @@
       2
     ],
     "crop_scores": [
-      0.9989942908287048,
-      0.997783362865448
+      0.9999085664749146,
+      0.9998588562011719
     ],
-    "processing_seconds": 0.42775504200000114
+    "processing_seconds": 0.426116707999995
   },
   {
     "image": "images/test/OoA9h0JUsa3cLAZG9HPzxg.jpg",
@@ -87892,12 +87892,12 @@
       0.0010843415511772037
     ],
     "accepted_refined_classes": [
-      3
+      1
     ],
     "crop_scores": [
-      0.5073670148849487
+      0.9892224073410034
     ],
-    "processing_seconds": 0.4217625420000104
+    "processing_seconds": 0.4310715830000049
   },
   {
     "image": "images/test/P7I-4KL2chqqBVC92FuNCQ.jpg",
@@ -88404,7 +88404,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41358304199999907
+    "processing_seconds": 0.42382816599999273
   },
   {
     "image": "images/test/PHUCgtcaVSrAJ0AzuqaLuQ.jpg",
@@ -89151,7 +89151,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4149922499999974
+    "processing_seconds": 0.4238442499999877
   },
   {
     "image": "images/test/PIB1_0ZAX_pzvGksoWLecA.jpg",
@@ -89612,9 +89612,9 @@
       2
     ],
     "crop_scores": [
-      0.9999996423721313
+      0.9999903440475464
     ],
-    "processing_seconds": 0.41252720900000384
+    "processing_seconds": 0.4272497499999872
   },
   {
     "image": "images/test/Q8g52pXxt0rA4efQ3B1Fpg.jpg",
@@ -90193,7 +90193,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4073142909999916
+    "processing_seconds": 0.42076087499999915
   },
   {
     "image": "images/test/Q91ZyLUrrZmtWhjul4Co9g.jpg",
@@ -90828,7 +90828,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41460099999999045
+    "processing_seconds": 0.4171937499999956
   },
   {
     "image": "images/test/QDVTkr2TmKKD5Ocw_wgljA.jpg",
@@ -91426,10 +91426,10 @@
       3
     ],
     "crop_scores": [
-      0.7578673362731934,
-      0.9980412721633911
+      0.9992640614509583,
+      0.9979959726333618
     ],
-    "processing_seconds": 0.4333007080000044
+    "processing_seconds": 0.4461660829999943
   },
   {
     "image": "images/test/QelKGPl72DUi--bVnse40Q.jpg",
@@ -92258,9 +92258,9 @@
       2
     ],
     "crop_scores": [
-      0.9999926090240479
+      0.9999701976776123
     ],
-    "processing_seconds": 0.433154916999996
+    "processing_seconds": 0.44996229199999505
   },
   {
     "image": "images/test/Qg6QTtYIm2qNFOGbMJzDfA.jpg",
@@ -92690,10 +92690,10 @@
       3
     ],
     "crop_scores": [
-      0.9998968839645386,
-      0.9998968839645386
+      0.9958192110061646,
+      0.9958192110061646
     ],
-    "processing_seconds": 0.43308979100000045
+    "processing_seconds": 0.45071950000000527
   },
   {
     "image": "images/test/RDjBJbCGdsCACgtBVJ8neQ.jpg",
@@ -92921,9 +92921,9 @@
     ],
     "crop_scores": [
       0.9999988079071045,
-      0.9999347925186157
+      0.999579131603241
     ],
-    "processing_seconds": 0.42686883400000397
+    "processing_seconds": 0.44437262499999974
   },
   {
     "image": "images/test/RHofGhOaN3CjdQtVwg-95g.jpg",
@@ -93752,9 +93752,9 @@
       2
     ],
     "crop_scores": [
-      0.9999994039535522
+      0.9998786449432373
     ],
-    "processing_seconds": 0.4267405840000009
+    "processing_seconds": 0.43764924999999266
   },
   {
     "image": "images/test/RKS5rIpBCL-sYOvhWSM29A.jpg",
@@ -94436,14 +94436,14 @@
       0.0010278935078531504
     ],
     "accepted_refined_classes": [
-      0,
-      0
+      1,
+      1
     ],
     "crop_scores": [
-      0.765616774559021,
-      0.765616774559021
+      0.9867264032363892,
+      0.9867264032363892
     ],
-    "processing_seconds": 0.4293279580000018
+    "processing_seconds": 0.4435718750000035
   },
   {
     "image": "images/test/RLlBshtbsGz1Eue-ftN9Cw.jpg",
@@ -94921,10 +94921,10 @@
       1
     ],
     "crop_scores": [
-      0.9996065497398376,
-      0.9920193552970886
+      0.999864935874939,
+      0.9997252821922302
     ],
-    "processing_seconds": 0.41980579199999113
+    "processing_seconds": 0.4339163750000097
   },
   {
     "image": "images/test/RRpQghoU2rfPMAAW7boiow.jpg",
@@ -95751,7 +95751,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4191690839999893
+    "processing_seconds": 0.43189349999998683
   },
   {
     "image": "images/test/RfhBihYJxCnMnnmy-GXt4g.jpg",
@@ -96508,9 +96508,9 @@
       0
     ],
     "crop_scores": [
-      0.9999439716339111
+      0.9999891519546509
     ],
-    "processing_seconds": 0.42078395800000123
+    "processing_seconds": 0.4306532080000096
   },
   {
     "image": "images/test/RfntSwpF9ibi9ujtrEYy0A.jpg",
@@ -96756,10 +96756,10 @@
       3
     ],
     "crop_scores": [
-      0.9999802112579346,
-      0.9999905824661255
+      0.9991967082023621,
+      0.9994087219238281
     ],
-    "processing_seconds": 0.42476129100001003
+    "processing_seconds": 0.423573250000004
   },
   {
     "image": "images/test/S10q_64hEMEVInXLfpB2YA.jpg",
@@ -97587,14 +97587,14 @@
     "accepted_refined_classes": [
       4,
       4,
-      2
+      1
     ],
     "crop_scores": [
-      0.9998194575309753,
-      0.9998186230659485,
-      0.9536502361297607
+      0.9999896287918091,
+      0.9999899864196777,
+      0.8629431128501892
     ],
-    "processing_seconds": 0.44343766699999776
+    "processing_seconds": 0.45186087499999417
   },
   {
     "image": "images/test/SGK3P_KHtCsuypyfEfU6yg.jpg",
@@ -98333,13 +98333,13 @@
     ],
     "accepted_refined_classes": [
       4,
-      2
+      1
     ],
     "crop_scores": [
-      0.9995548129081726,
-      0.7328267097473145
+      0.9999898672103882,
+      0.8899137377738953
     ],
-    "processing_seconds": 0.43493870900000786
+    "processing_seconds": 0.44342075000000136
   },
   {
     "image": "images/test/SGdCuPHhop9RD6brqB7dZA.jpg",
@@ -99168,9 +99168,9 @@
       3
     ],
     "crop_scores": [
-      0.9854636788368225
+      0.9985628724098206
     ],
-    "processing_seconds": 0.42851841699999227
+    "processing_seconds": 0.43873070799999425
   },
   {
     "image": "images/test/SNG3vQbLCyrG1XTGhcPF2Q.jpg",
@@ -99737,9 +99737,9 @@
       2
     ],
     "crop_scores": [
-      0.9994072914123535
+      0.9999916553497314
     ],
-    "processing_seconds": 0.42193216700000846
+    "processing_seconds": 0.4407126250000033
   },
   {
     "image": "images/test/ST9wswB9qLDtuHm_wLUUXQ.jpg",
@@ -99936,9 +99936,9 @@
       3
     ],
     "crop_scores": [
-      0.9999898672103882
+      0.9986886382102966
     ],
-    "processing_seconds": 0.41465141700000174
+    "processing_seconds": 0.42629908399999294
   },
   {
     "image": "images/test/SVU4_lq3_4zuYulPcMs_ZA.jpg",
@@ -100781,10 +100781,10 @@
       3
     ],
     "crop_scores": [
-      0.9999954700469971,
-      0.9998047947883606
+      0.9990007281303406,
+      0.9963018894195557
     ],
-    "processing_seconds": 0.4386455000000069
+    "processing_seconds": 0.4463672079999981
   },
   {
     "image": "images/test/SXlHalkfvQGMg8tDi96LqA.jpg",
@@ -101481,14 +101481,14 @@
     "accepted_refined_classes": [
       2,
       0,
-      1
+      0
     ],
     "crop_scores": [
-      0.99997878074646,
-      0.99996018409729,
-      0.6660532355308533
+      0.9999700784683228,
+      0.9999743700027466,
+      0.43618133664131165
     ],
-    "processing_seconds": 0.44709600000000194
+    "processing_seconds": 0.4500103339999981
   },
   {
     "image": "images/test/SvMOGtN6vRDf2MmyTej6eA.jpg",
@@ -101957,9 +101957,9 @@
       0
     ],
     "crop_scores": [
-      0.9876513481140137
+      0.999985933303833
     ],
-    "processing_seconds": 0.42279700000000275
+    "processing_seconds": 0.4262668340000033
   },
   {
     "image": "images/test/Szs2YSN5L_V374rn-2K4JA.jpg",
@@ -102789,10 +102789,10 @@
       4
     ],
     "crop_scores": [
-      0.9999613761901855,
-      0.9999711513519287
+      0.9999830722808838,
+      0.9999821186065674
     ],
-    "processing_seconds": 0.43776458399999285
+    "processing_seconds": 0.4553135829999917
   },
   {
     "image": "images/test/T3I16b93SdBcdQduNnrH3g.jpg",
@@ -103315,7 +103315,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4123704169999911
+    "processing_seconds": 0.4296323750000113
   },
   {
     "image": "images/test/TUKoOMCyB9fs2L_HjeQcaA.jpg",
@@ -103976,9 +103976,9 @@
       3
     ],
     "crop_scores": [
-      0.999866247177124
+      0.9985325336456299
     ],
-    "processing_seconds": 0.4237012079999971
+    "processing_seconds": 0.4402929169999936
   },
   {
     "image": "images/test/TYUDniJ-EnxUH1doYUhNHA.jpg",
@@ -104557,7 +104557,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4104418750000036
+    "processing_seconds": 0.43112075000000516
   },
   {
     "image": "images/test/Tg7j9MBXX94TjunlHTY2ug.jpg",
@@ -105386,9 +105386,9 @@
       2
     ],
     "crop_scores": [
-      0.9999752044677734
+      0.9999774694442749
     ],
-    "processing_seconds": 0.43101337499999204
+    "processing_seconds": 0.44738887500000146
   },
   {
     "image": "images/test/To_rrtyTSj5GqPyzp8Uw6A.jpg",
@@ -106215,7 +106215,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.42248891600000604
+    "processing_seconds": 0.43601124999999286
   },
   {
     "image": "images/test/Tuw270IRpx5XK8-DJFx7qw.jpg",
@@ -106668,9 +106668,9 @@
       1
     ],
     "crop_scores": [
-      0.47903263568878174
+      0.9996039271354675
     ],
-    "processing_seconds": 0.42052224999999055
+    "processing_seconds": 0.43022891600000435
   },
   {
     "image": "images/test/TxJcn7T6g3dfWJwJg7qkug.jpg",
@@ -107331,9 +107331,9 @@
       2
     ],
     "crop_scores": [
-      0.9999994039535522
+      0.9999405145645142
     ],
-    "processing_seconds": 0.41866654100000744
+    "processing_seconds": 0.43348066699999777
   },
   {
     "image": "images/test/U--o6CcrYOjUUJHMK0eGRg.jpg",
@@ -108162,9 +108162,9 @@
       3
     ],
     "crop_scores": [
-      0.9999903440475464
+      0.9996334314346313
     ],
-    "processing_seconds": 0.43234787500000493
+    "processing_seconds": 0.4482939579999936
   },
   {
     "image": "images/test/UMMy7jaoB6NMvEiDeRMYvQ.jpg",
@@ -108721,9 +108721,9 @@
       2
     ],
     "crop_scores": [
-      0.9999992847442627
+      0.9999581575393677
     ],
-    "processing_seconds": 0.42450241699999935
+    "processing_seconds": 0.4386591250000009
   },
   {
     "image": "images/test/UYAe7A6VfvH-BPr2gxs5iw.jpg",
@@ -109157,9 +109157,9 @@
       0
     ],
     "crop_scores": [
-      0.9999978542327881
+      0.9999963045120239
     ],
-    "processing_seconds": 0.4200955410000091
+    "processing_seconds": 0.43228533299999583
   },
   {
     "image": "images/test/UYogr6-Hgn8MeOq6VoFM7g.jpg",
@@ -109988,9 +109988,9 @@
       4
     ],
     "crop_scores": [
-      0.9991100430488586
+      0.9999262094497681
     ],
-    "processing_seconds": 0.42907799999998986
+    "processing_seconds": 0.4484977910000083
   },
   {
     "image": "images/test/UmaLevl-AubTs0cRPDC2UA.jpg",
@@ -110430,13 +110430,13 @@
     ],
     "accepted_refined_classes": [
       0,
-      4
+      3
     ],
     "crop_scores": [
-      0.9999996423721313,
-      0.8827818632125854
+      0.9999998807907104,
+      0.820823609828949
     ],
-    "processing_seconds": 0.42866929200000925
+    "processing_seconds": 0.44827616700000306
   },
   {
     "image": "images/test/UvcNMQnXNLimAQZYUr9JQg.jpg",
@@ -110754,10 +110754,10 @@
       4
     ],
     "crop_scores": [
-      0.9999994039535522,
-      0.7738760113716125
+      0.999968409538269,
+      0.5398645997047424
     ],
-    "processing_seconds": 0.42649683300000163
+    "processing_seconds": 0.4406006659999946
   },
   {
     "image": "images/test/VSKqzSGIAMNeOHDTpnkPPg.jpg",
@@ -111584,7 +111584,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41160433299999966
+    "processing_seconds": 0.42405195899999626
   },
   {
     "image": "images/test/VajYEDXdtLcyiRKf4_onmQ.jpg",
@@ -111965,9 +111965,9 @@
       4
     ],
     "crop_scores": [
-      0.9998852014541626
+      0.999954104423523
     ],
-    "processing_seconds": 0.41439020800000037
+    "processing_seconds": 0.427242416999988
   },
   {
     "image": "images/test/VlvXKEMbBfOhH0W_h7rgJw.jpg",
@@ -112811,11 +112811,11 @@
       3
     ],
     "crop_scores": [
-      0.9989112615585327,
-      0.9995749592781067,
-      0.8488234281539917
+      0.9996084570884705,
+      0.9999734163284302,
+      0.8778257369995117
     ],
-    "processing_seconds": 0.44417833299999643
+    "processing_seconds": 0.4595137499999993
   },
   {
     "image": "images/test/Vn5TBKcd57uUfKxv_YnP-A.jpg",
@@ -113132,9 +113132,9 @@
       3
     ],
     "crop_scores": [
-      0.9998595714569092
+      0.9982926249504089
     ],
-    "processing_seconds": 0.4183725000000038
+    "processing_seconds": 0.4320467499999978
   },
   {
     "image": "images/test/VwdniiA4sotcKRYbiGQymQ.jpg",
@@ -113465,7 +113465,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.40541695800000355
+    "processing_seconds": 0.4219268749999969
   },
   {
     "image": "images/test/VxjcLWa10BCIgOQtjvKqLg.jpg",
@@ -114100,10 +114100,10 @@
       0
     ],
     "crop_scores": [
-      0.9999997615814209,
-      0.9834308624267578
+      0.9999505281448364,
+      0.6071757674217224
     ],
-    "processing_seconds": 0.538746125000003
+    "processing_seconds": 0.4989488749999964
   },
   {
     "image": "images/test/Vz4DeCpzjua-vRWthPmZNw.jpg",
@@ -114844,7 +114844,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4092335839999919
+    "processing_seconds": 0.42758737500000166
   },
   {
     "image": "images/test/WDC6JFz9m7ZOEVfS2ovIWw.jpg",
@@ -115671,7 +115671,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4183728330000065
+    "processing_seconds": 0.4356408329999937
   },
   {
     "image": "images/test/Wnv9ubrLHNmtLtyOx_Swdg.jpg",
@@ -116196,9 +116196,9 @@
       0
     ],
     "crop_scores": [
-      0.9999932050704956
+      0.9985054731369019
     ],
-    "processing_seconds": 0.6023957080000031
+    "processing_seconds": 0.6242856249999988
   },
   {
     "image": "images/test/XEEFSzZDsN2WsQxbEYsOpg.jpg",
@@ -116707,10 +116707,10 @@
       0
     ],
     "crop_scores": [
-      0.6332560777664185,
-      0.9999992847442627
+      0.7125112414360046,
+      0.9999686479568481
     ],
-    "processing_seconds": 0.4251742910000047
+    "processing_seconds": 0.436747957999998
   },
   {
     "image": "images/test/XQsGX1fHPA5EUamA3f9aOA.jpg",
@@ -117537,7 +117537,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4208362499999936
+    "processing_seconds": 0.43190812499999254
   },
   {
     "image": "images/test/Xas1JCEplmGic0ssVtzuyA.jpg",
@@ -118207,10 +118207,10 @@
       2
     ],
     "crop_scores": [
-      0.9999737739562988,
-      0.9998551607131958
+      0.9986661672592163,
+      0.9973706007003784
     ],
-    "processing_seconds": 0.42916058299999804
+    "processing_seconds": 0.4426913329999991
   },
   {
     "image": "images/test/Xg7zKi2V4VGUAylIWz14iQ.jpg",
@@ -118557,7 +118557,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41052083300000675
+    "processing_seconds": 0.42173733300001004
   },
   {
     "image": "images/test/XvAfy8lqjkXcq8EU-a2XlA.jpg",
@@ -119386,9 +119386,9 @@
       1
     ],
     "crop_scores": [
-      0.9896382093429565
+      0.9993522763252258
     ],
-    "processing_seconds": 0.4266829169999937
+    "processing_seconds": 0.4355586669999951
   },
   {
     "image": "images/test/Y4Q9qndv3bSdZ8Oxc6ViQA.jpg",
@@ -119761,9 +119761,9 @@
       3
     ],
     "crop_scores": [
-      0.9999992847442627
+      0.9996107220649719
     ],
-    "processing_seconds": 0.4207117499999953
+    "processing_seconds": 0.4383744170000057
   },
   {
     "image": "images/test/Yb0lXtrKiwBEQvHQeYyUZQ.jpg",
@@ -120259,13 +120259,13 @@
     ],
     "accepted_refined_classes": [
       1,
-      2
+      1
     ],
     "crop_scores": [
-      0.9941294193267822,
-      0.9444482326507568
+      0.9999480247497559,
+      0.9985199570655823
     ],
-    "processing_seconds": 0.6085347080000076
+    "processing_seconds": 0.633121083000006
   },
   {
     "image": "images/test/YdE9FboKNA5qHszscNXWqg.jpg",
@@ -120708,10 +120708,10 @@
       4
     ],
     "crop_scores": [
-      0.9997090697288513,
-      0.9998263716697693
+      0.9999721050262451,
+      0.9999735355377197
     ],
-    "processing_seconds": 0.4288210419999956
+    "processing_seconds": 0.4385429170000066
   },
   {
     "image": "images/test/Yond-HmJzOPd2NPH0YMXRA.jpg",
@@ -121441,9 +121441,9 @@
       1
     ],
     "crop_scores": [
-      0.9980858564376831
+      0.9999295473098755
     ],
-    "processing_seconds": 0.42428741700000216
+    "processing_seconds": 0.43928024999999593
   },
   {
     "image": "images/test/YvCWSXHmmDC2rIa4ax7ANA.jpg",
@@ -121582,10 +121582,10 @@
       0
     ],
     "crop_scores": [
-      0.9999997615814209,
-      0.9999997615814209
+      0.9999986886978149,
+      0.9999971389770508
     ],
-    "processing_seconds": 0.419779915999996
+    "processing_seconds": 0.4369540830000034
   },
   {
     "image": "images/test/ZGRN3KRL6iUgACtkykfWrA.jpg",
@@ -122108,7 +122108,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41531100000000265
+    "processing_seconds": 0.4283791250000064
   },
   {
     "image": "images/test/ZP0c0QfrrPuhk5qrEeM7Zg.jpg",
@@ -122610,10 +122610,10 @@
       0
     ],
     "crop_scores": [
-      0.999998927116394,
-      0.9999992847442627
+      0.9999290704727173,
+      0.9999899864196777
     ],
-    "processing_seconds": 0.429973167
+    "processing_seconds": 0.4450431250000122
   },
   {
     "image": "images/test/ZQ83G1giCbn5y_KjenVRrw.jpg",
@@ -123410,9 +123410,9 @@
       0
     ],
     "crop_scores": [
-      0.9999641180038452
+      0.999544084072113
     ],
-    "processing_seconds": 0.42788545800000577
+    "processing_seconds": 0.44081354100001136
   },
   {
     "image": "images/test/_0JlZhb1y76fBKR2UC2tEw.jpg",
@@ -123876,7 +123876,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.40976424999999495
+    "processing_seconds": 0.423160375000009
   },
   {
     "image": "images/test/_DlwPa2m8WcpEvVW7U416g.jpg",
@@ -124729,7 +124729,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.42768145899999865
+    "processing_seconds": 0.4400992910000099
   },
   {
     "image": "images/test/_HTJ4JUpaOI2OcB6uAIr3g.jpg",
@@ -125312,11 +125312,11 @@
       4
     ],
     "crop_scores": [
-      0.999760091304779,
-      0.9765093922615051,
-      0.9997424483299255
+      0.9999910593032837,
+      0.999934196472168,
+      0.9999878406524658
     ],
-    "processing_seconds": 0.438384874999997
+    "processing_seconds": 0.4345787919999964
   },
   {
     "image": "images/test/_V4u65oP2XVAZbkPOt4Elg.jpg",
@@ -126156,7 +126156,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4113591670000005
+    "processing_seconds": 0.4319802499999952
   },
   {
     "image": "images/test/_q3dlhQBWNFGMgKSbcw9TA.jpg",
@@ -126772,7 +126772,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4148077919999906
+    "processing_seconds": 0.4303097079999958
   },
   {
     "image": "images/test/a5eGlwaATFtSuOj5VZMBEg.jpg",
@@ -127140,13 +127140,13 @@
     ],
     "accepted_refined_classes": [
       0,
-      4
+      3
     ],
     "crop_scores": [
-      0.9999767541885376,
-      0.9109609127044678
+      0.999705970287323,
+      0.616942822933197
     ],
-    "processing_seconds": 0.42094770900000356
+    "processing_seconds": 0.5753444580000036
   },
   {
     "image": "images/test/aD62hg7mYJXHqTZG79fTog.jpg",
@@ -127791,9 +127791,9 @@
       2
     ],
     "crop_scores": [
-      0.999958872795105
+      0.9999525547027588
     ],
-    "processing_seconds": 0.413210792000001
+    "processing_seconds": 0.43069233399999973
   },
   {
     "image": "images/test/ag6JbV8ji4ri1ZBQEsiEDQ.jpg",
@@ -128340,7 +128340,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41112062499999524
+    "processing_seconds": 0.42850358299999414
   },
   {
     "image": "images/test/ajS5C0Lz7wYEG1kf9XFSZA.jpg",
@@ -129170,10 +129170,10 @@
       4
     ],
     "crop_scores": [
-      0.9998620748519897,
-      0.99996018409729
+      0.9999909400939941,
+      0.9999927282333374
     ],
-    "processing_seconds": 0.43590608400000974
+    "processing_seconds": 0.4514096249999966
   },
   {
     "image": "images/test/at23r_l9g4kCXUJKB5hvzg.jpg",
@@ -129458,9 +129458,9 @@
       4
     ],
     "crop_scores": [
-      0.9988682270050049
+      0.9999312162399292
     ],
-    "processing_seconds": 0.3984949590000042
+    "processing_seconds": 0.4207920420000022
   },
   {
     "image": "images/test/b4Z2F4uVbOWYiiinKRGgcQ.jpg",
@@ -130193,9 +130193,9 @@
       3
     ],
     "crop_scores": [
-      0.9999785423278809
+      0.9971578121185303
     ],
-    "processing_seconds": 0.40786649999999725
+    "processing_seconds": 0.43745020800000134
   },
   {
     "image": "images/test/bKFU2Ijjj4o8wY9H6vXMEg.jpg",
@@ -130677,14 +130677,14 @@
       0.0010201494442299008
     ],
     "accepted_refined_classes": [
-      4,
+      0,
       1
     ],
     "crop_scores": [
-      0.3633629381656647,
-      0.48205870389938354
+      0.8274184465408325,
+      0.47163352370262146
     ],
-    "processing_seconds": 0.4929211249999952
+    "processing_seconds": 0.4460580840000006
   },
   {
     "image": "images/test/bQXuF-r7MWbqjNelqu2VpQ.jpg",
@@ -131201,9 +131201,9 @@
       0
     ],
     "crop_scores": [
-      0.9999681711196899
+      0.9999876022338867
     ],
-    "processing_seconds": 0.43015045799999996
+    "processing_seconds": 0.43793025000000796
   },
   {
     "image": "images/test/brqxkp_0FVGR9qusVtIC8g.jpg",
@@ -131592,9 +131592,9 @@
       0
     ],
     "crop_scores": [
-      0.99946528673172
+      0.9993165731430054
     ],
-    "processing_seconds": 0.4192540419999915
+    "processing_seconds": 0.4300320830000004
   },
   {
     "image": "images/test/c2ukE17w1Ym-7PEoJWyabQ.jpg",
@@ -132303,9 +132303,9 @@
       4
     ],
     "crop_scores": [
-      0.9976636171340942
+      0.9993364214897156
     ],
-    "processing_seconds": 0.42244883399999367
+    "processing_seconds": 0.43722220800000855
   },
   {
     "image": "images/test/cIQsM6CEEQr-j7eZ3llnxA.jpg",
@@ -132780,7 +132780,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.412018584000009
+    "processing_seconds": 0.4281033329999957
   },
   {
     "image": "images/test/cZlLWL4gCepgxHaPhD0feg.jpg",
@@ -133585,9 +133585,9 @@
       2
     ],
     "crop_scores": [
-      0.9999960660934448
+      0.9999954700469971
     ],
-    "processing_seconds": 0.4257830410000025
+    "processing_seconds": 0.44238266699998974
   },
   {
     "image": "images/test/c_yewlnlCIupNvh-BfZAoA.jpg",
@@ -134224,13 +134224,13 @@
     ],
     "accepted_refined_classes": [
       3,
-      2
+      1
     ],
     "crop_scores": [
-      0.9438193440437317,
-      0.42572906613349915
+      0.9981822967529297,
+      0.7138022184371948
     ],
-    "processing_seconds": 0.4318316659999937
+    "processing_seconds": 0.4463424579999895
   },
   {
     "image": "images/test/cypnCh8Lm2pMQo4mXd0HLA.jpg",
@@ -134939,9 +134939,9 @@
       1
     ],
     "crop_scores": [
-      0.9994799494743347
+      0.9997922778129578
     ],
-    "processing_seconds": 0.4216086250000046
+    "processing_seconds": 0.4305142089999947
   },
   {
     "image": "images/test/dCzn07bli-d3yffozLkeZA.jpg",
@@ -135018,9 +135018,9 @@
       4
     ],
     "crop_scores": [
-      0.9935621023178101
+      0.9999829530715942
     ],
-    "processing_seconds": 0.4118455830000016
+    "processing_seconds": 0.42154825000000073
   },
   {
     "image": "images/test/dOxbWM2jS5hBARUGII5lIw.jpg",
@@ -135847,7 +135847,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41765900000000045
+    "processing_seconds": 0.42977445800001135
   },
   {
     "image": "images/test/dRzT9p9xQaV3CslixKxbLQ.jpg",
@@ -136687,7 +136687,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41612266700001044
+    "processing_seconds": 0.43014091599999915
   },
   {
     "image": "images/test/dboswYsKRFsT4iy-5RKn-g.jpg",
@@ -137516,9 +137516,9 @@
       1
     ],
     "crop_scores": [
-      0.8858543038368225
+      0.9957776069641113
     ],
-    "processing_seconds": 0.429640292000002
+    "processing_seconds": 0.4421291670000045
   },
   {
     "image": "images/test/dyZrYL0aJUWsS489PJ0xFw.jpg",
@@ -138208,9 +138208,9 @@
       1
     ],
     "crop_scores": [
-      0.42500150203704834
+      0.9995699524879456
     ],
-    "processing_seconds": 0.41883966599999667
+    "processing_seconds": 0.4321324580000123
   },
   {
     "image": "images/test/e6FvYRNtD3RZcvPPIKmb2A.jpg",
@@ -138797,7 +138797,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4117649169999993
+    "processing_seconds": 0.4256878329999978
   },
   {
     "image": "images/test/eC2_Q3Gl5tsufkjs0HTHQg.jpg",
@@ -139040,7 +139040,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.40523579199999915
+    "processing_seconds": 0.4179711250000082
   },
   {
     "image": "images/test/eLB2WQGn9S2ATswP2BMArQ.jpg",
@@ -139867,7 +139867,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41977595800000245
+    "processing_seconds": 0.4284770000000009
   },
   {
     "image": "images/test/emEvzXKmsu8YNDnFItbX5Q.jpg",
@@ -140697,10 +140697,10 @@
       4
     ],
     "crop_scores": [
-      0.9999186992645264,
-      0.9999229907989502
+      0.9999946355819702,
+      0.9999920129776001
     ],
-    "processing_seconds": 0.4368648749999977
+    "processing_seconds": 0.4515953749999966
   },
   {
     "image": "images/test/erpKjk82Dij6k8NxrEUAkw.jpg",
@@ -141169,9 +141169,9 @@
       0
     ],
     "crop_scores": [
-      0.9960888624191284
+      0.9980762004852295
     ],
-    "processing_seconds": 0.41536095800000794
+    "processing_seconds": 0.4328211670000002
   },
   {
     "image": "images/test/exvgDAmlYjt5nuGyB7RrKw.jpg",
@@ -142039,9 +142039,9 @@
       0
     ],
     "crop_scores": [
-      0.9999935626983643
+      0.9998095631599426
     ],
-    "processing_seconds": 0.43982270899999776
+    "processing_seconds": 0.4572235409999905
   },
   {
     "image": "images/test/f-AT1U_JrSFdv5GppB_cXw.jpg",
@@ -142897,10 +142897,10 @@
       3
     ],
     "crop_scores": [
-      0.9997249245643616,
-      0.9999850988388062
+      0.9978565573692322,
+      0.9996521472930908
     ],
-    "processing_seconds": 0.4361397079999989
+    "processing_seconds": 0.45140804199999707
   },
   {
     "image": "images/test/f0LCtnr45KAsA72rvpYQJg.jpg",
@@ -143593,9 +143593,9 @@
       2
     ],
     "crop_scores": [
-      0.9999957084655762
+      0.9994348883628845
     ],
-    "processing_seconds": 0.4217079999999953
+    "processing_seconds": 0.43679937500000676
   },
   {
     "image": "images/test/fNl0Ipbdjp4DLOU5F5UfPg.jpg",
@@ -144171,15 +144171,15 @@
     ],
     "accepted_refined_classes": [
       3,
-      0,
+      1,
       4
     ],
     "crop_scores": [
-      0.9762903451919556,
-      0.9922372698783875,
-      0.9999054670333862
+      0.9880757331848145,
+      0.3984107971191406,
+      0.9999690055847168
     ],
-    "processing_seconds": 0.4348035419999974
+    "processing_seconds": 0.4488531249999994
   },
   {
     "image": "images/test/fT9nL1We4E1ctBBunyzVHQ.jpg",
@@ -144814,7 +144814,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4144852499999985
+    "processing_seconds": 0.4263231660000031
   },
   {
     "image": "images/test/fZyFflH72wPI6r7NKU-NiA.jpg",
@@ -145267,9 +145267,9 @@
       1
     ],
     "crop_scores": [
-      0.9476039409637451
+      0.9994025230407715
     ],
-    "processing_seconds": 0.416931708000007
+    "processing_seconds": 0.43056679100000395
   },
   {
     "image": "images/test/ffKvCDEMQw6cksikXtLJFQ.jpg",
@@ -145450,9 +145450,9 @@
       4
     ],
     "crop_scores": [
-      0.9999874830245972
+      0.9999697208404541
     ],
-    "processing_seconds": 0.4127097909999975
+    "processing_seconds": 0.4234940420000015
   },
   {
     "image": "images/test/g7OYV7BA5p_PgOXU-kFjEg.jpg",
@@ -145993,9 +145993,9 @@
       3
     ],
     "crop_scores": [
-      0.9999904632568359
+      0.9956127405166626
     ],
-    "processing_seconds": 0.4194416659999973
+    "processing_seconds": 0.433204958999994
   },
   {
     "image": "images/test/gEuTjb0q8gsf3o8HJt2URw.jpg",
@@ -146526,7 +146526,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4109340830000008
+    "processing_seconds": 0.42908470800000487
   },
   {
     "image": "images/test/gWwXTPA27DAsD4oWYfyX_w.jpg",
@@ -147353,7 +147353,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.42136166699999933
+    "processing_seconds": 0.43831904099999974
   },
   {
     "image": "images/test/gr7awyd2xP636SdU-9i1zw.jpg",
@@ -147620,7 +147620,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41002929199999016
+    "processing_seconds": 0.42378212500000245
   },
   {
     "image": "images/test/hLCUXh7slk1rHhYydf_icA.jpg",
@@ -147953,9 +147953,9 @@
       3
     ],
     "crop_scores": [
-      0.9999823570251465
+      0.9988334774971008
     ],
-    "processing_seconds": 0.41843141699999364
+    "processing_seconds": 0.43431870799999217
   },
   {
     "image": "images/test/hpA90nYW-UgczrZTcenzGA.jpg",
@@ -148774,7 +148774,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4202602090000056
+    "processing_seconds": 0.433594625000012
   },
   {
     "image": "images/test/hsJSEYdydVvI02zgswrXAw.jpg",
@@ -149616,9 +149616,9 @@
       2
     ],
     "crop_scores": [
-      0.9999949932098389
+      0.999942421913147
     ],
-    "processing_seconds": 0.42593645800000957
+    "processing_seconds": 0.4330694169999987
   },
   {
     "image": "images/test/hyPvBiFkXCYAwGiH9TFNXg.jpg",
@@ -150437,7 +150437,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.42253000000000895
+    "processing_seconds": 0.4352743329999953
   },
   {
     "image": "images/test/iATe9fsaA21n7SM00aY8UQ.jpg",
@@ -151235,10 +151235,10 @@
       3
     ],
     "crop_scores": [
-      0.9271162152290344,
-      0.8295153379440308
+      0.641334056854248,
+      0.8596305847167969
     ],
-    "processing_seconds": 0.43210295900000517
+    "processing_seconds": 0.44294779199999823
   },
   {
     "image": "images/test/iLOS0WHVumwxaXBODCvHog.jpg",
@@ -152067,9 +152067,9 @@
       3
     ],
     "crop_scores": [
-      0.9857165813446045
+      0.9989081621170044
     ],
-    "processing_seconds": 0.42763304200001073
+    "processing_seconds": 0.4423129169999953
   },
   {
     "image": "images/test/iUMDiKA5UVKi1qdG8cup6g.jpg",
@@ -152715,10 +152715,10 @@
       3
     ],
     "crop_scores": [
-      0.989081859588623,
-      0.9985839128494263
+      0.9996554851531982,
+      0.9848256707191467
     ],
-    "processing_seconds": 0.4499939580000074
+    "processing_seconds": 0.44652233399999375
   },
   {
     "image": "images/test/iass8-CPlVjgd4Ee1Fok0Q.jpg",
@@ -153025,7 +153025,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4031801660000127
+    "processing_seconds": 0.4279596669999961
   },
   {
     "image": "images/test/iefJryQRV_PLJe-fOZD6JQ.jpg",
@@ -153668,7 +153668,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.3968987499999912
+    "processing_seconds": 0.4340618749999976
   },
   {
     "image": "images/test/ii-67S89yyhknA7od8KWPQ.jpg",
@@ -154023,7 +154023,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4077339170000016
+    "processing_seconds": 0.4244935830000003
   },
   {
     "image": "images/test/juzmVcpoSdNRiZCgIHDX1g.jpg",
@@ -154274,7 +154274,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41870099999999866
+    "processing_seconds": 0.42461262499999464
   },
   {
     "image": "images/test/k1T2OrEya0SH_8C_xUUfSg.jpg",
@@ -155045,7 +155045,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4074500830000005
+    "processing_seconds": 0.428779832999993
   },
   {
     "image": "images/test/k261siNfc2L1NjswH_dlug.jpg",
@@ -155876,11 +155876,11 @@
       4
     ],
     "crop_scores": [
-      0.9999192953109741,
-      0.9702724814414978,
-      0.4919155240058899
+      0.9999916553497314,
+      0.9585204720497131,
+      0.7342912554740906
     ],
-    "processing_seconds": 0.45441954099999293
+    "processing_seconds": 0.47551958400001126
   },
   {
     "image": "images/test/k7RF_ao3TxtknEpkvCrXJA.jpg",
@@ -156722,9 +156722,9 @@
       0
     ],
     "crop_scores": [
-      0.9999995231628418
+      0.9999915361404419
     ],
-    "processing_seconds": 0.4192595419999918
+    "processing_seconds": 0.44174058299999786
   },
   {
     "image": "images/test/kBVg8XIdz505xShZNrTJWw.jpg",
@@ -157191,7 +157191,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.3962240000000037
+    "processing_seconds": 0.4232640000000032
   },
   {
     "image": "images/test/kDVzOV0h7z9XEE-QUA8uPA.jpg",
@@ -157788,9 +157788,9 @@
       3
     ],
     "crop_scores": [
-      0.9997310042381287
+      0.9948797225952148
     ],
-    "processing_seconds": 0.4121458750000073
+    "processing_seconds": 0.4376005419999984
   },
   {
     "image": "images/test/kMIbfMl4JBaSEqexWprZPw.jpg",
@@ -158617,13 +158617,13 @@
     ],
     "accepted_refined_classes": [
       1,
-      3
+      1
     ],
     "crop_scores": [
-      0.9996140599250793,
-      0.9021206498146057
+      0.9989323019981384,
+      0.6636457443237305
     ],
-    "processing_seconds": 0.44335933399999305
+    "processing_seconds": 0.4734487909999956
   },
   {
     "image": "images/test/kw-OsHhyd1pkCLLhhDp3qA.jpg",
@@ -159452,9 +159452,9 @@
       4
     ],
     "crop_scores": [
-      0.9999198913574219
+      0.9999587535858154
     ],
-    "processing_seconds": 0.417231459000007
+    "processing_seconds": 0.44412341700000013
   },
   {
     "image": "images/test/l0bAdfGW4ieNWLxo0crl4A.jpg",
@@ -159947,9 +159947,9 @@
       4
     ],
     "crop_scores": [
-      0.9993853569030762
+      0.9999804496765137
     ],
-    "processing_seconds": 0.41838741700000526
+    "processing_seconds": 0.43688854100000185
   },
   {
     "image": "images/test/l3PrFNAOAHsc5KZhwlGz8A.jpg",
@@ -160608,7 +160608,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4020046659999963
+    "processing_seconds": 0.4260346249999998
   },
   {
     "image": "images/test/lL-0TsvX8QFzvpP2zEuJWQ.jpg",
@@ -161461,7 +161461,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.40740008299999886
+    "processing_seconds": 0.4267700420000011
   },
   {
     "image": "images/test/la9OBzU8U02mctmba-Rh7w.jpg",
@@ -162112,7 +162112,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4046441670000007
+    "processing_seconds": 0.42618583300000523
   },
   {
     "image": "images/test/leNAvCo2W8P6GPhxKvIMYw.jpg",
@@ -162941,9 +162941,9 @@
       3
     ],
     "crop_scores": [
-      0.999942421913147
+      0.9983358979225159
     ],
-    "processing_seconds": 0.4110134169999924
+    "processing_seconds": 0.42905274999999676
   },
   {
     "image": "images/test/m0MrEbsywtATzVMA0ljrgg.jpg",
@@ -163530,7 +163530,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.402626166999994
+    "processing_seconds": 0.42252999999999474
   },
   {
     "image": "images/test/m86rN7z1GBh2mJGdRKqClA.jpg",
@@ -164181,7 +164181,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4093777500000044
+    "processing_seconds": 0.42422479199998975
   },
   {
     "image": "images/test/mUCL_VkdWNl8rk9br30Blw.jpg",
@@ -164759,12 +164759,12 @@
       0.0010036539752036333
     ],
     "accepted_refined_classes": [
-      0
+      1
     ],
     "crop_scores": [
-      0.9872584939002991
+      0.9962419271469116
     ],
-    "processing_seconds": 0.41948012499999265
+    "processing_seconds": 0.43453687499999205
   },
   {
     "image": "images/test/mgzFIQYJYrFi6vYkmO2YDg.jpg",
@@ -165311,7 +165311,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.40311925000000315
+    "processing_seconds": 0.42138333399999794
   },
   {
     "image": "images/test/myKQWPfbVGqCHw_-fyS4DQ.jpg",
@@ -166052,9 +166052,9 @@
       0
     ],
     "crop_scores": [
-      0.9999970197677612
+      1.0
     ],
-    "processing_seconds": 0.4065024169999987
+    "processing_seconds": 0.43149633299999834
   },
   {
     "image": "images/test/nBFch6AlQhEtFqNdTeVekg.jpg",
@@ -166836,10 +166836,10 @@
       1
     ],
     "crop_scores": [
-      0.9999402761459351,
-      0.5565723180770874
+      0.9999998807907104,
+      0.7396730184555054
     ],
-    "processing_seconds": 0.4299457080000053
+    "processing_seconds": 0.4401207079999949
   },
   {
     "image": "images/test/nD48gzs7GZTcVFI7E4lblg.jpg",
@@ -167178,7 +167178,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.40346979099999203
+    "processing_seconds": 0.41701416700000493
   },
   {
     "image": "images/test/nFx5FHm3XoqgE0sIzQnJIA.jpg",
@@ -167807,9 +167807,9 @@
       2
     ],
     "crop_scores": [
-      0.9986414313316345
+      0.9999551773071289
     ],
-    "processing_seconds": 0.42376391599999863
+    "processing_seconds": 0.43762399999999957
   },
   {
     "image": "images/test/nGdwOrdRiqIdTEqht5UT8A.jpg",
@@ -168649,7 +168649,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4164695839999979
+    "processing_seconds": 0.4308958750000045
   },
   {
     "image": "images/test/nKOsIpMzKBz0l4ThyJIuQw.jpg",
@@ -169504,9 +169504,9 @@
       0
     ],
     "crop_scores": [
-      0.8923919200897217
+      0.9994151592254639
     ],
-    "processing_seconds": 0.4245205419999962
+    "processing_seconds": 0.4415225000000049
   },
   {
     "image": "images/test/nKuLLkKy7GtMPgc0ythEgA.jpg",
@@ -170335,9 +170335,9 @@
       2
     ],
     "crop_scores": [
-      0.9999991655349731
+      0.9999560117721558
     ],
-    "processing_seconds": 0.42503758299999106
+    "processing_seconds": 0.4487522499999983
   },
   {
     "image": "images/test/nZR7456QF95KSM0z2-os6g.jpg",
@@ -170596,7 +170596,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4073762089999917
+    "processing_seconds": 0.4282667500000059
   },
   {
     "image": "images/test/nj8CxbIwckUZsNzAFwa7pg.jpg",
@@ -171439,10 +171439,10 @@
       1
     ],
     "crop_scores": [
-      0.9976192116737366,
-      0.9953578114509583
+      0.9999771118164062,
+      0.9998985528945923
     ],
-    "processing_seconds": 0.43132483400000865
+    "processing_seconds": 0.4519396250000085
   },
   {
     "image": "images/test/no4euEp3s_RAiOQwaY5HVA.jpg",
@@ -172039,9 +172039,9 @@
       1
     ],
     "crop_scores": [
-      0.9995772242546082
+      0.9999148845672607
     ],
-    "processing_seconds": 0.4162055829999929
+    "processing_seconds": 0.4216744590000019
   },
   {
     "image": "images/test/ntElF4c01JyY8AuwswQWUQ.jpg",
@@ -172870,9 +172870,9 @@
       0
     ],
     "crop_scores": [
-      0.9998034834861755
+      0.9999909400939941
     ],
-    "processing_seconds": 0.42051358300000174
+    "processing_seconds": 0.4246007499999962
   },
   {
     "image": "images/test/nyNOPC4xdcupMXxcLPfy7Q.jpg",
@@ -173259,7 +173259,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4077875840000047
+    "processing_seconds": 0.4223142080000031
   },
   {
     "image": "images/test/oNgPXf5j3TTQPk4zm5LM5Q.jpg",
@@ -173848,9 +173848,9 @@
       1
     ],
     "crop_scores": [
-      0.9998956918716431
+      0.9999147653579712
     ],
-    "processing_seconds": 0.4209646670000069
+    "processing_seconds": 0.4367863340000042
   },
   {
     "image": "images/test/oOAfZ9Pj1SJUS6ZV9JkkHA.jpg",
@@ -174692,9 +174692,9 @@
       2
     ],
     "crop_scores": [
-      0.9999994039535522
+      0.9999805688858032
     ],
-    "processing_seconds": 0.4266913749999901
+    "processing_seconds": 0.43653354199997807
   },
   {
     "image": "images/test/oTQTfoeiQgT0vAQgIyAALw.jpg",
@@ -175299,9 +175299,9 @@
       0
     ],
     "crop_scores": [
-      0.9999884366989136
+      0.9999614953994751
     ],
-    "processing_seconds": 0.41555687499999294
+    "processing_seconds": 0.4278780839999854
   },
   {
     "image": "images/test/oYvrfOLxIzsdUJEcK0n3rQ.jpg",
@@ -176079,12 +176079,12 @@
       0.0010649809846654534
     ],
     "accepted_refined_classes": [
-      0
+      3
     ],
     "crop_scores": [
-      0.6994883418083191
+      0.6139696836471558
     ],
-    "processing_seconds": 0.4242292919999926
+    "processing_seconds": 0.44136883399997373
   },
   {
     "image": "images/test/oxbDXQfWApx-uOfv_eOICw.jpg",
@@ -176324,13 +176324,13 @@
     ],
     "accepted_refined_classes": [
       2,
-      2
+      0
     ],
     "crop_scores": [
-      0.9999991655349731,
-      0.41737911105155945
+      0.9989569187164307,
+      0.9971705079078674
     ],
-    "processing_seconds": 0.4264197079999974
+    "processing_seconds": 0.4397976249999829
   },
   {
     "image": "images/test/pWqTwFtmORrN1Zfwk0PP6Q.jpg",
@@ -176961,9 +176961,9 @@
       2
     ],
     "crop_scores": [
-      0.9999943971633911
+      0.9999666213989258
     ],
-    "processing_seconds": 0.41999558300000217
+    "processing_seconds": 0.4392050829999903
   },
   {
     "image": "images/test/plrleTQVXhUfQlQoLzuAiQ.jpg",
@@ -177701,9 +177701,9 @@
       2
     ],
     "crop_scores": [
-      0.9999995231628418
+      0.9999911785125732
     ],
-    "processing_seconds": 0.4214884159999883
+    "processing_seconds": 0.43785800000000563
   },
   {
     "image": "images/test/q45nzUU87VvnqXsxeE0tUg.jpg",
@@ -178530,7 +178530,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4201405410000234
+    "processing_seconds": 0.433539541999977
   },
   {
     "image": "images/test/q6HvBKm-SUaYxKlqZXbFHA.jpg",
@@ -179221,7 +179221,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.412416874999991
+    "processing_seconds": 0.42316183299999466
   },
   {
     "image": "images/test/qDyXgfCNWlsx0pVBSS_P9Q.jpg",
@@ -180051,10 +180051,10 @@
       1
     ],
     "crop_scores": [
-      0.9999997615814209,
-      0.990695595741272
+      0.9999923706054688,
+      0.9840189218521118
     ],
-    "processing_seconds": 0.43339995899998485
+    "processing_seconds": 0.4350077920000217
   },
   {
     "image": "images/test/qVCHkbIsrT1ZRVBuk6kHAw.jpg",
@@ -180588,10 +180588,10 @@
       3
     ],
     "crop_scores": [
-      0.9965282082557678,
-      0.9919015765190125
+      0.9765980243682861,
+      0.8204507827758789
     ],
-    "processing_seconds": 0.433136917000013
+    "processing_seconds": 0.42858566599997516
   },
   {
     "image": "images/test/qkZtOmDVwPrxO1kvfJuVVw.jpg",
@@ -180972,9 +180972,9 @@
       0
     ],
     "crop_scores": [
-      0.9999877214431763
+      0.9999929666519165
     ],
-    "processing_seconds": 0.42602554100000134
+    "processing_seconds": 0.40963195899999505
   },
   {
     "image": "images/test/r6bGJWfuUjhud9HeNdOGeg.jpg",
@@ -181681,7 +181681,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4168981249999888
+    "processing_seconds": 0.40772270800002275
   },
   {
     "image": "images/test/rDUbqp7-at8uNbyEmMJJQg.jpg",
@@ -181900,7 +181900,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.42502612499998804
+    "processing_seconds": 0.39289987499998347
   },
   {
     "image": "images/test/s2pDMrkQNZw9mj-OunllUQ.jpg",
@@ -182492,7 +182492,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41203412499999104
+    "processing_seconds": 0.4096519169999908
   },
   {
     "image": "images/test/sNsYrIp2bSZHcjOeYPcsyg.jpg",
@@ -182905,9 +182905,9 @@
       2
     ],
     "crop_scores": [
-      0.9999958276748657
+      0.99991774559021
     ],
-    "processing_seconds": 0.4255072910000024
+    "processing_seconds": 0.4248445419999882
   },
   {
     "image": "images/test/spofhRdXS7ikWbtRX1r-fg.jpg",
@@ -183384,9 +183384,9 @@
       0
     ],
     "crop_scores": [
-      0.9998490810394287
+      0.9999308586120605
     ],
-    "processing_seconds": 0.4256478750000099
+    "processing_seconds": 0.42825216599999294
   },
   {
     "image": "images/test/sqmMy4mH0POVz9UqipbSkw.jpg",
@@ -183917,7 +183917,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41541449999999713
+    "processing_seconds": 0.43875691599998845
   },
   {
     "image": "images/test/tAqd391xj68KIDZ_2CKfWA.jpg",
@@ -184279,16 +184279,16 @@
       0.0010230244370177388
     ],
     "accepted_refined_classes": [
-      3,
+      1,
       3,
       3
     ],
     "crop_scores": [
-      0.8080777525901794,
-      0.9980776309967041,
-      0.9999988079071045
+      0.6741184592247009,
+      0.9962783455848694,
+      0.9995220899581909
     ],
-    "processing_seconds": 0.43756462499999316
+    "processing_seconds": 0.4485244159999979
   },
   {
     "image": "images/test/tSIFiQe2hIWFqBLiKyUjRw.jpg",
@@ -185093,10 +185093,10 @@
       0
     ],
     "crop_scores": [
-      0.9999985694885254,
-      1.0
+      0.9999334812164307,
+      0.9999874830245972
     ],
-    "processing_seconds": 0.4320722079999939
+    "processing_seconds": 0.43771129200001724
   },
   {
     "image": "images/test/tWHYouhA6N3Gan_CKDHyIg.jpg",
@@ -185366,10 +185366,10 @@
       0
     ],
     "crop_scores": [
-      0.9999995231628418,
-      0.999954342842102
+      0.9997182488441467,
+      0.9998468160629272
     ],
-    "processing_seconds": 0.419229917000024
+    "processing_seconds": 0.42523787499999344
   },
   {
     "image": "images/test/tXQDsLkeSWJ1k2K3TaDfIw.jpg",
@@ -185820,7 +185820,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4076027910000164
+    "processing_seconds": 0.39958158400000343
   },
   {
     "image": "images/test/tZxAxZFgtVCMF3yPaSx4Ew.jpg",
@@ -186633,9 +186633,9 @@
       2
     ],
     "crop_scores": [
-      0.9999996423721313
+      0.9999667406082153
     ],
-    "processing_seconds": 0.4230237499999987
+    "processing_seconds": 0.41718804100000284
   },
   {
     "image": "images/test/tbVi8ru91g1KE-vS5ZyraQ.jpg",
@@ -187086,7 +187086,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4123305839999887
+    "processing_seconds": 0.4175164160000122
   },
   {
     "image": "images/test/tb_q-qorpr3v4PeMsD7xOw.jpg",
@@ -187721,7 +187721,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41057841700001063
+    "processing_seconds": 0.4244710410000039
   },
   {
     "image": "images/test/tpCopv92hYoxQicswp1pVA.jpg",
@@ -188550,9 +188550,9 @@
       2
     ],
     "crop_scores": [
-      0.9999706745147705
+      0.998880922794342
     ],
-    "processing_seconds": 0.43321399999999244
+    "processing_seconds": 0.4518998329999988
   },
   {
     "image": "images/test/uu7AnkHYqBe8P0ktOimeDA.jpg",
@@ -189363,7 +189363,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4151877909999939
+    "processing_seconds": 0.4339564169999903
   },
   {
     "image": "images/test/uv8YtQNTdu_Q4l_fRIUpBQ.jpg",
@@ -190202,16 +190202,16 @@
       0.0012026086915284395
     ],
     "accepted_refined_classes": [
-      3,
+      4,
       4,
       3
     ],
     "crop_scores": [
-      0.7013300061225891,
-      0.9935575127601624,
-      0.954206109046936
+      0.9993603825569153,
+      0.9983909130096436,
+      0.8206049799919128
     ],
-    "processing_seconds": 0.44275391700000455
+    "processing_seconds": 0.4528174159999878
   },
   {
     "image": "images/test/vH2FDkcNSoxB_U3Hvml3Kg.jpg",
@@ -190743,11 +190743,11 @@
       4
     ],
     "crop_scores": [
-      0.9937560558319092,
-      0.999911904335022,
-      0.999911904335022
+      0.9999567270278931,
+      0.9999821186065674,
+      0.9999821186065674
     ],
-    "processing_seconds": 0.43317629100002364
+    "processing_seconds": 0.42548179100000993
   },
   {
     "image": "images/test/vIkB8UZOD7uPsLvDl1kJAg.jpg",
@@ -191206,7 +191206,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.40539020800000003
+    "processing_seconds": 0.41921929099999033
   },
   {
     "image": "images/test/wW-jF0Uv1y0NP-Gy4wpqKw.jpg",
@@ -191883,9 +191883,9 @@
       4
     ],
     "crop_scores": [
-      0.9941670894622803
+      0.9999781847000122
     ],
-    "processing_seconds": 0.4214843329999951
+    "processing_seconds": 0.4345617500000003
   },
   {
     "image": "images/test/wcuQtSYuT3qAu_4Slt0C3A.jpg",
@@ -192696,10 +192696,10 @@
       1
     ],
     "crop_scores": [
-      0.9999969005584717,
-      0.4172419309616089
+      0.9999966621398926,
+      0.998703122138977
     ],
-    "processing_seconds": 0.42976462500001844
+    "processing_seconds": 0.440627749999976
   },
   {
     "image": "images/test/wnzAduuOV2IJcG53v2ap6w.jpg",
@@ -193440,9 +193440,9 @@
       1
     ],
     "crop_scores": [
-      0.9214689135551453
+      0.9997376799583435
     ],
-    "processing_seconds": 0.4268807919999915
+    "processing_seconds": 0.41818441599997414
   },
   {
     "image": "images/test/xKLh7dKBeI5nQESJRNboBg.jpg",
@@ -193882,7 +193882,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4136947080000084
+    "processing_seconds": 0.4158542499999953
   },
   {
     "image": "images/test/xN_2sQShoFnXziLY47wZlQ.jpg",
@@ -194402,19 +194402,19 @@
     ],
     "accepted_refined_classes": [
       4,
-      2,
+      3,
       3,
       3,
       4
     ],
     "crop_scores": [
-      0.9995189905166626,
-      0.9476604461669922,
-      0.974884033203125,
-      0.9998396635055542,
-      0.999708354473114
+      0.9971655011177063,
+      0.5221004486083984,
+      0.9983422756195068,
+      0.9996646642684937,
+      0.997527539730072
     ],
-    "processing_seconds": 0.45183329200000344
+    "processing_seconds": 0.4519020829999931
   },
   {
     "image": "images/test/xpUFBpm4ssS6qxUyjWbyug.jpg",
@@ -194924,10 +194924,10 @@
       4
     ],
     "crop_scores": [
-      0.9976944327354431,
-      0.9797017574310303
+      0.9721083641052246,
+      0.9731544852256775
     ],
-    "processing_seconds": 0.4257641250000006
+    "processing_seconds": 0.42741229200001385
   },
   {
     "image": "images/test/xw66-JnZctLHuv3KkxLY-A.jpg",
@@ -195754,7 +195754,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.42077624999998875
+    "processing_seconds": 0.4155485409999926
   },
   {
     "image": "images/test/yGEzBVgRbIdemED88PSWkQ.jpg",
@@ -196290,10 +196290,10 @@
       1
     ],
     "crop_scores": [
-      0.9999992847442627,
-      0.9975130558013916
+      0.9999589920043945,
+      0.9911764860153198
     ],
-    "processing_seconds": 0.4253345409999838
+    "processing_seconds": 0.4224700000000041
   },
   {
     "image": "images/test/yO4_L4mWsPSsNAfTC6RHfQ.jpg",
@@ -196576,7 +196576,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4016665000000046
+    "processing_seconds": 0.40225849999998786
   },
   {
     "image": "images/test/yOlk6oW-3Bpf5W0iOHHnrw.jpg",
@@ -197092,16 +197092,16 @@
     "accepted_refined_classes": [
       0,
       0,
-      0,
-      0
+      1,
+      1
     ],
     "crop_scores": [
-      0.9999868869781494,
-      0.9999991655349731,
-      0.5835004448890686,
-      0.43107470870018005
+      0.999996542930603,
+      0.9999966621398926,
+      0.8464649319648743,
+      0.9556551575660706
     ],
-    "processing_seconds": 0.4419395420000001
+    "processing_seconds": 0.4451712910000083
   },
   {
     "image": "images/test/yZzkIizrO7S-zZrDcCdlCA.jpg",
@@ -197839,9 +197839,9 @@
       4
     ],
     "crop_scores": [
-      0.9995889067649841
+      0.999968409538269
     ],
-    "processing_seconds": 0.4237780409999914
+    "processing_seconds": 0.42826562499999454
   },
   {
     "image": "images/test/ygkNgeh0wtrFR8Wq8Qxh5A.jpg",
@@ -198558,9 +198558,9 @@
       0
     ],
     "crop_scores": [
-      0.9998745918273926
+      0.9999767541885376
     ],
-    "processing_seconds": 0.4192883750000078
+    "processing_seconds": 0.4144727500000158
   },
   {
     "image": "images/test/z0tOp2HV8zn_CGaVu81fZw.jpg",
@@ -199387,7 +199387,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.41818054099999813
+    "processing_seconds": 0.4262061249999931
   },
   {
     "image": "images/test/zFqsz2gkUilVCCCTpwmRgA.jpg",
@@ -199680,9 +199680,9 @@
       4
     ],
     "crop_scores": [
-      0.9995667338371277
+      0.9999730587005615
     ],
-    "processing_seconds": 0.41801745899999787
+    "processing_seconds": 0.43515266599999336
   },
   {
     "image": "images/test/zGInnRbgbxMy3y0RKnjX_w.jpg",
@@ -200511,9 +200511,9 @@
       3
     ],
     "crop_scores": [
-      0.9899429082870483
+      0.9975385665893555
     ],
-    "processing_seconds": 0.43383937500001934
+    "processing_seconds": 0.4507243340000002
   },
   {
     "image": "images/test/znck-gW-AXrbfLUfnUemzw.jpg",
@@ -201340,7 +201340,7 @@
     ],
     "accepted_refined_classes": [],
     "crop_scores": [],
-    "processing_seconds": 0.4163984580000033
+    "processing_seconds": 0.4346039169999756
   },
   {
     "image": "images/test/zraH9ilyq-cmPP3-UXDcjw.jpg",
@@ -201897,9 +201897,9 @@
       2
     ],
     "crop_scores": [
-      0.9999839067459106
+      0.9997926354408264
     ],
-    "processing_seconds": 0.41606104100000607
+    "processing_seconds": 0.4306084579999947
   },
   {
     "image": "images/test/zs94cX0A-HICNOTxT5Zlzw.jpg",
@@ -202424,8 +202424,8 @@
       1
     ],
     "crop_scores": [
-      0.999721348285675
+      0.9998193383216858
     ],
-    "processing_seconds": 0.421530166999986
+    "processing_seconds": 0.43607304200000385
   }
 ]

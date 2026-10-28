@@ -27,6 +27,12 @@ def main():
         raise ValueError('Test results do not cover all held-out scenes.')
     if abs(evaluations[0]['detection']['mAP50']-evaluations[1]['detection']['mAP50'])>1e-3:
         raise ValueError('Exported detection result differs unexpectedly.')
+    classifier=json.loads((ROOT/'report/mtsd_classifier_results/onnx_verification.json').read_text())
+    if classifier['sessions']['float32']['test_samples']!=425:
+        raise ValueError('Classifier export was not evaluated on all Mapillary test crops.')
+    comparison=json.loads((ROOT/'report/mtsd_classifier_results/comparison.json').read_text())
+    if len(comparison['experiments'])!=3 or any(e['test']['samples']!=425 for e in comparison['experiments']):
+        raise ValueError('Incomplete Mapillary classifier comparison.')
     gallery=ROOT/'demo/mtsd_gallery/real_image_gallery.mp4'
     capture=cv2.VideoCapture(str(gallery))
     frames=0; lowest_std=float('inf')
@@ -48,6 +54,11 @@ def main():
     with tempfile.TemporaryDirectory(prefix='capstone-bundle-check-') as temporary:
         folder=Path(temporary)
         count=restore(ROOT/'artifacts/inference_models.zip',folder)
+        metadata=json.loads((folder/'models/mtsd_classifier/metadata.json').read_text())
+        if metadata['dataset']['dataset']!='Mapillary Traffic Sign Dataset v2 fully annotated':
+            raise ValueError('Packaged classifier does not use the final Mapillary dataset.')
+        subprocess.run([sys.executable,'-m','src.predict_image','demo/mtsd_crops/stop.png',
+                        '--model-dir',str(folder/'models/mtsd_classifier')],cwd=ROOT,check=True)
         subprocess.run([sys.executable,'-m','src.detect_signs',
                         'demo/mtsd_gallery/input.mp4','--model',str(folder/'models/mtsd/detector.onnx'),
                         '--output-dir',str(folder/'inference'),'--max-frames','2'],cwd=ROOT,check=True)
@@ -61,6 +72,8 @@ def main():
             'gallery_frames_decoded':frames,'gallery_minimum_frame_pixel_std':lowest_std,
             'gallery_detection_rows':detections,'fresh_bundle_files_verified':count,
             'fresh_bundle_inference_frames':smoke['frames'],
+            'classifier_test_crops_per_architecture':425,
+            'fresh_bundle_mapillary_crop_inference':True,
             'tensorboard_event_files':len(list((ROOT/'outputs').rglob('events.out.tfevents.*'))),
             'files':{p:{'bytes':(ROOT/p).stat().st_size,'sha256':hashlib.sha256((ROOT/p).read_bytes()).hexdigest()} for p in files},
             'scope':'Local file and inference checks. Not a Docker run, fresh dependency installation, full retraining or GitHub publication verification.'}

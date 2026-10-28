@@ -41,10 +41,10 @@ def benchmark(session, size):
 
 def main():
     parser = argparse.ArgumentParser(description="Export the validation-selected classifier and verify real ONNX inference.")
-    parser.add_argument("--comparison-dir", type=Path, default=Path("outputs/gtsrb_comparison"))
-    parser.add_argument("--data-dir", type=Path, default=Path("data/gtsrb"))
-    parser.add_argument("--output-dir", type=Path, default=Path("models/gtsrb"))
-    parser.add_argument("--report-dir", type=Path, default=Path("report/gtsrb_results"))
+    parser.add_argument("--comparison-dir", type=Path, default=Path("outputs/mtsd_classifier_comparison"))
+    parser.add_argument("--data-dir", type=Path, default=Path("data/mtsd_crops"))
+    parser.add_argument("--output-dir", type=Path, default=Path("models/mtsd_classifier"))
+    parser.add_argument("--report-dir", type=Path, default=Path("report/mtsd_classifier_results"))
     args = parser.parse_args()
     comparison = json.loads((args.comparison_dir / "comparison.json").read_text())
     selected = comparison["selected_architecture"]
@@ -66,7 +66,8 @@ def main():
     onnx.checker.check_model(exported)
     metadata = {"architecture": selected, "classes": classes, "image_size": size,
                 "normalization_mean": [0.485, 0.456, 0.406], "normalization_std": [0.229, 0.224, 0.225],
-                "selection": settings["selection_rule"], "scope": "Cropped GTSRB sign classifier, not an object detector"}
+                "selection": settings["selection_rule"], "scope": "Mapillary annotated-crop classifier, not an object detector",
+                "dataset": json.loads((args.data_dir / "dataset_summary.json").read_text())}
     (args.output_dir / "metadata.json").write_text(json.dumps(metadata, indent=2))
     quantized = args.output_dir / "classifier_dense_int8.onnx"
     quantize_dynamic(str(destination), str(quantized), weight_type=QuantType.QInt8, op_types_to_quantize=["MatMul", "Gemm"])

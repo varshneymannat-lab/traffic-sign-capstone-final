@@ -1,6 +1,6 @@
 # Traffic Sign Detection and Classification
 
-A graduation capstone using real road photographs, a lightweight YOLO11n detector, and comparisons of ResNet-18, MobileNetV3-Small and EfficientNet-B0 crop classifiers.
+A traffic-sign review project using **only the Mapillary Traffic Sign Dataset (MTSD)**: real road photographs for a lightweight YOLO11n detector and their annotated sign crops for ResNet-18, MobileNetV3-Small and EfficientNet-B0 comparisons.
 
 ## Goal
 
@@ -14,15 +14,15 @@ The practical problem is inspecting road-survey images for supported traffic sig
 
 | Model or experiment | Evaluation | Recorded result |
 | --- | --- | --- |
-| ResNet-18 | 2,820 official GTSRB test crops | Accuracy 99.89%, macro-F1 0.9992 |
-| MobileNetV3-Small | Same GTSRB split | Accuracy 95.04%, macro-F1 0.9581 |
-| EfficientNet-B0 | Same GTSRB split | Accuracy 99.47%, macro-F1 0.9952 |
+| ResNet-18 | 425 annotated Mapillary test crops | Accuracy 96.94% (412/425), macro-F1 0.9687 |
+| MobileNetV3-Small | Same Mapillary crop split | Accuracy 95.76%, macro-F1 0.9557 |
+| EfficientNet-B0 | Same Mapillary crop split | Accuracy 96.47%, macro-F1 0.9633 |
 | YOLO11n with tiled inference | 332 local held-out MTSD scenes, 425 boxes | mAP50 0.4839, mAP50:95 0.3344 |
 | Exported ONNX detector | Same 332 scenes | mAP50 0.4839, mAP50:95 0.3344 |
 
-**99.89% crop accuracy is not the accuracy of the road-scene system.** Architecture, checkpoint, inference mode and threshold selections use internal validation. The local MTSD test uses selected official validation scenes, not the hidden official test.
+**96.94% annotated-crop accuracy is not road-scene system accuracy.** Architecture, checkpoint, inference mode and threshold selections use internal validation. The local MTSD test uses selected official validation scenes, not the hidden official test. This fixed holdout was inspected in earlier project development, so it is not a new blind external evaluation.
 
-At validation-selected confidence 0.343 and matching IoU 0.50, detector-only precision/recall/F1 are 0.5811 / 0.4635 / 0.5157. Optional GTSRB-trained crop refinement improves these to 0.6519 / 0.5200 / 0.5785 on this subset. It cannot recover missing boxes. The predeclared default remains detector-only, rather than switching after viewing test results. Refinement accuracy of 96.51% on 229 matched boxes excludes missed objects.
+At validation-selected confidence 0.343 and matching IoU 0.50, detector-only precision/recall/F1 are 0.5811 / 0.4635 / 0.5157. Optional **Mapillary-trained** crop refinement gives 0.6726 / 0.5365 / 0.5969 (TP 228, FP 111, FN 197). It cannot recover missing boxes. The predeclared default remains detector-only, rather than switching after viewing test results. Refined accuracy of 99.56% (228/229) on matched accepted boxes excludes missed objects and uses a selected subset; it is not the 425-crop or end-to-end score.
 
 ## Report and Demonstration
 
@@ -31,7 +31,8 @@ At validation-selected confidence 0.343 and matching IoU 0.50, detector-only pre
 - [Annotation review](report/mtsd_annotation_review/README.md)
 - [Actual ONNX-processed gallery](demo/mtsd_gallery/real_image_gallery.mp4)
 - [Detector results](report/mtsd_results/evaluation.json), [ONNX results](report/mtsd_onnx_results/evaluation.json)
-- [Classifier comparisons](report/gtsrb_results/comparison.json)
+- [Mapillary classifier comparisons](report/mtsd_classifier_results/comparison.json)
+- [Crop quality and dimensions](report/mtsd_classifier_results/crop_quality.json)
 - [Requirement status](report/final_evidence.md)
 - [Human-review workflow](report/review_workflow.md)
 - [Credited reference-project comparison](report/reference_projects.md)
@@ -55,7 +56,7 @@ The included artifacts/inference_models.zip restores selected ONNX models, the d
 ~~~bash
 python -m src.detect_signs path/to/input.jpg --output-dir outputs/my_image
 python -m src.detect_signs path/to/input.mp4 --output-dir outputs/my_video
-python -m src.predict_image demo/gtsrb/stop.png
+python -m src.predict_image demo/mtsd_crops/stop.png
 ~~~
 
 Use a new empty output directory for each run. Default detection uses overlapping tiles. The option --inference-mode whole is faster but less accurate on recorded validation data. Optional --refine adds the crop classifier. Detector confidence and classifier scores are separate CSV fields.
@@ -71,9 +72,7 @@ Open [Traffic Sign Review](http://127.0.0.1:8765). Select **Run detector** for t
 
 ## Real Data
 
-GTSRB supplies 2,500 training crops (500/category), 750 validation crops and 2,820 official test crops. Training/validation tracks are disjoint. EDA found eight exact train/test pairs in a stop-sign training track; the entire 30-image training track was excluded before sampling.
-
-MTSD supplies 2,706 selected real road scenes and 3,433 target boxes:
+**One source dataset, two input forms.** MTSD supplies 2,706 selected real road scenes and 3,433 target boxes. Classifier crops are cut from those scenes, not drawn or pasted. Source scene/group splits are assigned before cropping and inherited unchanged. No exact crop hashes cross splits.
 
 | Category | Training scenes | Internal validation | Local test |
 | --- | ---: | ---: | ---: |
@@ -85,6 +84,17 @@ MTSD supplies 2,706 selected real road scenes and 3,433 target boxes:
 | Unique scenes | 2,018 | 356 | 332 |
 
 Category counts overlap. There are over 400 retained training scenes/category, but not 500 each or necessarily independent physical signs. No copies or generated scenes inflate counts.
+
+| Category | Training crops | Validation crops | Test crops |
+| --- | ---: | ---: | ---: |
+| Stop | 498 | 87 | 83 |
+| No entry | 546 | 102 | 87 |
+| Yield | 576 | 101 | 100 |
+| Speed limit 30 | 478 | 73 | 79 |
+| Speed limit 50 | 465 | 82 | 76 |
+| Total annotated crops | 2,563 | 445 | 425 |
+
+Crops retain parent-scene identity, category, coordinates and SHA256. They use prepared scenes (longest side at most 1,280 pixels) so low source resolution remains a limitation: 1,583 crops have a shortest side below 16 pixels. Resizing to 128 pixels adds no original detail. The earlier GTSRB study is retired from the active project; final classifier weights and scores come from new Mapillary training. ImageNet/general detector pretrained weights are initialization, not additional project traffic-sign datasets.
 
 Official training supplies internal training/validation. Similarity groups stay together. Three training candidates overlapping held-out groups were removed. Hashes cannot prove physical-sign independence. Panoramas and scenes with targets flagged ambiguous, occluded or out-of-frame were excluded. Only target-positive scenes are sampled, so false-alarm rates on sign-free journeys are unmeasured.
 
@@ -107,16 +117,15 @@ SAHI uses 640-pixel tiles, 20% overlap, a whole-scene pass and class-aware NMS. 
 
 The submission checkout is a fork of [Vladimir-125/lightning-hydra-template](https://github.com/Vladimir-125/lightning-hydra-template), retaining its history and MIT notice. Classifiers use Lightning/Hydra. Detection uses the Ultralytics trainer with YAML settings.
 
-Classifiers: ImageNet-pretrained, 128-pixel crops, five epochs, batch 16, AdamW 0.0003, weight decay 0.0001, seed 42. Selection uses validation macro-F1. Accuracy, macro precision/recall/F1, confusion matrices, parameter counts and CPU forward latency are compared.
+Classifiers: ImageNet-pretrained, 128-pixel Mapillary crops, five epochs, batch 16, AdamW 0.0003, weight decay 0.0001, seed 42. All three train on Apple MPS; scoring and forward latency use CPU. Selection uses validation macro-F1: ResNet 0.9619, MobileNet 0.9463, EfficientNet 0.9477. Accuracy, macro precision/recall/F1, confusion matrices, parameter counts and CPU forward latency are compared. A majority-training-label baseline gets 23.53% accuracy and macro-F1 0.0762.
 
 Detector: two initial five-epoch runs at 416/640, batch 8, ten frozen blocks, AdamW 0.001. A further 15-epoch run starts from the selected 640 checkpoint with five frozen blocks and learning rate 0.0005. Initial runs use CPU and additional training uses Apple M1 MPS. Their durations are not a controlled hardware-speed comparison. Whole/tiled mode and confidence are chosen using validation only.
 
 ~~~bash
-python scripts/download_gtsrb.py
-python scripts/eda_gtsrb.py
-python scripts/prepare_gtsrb.py --class-ids 14 17 13 1 2
-python scripts/compare_classifiers.py --data-dir data/gtsrb --epochs 5
+python scripts/prepare_mtsd_crops.py
+python scripts/compare_classifiers.py --data-dir data/mtsd_crops --output-dir outputs/mtsd_classifier_comparison --epochs 5 --image-size 128 --device auto
 python scripts/export_selected.py
+python scripts/build_classifier_results.py
 ~~~
 
 MTSD requires authorised [Mapillary access](https://www.mapillary.com/dataset/trafficsign). Obtain the fully annotated v2 release. Expected layout: data/raw/mtsd/mtsd_v2_fully_annotated/ containing annotations/, splits/ and images/. The source folder has a DVC pointer. Its annotation ZIP MD5 and selected image-member CRC32/SHA256 were checked. Full image-archive MD5 verification is not claimed. Temporary account-specific download links must stay private.
@@ -143,7 +152,7 @@ node --test tests/review_logic.test.mjs
 
 DVC records source data, splits, experiment outputs and models. **No shared DVC remote is configured.** A fresh clone can run the packaged inference demo, but training reproduction needs authorised data and either the original cache or regeneration. The command dvc pull cannot fetch unconfigured storage. A new training run may differ across hardware.
 
-ONNX is an export format, not another architecture. Raw output equivalence is checked and actual exported inference is evaluated on all local test scenes. The optional classifier optimisation is dense-layer-only dynamic INT8, not full-detector quantisation or pruning.
+ONNX is an export format, not another architecture. Actual exported inference is evaluated on all local test scenes and 425 test crops. Classifier first-batch maximum absolute logit difference is 0.0000186. Dense-layer-only INT8 retains 96.94% crop accuracy, but mean forward times of 10.15/10.11 ms and sizes 44.708/44.705 MB show no convincing speed or compression gain. Convolutions stay float32; this is not full-detector quantisation or pruning.
 
 ## Docker
 
@@ -174,7 +183,6 @@ tests/                   Focused data, model, inference and smoke tests
 
 ## Sources and Terms
 
-- [GTSRB/GTSDB benchmark authors](https://github.com/houbensebastian/GermanTrafficSignBenchmarks)
 - [Mapillary Traffic Sign Dataset](https://www.mapillary.com/dataset/trafficsign), Ertler et al., ECCV 2020
 - [Ultralytics](https://github.com/ultralytics/ultralytics)
 - [SAHI](https://github.com/obss/sahi), Akyon et al., ICIP 2022

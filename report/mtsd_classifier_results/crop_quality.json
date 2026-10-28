@@ -1,0 +1,17 @@
+{
+  "exact_crop_hashes_crossing_splits": 0,
+  "crops_shorter_side_below_16_pixels": 1583,
+  "median_dimensions_by_split": {
+    "xmax": {
+      "test": 17.0,
+      "train": 17.0,
+      "val": 17.0
+    },
+    "ymax": {
+      "test": 19.0,
+      "train": 19.0,
+      "val": 20.0
+    }
+  },
+  "scope": "Exact file hashes and dimensions; does not establish physical-sign independence"
+}

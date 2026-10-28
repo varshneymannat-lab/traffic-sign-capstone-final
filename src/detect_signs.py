@@ -51,8 +51,8 @@ def main():
     parser.add_argument('--image-size',type=int,help='Defaults to exported detector metadata.')
     parser.add_argument('--confidence',type=float)
     parser.add_argument('--max-frames',type=int)
-    parser.add_argument('--refine',action='store_true',help='Optionally classify accepted boxes using the GTSRB ONNX classifier; this may hurt under domain shift.')
-    parser.add_argument('--classifier-dir',type=Path,default=Path('models/gtsrb'))
+    parser.add_argument('--refine',action='store_true',help='Optionally classify accepted boxes using the Mapillary ONNX crop classifier; boxes and missed signs are unchanged.')
+    parser.add_argument('--classifier-dir',type=Path,default=Path('models/mtsd_classifier'))
     parser.add_argument('--inference-mode',choices=['whole','sliced'],help='Defaults to the validation-selected mode in model metadata.')
     args = parser.parse_args()
     if not args.input.is_file() or not args.model.is_file():

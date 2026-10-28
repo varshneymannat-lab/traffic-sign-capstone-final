@@ -1,8 +1,8 @@
 defaults:
-  - data: gtsrb
+  - data: mtsd_crops
   - model: sign_resnet
   - trainer: default
   - paths: default
   - _self_
 
-ckpt_path: models/gtsrb/classifier.ckpt
+ckpt_path: models/mtsd_classifier/classifier.ckpt

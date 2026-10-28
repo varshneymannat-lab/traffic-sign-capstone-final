@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-28T10:26:07.803Z",
+  "checked_at": "2026-10-28T12:39:32.713Z",
   "real_model_predictions": 1,
   "actual_onnx_inference": true,
   "checks": [

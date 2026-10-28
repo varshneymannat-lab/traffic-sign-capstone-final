@@ -1,6 +1,0 @@
-{
-  "label": "no_entry",
-  "strategy": "Most frequent training label; ties resolved by sklearn label ordering",
-  "accuracy": 0.1276595744680851,
-  "macro_f1": 0.04528301886792453
-}

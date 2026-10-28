@@ -82,7 +82,9 @@ def main():
     parser.add_argument("--latency-repeats", type=int, default=30)
     parser.add_argument("--from-scratch", action="store_true")
     parser.add_argument("--image-size", type=int, default=128)
+    parser.add_argument("--device", choices=["auto", "cpu", "mps"], default="auto")
     args = parser.parse_args()
+    training_device = ("mps" if torch.backends.mps.is_available() else "cpu") if args.device == "auto" else args.device
     if min(args.epochs, args.batch_size, args.threads, args.latency_repeats, args.image_size) < 1:
         parser.error("Epochs, batch size, threads, and repeats must be positive.")
     data_dir = args.data_dir.resolve()
@@ -117,7 +119,7 @@ def main():
         "augmentation": "Resize, ColorJitter, RandomRotation(8 degrees); no horizontal flipping",
         "annotation_sha256": hashlib.sha256(annotations_path.read_bytes()).hexdigest(),
         "split_counts": annotations.groupby(["split", "sign_label"]).size().unstack(fill_value=0).to_dict(),
-        "hardware": {"platform": platform.platform(), "device": "cpu", "torch_threads": args.threads},
+        "hardware": {"platform": platform.platform(), "training_device": training_device, "evaluation_device": "cpu", "torch_threads": args.threads},
         "selection_rule": "Highest validation macro-F1, then lower CPU latency for an exact tie. Test scores do not select the model.",
         "latency_scope": "Single-image forward pass after warm-up, excluding image loading and preprocessing. Not full video speed.",
     }
@@ -131,7 +133,7 @@ def main():
                    f"data.sign_classes={json.dumps(args.classes)}",
                    f"data.image_size={args.image_size}",
                    f"model.pretrained={str(not args.from_scratch).lower()}",
-                   f"trainer.max_epochs={args.epochs}", "trainer.accelerator=cpu",
+                   f"trainer.max_epochs={args.epochs}", f"trainer.accelerator={training_device}",
                    f"data.batch_size={args.batch_size}", "data.num_workers=0",
                    f"seed={args.seed}", "test_after_training=false", "trainer.log_every_n_steps=1",
                    "+trainer.enable_progress_bar=false", "callbacks.model_checkpoint.monitor=val/f1", "callbacks.model_checkpoint.mode=max"]

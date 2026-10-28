@@ -1,34 +1,14 @@
 stages:
-  download:
-    cmd: python scripts/download_gtsrb.py
+  prepare_crops:
+    cmd: python scripts/prepare_mtsd_crops.py
     deps:
-      - scripts/download_gtsrb.py
+      - scripts/prepare_mtsd_crops.py
+      - data/mtsd
     outs:
-      - data/raw/gtsrb/archives
-
-  eda:
-    cmd: python scripts/eda_gtsrb.py
-    deps:
-      - scripts/eda_gtsrb.py
-      - data/raw/gtsrb/archives
-    outs:
-      - report/gtsrb_eda:
-          cache: false
-
-  prepare:
-    cmd: python scripts/prepare_gtsrb.py --class-ids 14 17 13 1 2 --train-per-class ${data.train_per_class} --val-per-class ${data.val_per_class} --seed ${seed}
-    deps:
-      - scripts/prepare_gtsrb.py
-      - data/raw/gtsrb/archives
-      - report/gtsrb_eda/exact_duplicate_files.json
-    params:
-      - data
-      - seed
-    outs:
-      - data/gtsrb
+      - data/mtsd_crops
 
   compare:
-    cmd: python scripts/compare_classifiers.py --data-dir data/gtsrb --output-dir outputs/gtsrb_comparison --epochs ${training.epochs} --image-size ${training.image_size} --batch-size ${training.batch_size} --threads ${training.threads} --seed ${seed}
+    cmd: python scripts/compare_classifiers.py --data-dir data/mtsd_crops --output-dir outputs/mtsd_classifier_comparison --epochs ${training.epochs} --image-size ${training.image_size} --batch-size ${training.batch_size} --threads ${training.threads} --seed ${seed} --device auto
     deps:
       - scripts/compare_classifiers.py
       - src/train.py
@@ -37,18 +17,18 @@ stages:
       - src/utils/video_pipeline.py
       - configs/train.yaml
       - configs/model
-      - configs/data/gtsrb.yaml
+      - configs/data/mtsd_crops.yaml
       - configs/paths
       - configs/logger
       - configs/callbacks
       - configs/trainer
-      - data/gtsrb
+      - data/mtsd_crops
       - requirements.txt
     params:
       - training
       - seed
     outs:
-      - outputs/gtsrb_comparison
+      - outputs/mtsd_classifier_comparison
 
   export:
     cmd: python scripts/export_selected.py
@@ -57,43 +37,39 @@ stages:
       - src/data
       - src/models
       - src/utils/video_pipeline.py
-      - outputs/gtsrb_comparison
-      - data/gtsrb
+      - outputs/mtsd_classifier_comparison
+      - data/mtsd_crops
     outs:
-      - models/gtsrb
+      - models/mtsd_classifier
     metrics:
-      - report/gtsrb_results/onnx_verification.json:
+      - report/mtsd_classifier_results/onnx_verification.json:
           cache: false
 
   classifier_report:
-    cmd: python scripts/build_gtsrb_report.py
+    cmd: python scripts/build_classifier_results.py
     deps:
-      - scripts/build_gtsrb_report.py
-      - outputs/gtsrb_comparison
-      - data/gtsrb/dataset_summary.json
-      - report/gtsrb_results/onnx_verification.json
+      - scripts/build_classifier_results.py
+      - outputs/mtsd_classifier_comparison
+      - data/mtsd_crops
+      - report/mtsd_classifier_results/onnx_verification.json
     outs:
-      - report/classification_study/technical_report.md:
+      - report/mtsd_classifier_results/comparison.csv:
           cache: false
-      - report/classification_study/technical_report.html:
+      - report/mtsd_classifier_results/comparison.json:
           cache: false
-      - report/classification_study/technical_report.pdf:
+      - report/mtsd_classifier_results/figures:
           cache: false
-      - report/gtsrb_results/comparison.csv:
+      - report/mtsd_classifier_results/baseline.json:
           cache: false
-      - report/gtsrb_results/comparison.json:
+      - report/mtsd_classifier_results/selected_test_predictions.csv:
           cache: false
-      - report/gtsrb_results/figures:
+      - report/mtsd_classifier_results/learning_curves.json:
           cache: false
-      - report/gtsrb_results/baseline.json:
+      - report/mtsd_classifier_results/dataset_summary.json:
           cache: false
-      - report/gtsrb_results/selected_test_predictions.csv:
+      - report/mtsd_classifier_results/crop_quality.json:
           cache: false
-      - report/gtsrb_results/learning_curves.json:
-          cache: false
-      - report/gtsrb_results/dataset_summary.json:
-          cache: false
-      - demo/gtsrb:
+      - demo/mtsd_crops:
           cache: false
 
   pretrained_detector:
@@ -181,7 +157,7 @@ stages:
       - src/utils/scene_detector.py
       - outputs/mtsd_detection
       - models/mtsd
-      - models/gtsrb
+      - models/mtsd_classifier
       - data/mtsd
     outs:
       - report/mtsd_results:
@@ -198,7 +174,7 @@ stages:
     deps:
       - scripts/package_inference_models.py
       - models/mtsd
-      - models/gtsrb
+      - models/mtsd_classifier
     outs:
       - artifacts/inference_models.zip:
           cache: false
@@ -240,7 +216,7 @@ stages:
     cmd: python scripts/build_final_report.py
     deps:
       - scripts/build_final_report.py
-      - report/gtsrb_results
+      - report/mtsd_classifier_results
       - report/mtsd_results
       - report/mtsd_onnx_results
       - report/mtsd_eda

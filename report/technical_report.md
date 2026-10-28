@@ -4,7 +4,7 @@ Mannat Varshney | Revised 28 October 2026
 
 Abstract
 
-This project develops a five-category traffic-sign inspection system using real photographs. A GTSRB crop study compares pretrained ResNet-18, MobileNetV3-Small and EfficientNet-B0. A separate MTSD road-scene study fine-tunes the lightweight YOLO11n detector and compares input resolutions using a fixed validation split. The prepared detection data contains 2,018 training, 356 validation and 332 held-out scenes. The selected crop classifier achieves 99.89% GTSRB test accuracy. The selected detector achieves 0.4839 mAP@0.50 and 0.3344 mAP@0.50:0.95 on the selected MTSD held-out subset. Actual ONNX inference is checked, not just file export. Crop accuracy, scene detection quality and processing speed are reported separately.
+This project develops a five-category traffic-sign review system using only the Mapillary Traffic Sign Dataset (MTSD). Real annotated crops compare pretrained ResNet-18, MobileNetV3-Small and EfficientNet-B0. Full road scenes train a lightweight YOLO11n detector. Both tasks inherit the same protected scene split: 2,018 training, 356 validation and 332 local test scenes. The selected classifier achieves 96.94% accuracy on 425 annotated test crops. Detector mAP@0.50 is 0.4839 and mAP@0.50:0.95 is 0.3344. Actual ONNX inference is checked. Crop accuracy, scene detection quality and processing speed are reported separately.
 
 1. Introduction and Motivation
 
@@ -12,7 +12,7 @@ Traffic-sign inspection is a practical computer-vision task: a road photograph m
 
 The practical application is assisting manual road-photo review. A local interface runs the exported detector and lets a person accept, correct or reject predictions, add missed supported signs, and save an audit record. It is a functional inspection workflow; reviewer time savings and improved human accuracy have not been measured.
 
-The project retains the existing Lightning/Hydra training structure and classifier comparisons, but adds a real full-scene detection task. Cropped-sign classification answers which category a supplied rectangle contains. Detection must also find the rectangle. GTSRB alone cannot establish full-road performance. MTSD supplies real street photographs and manually annotated boxes [1,2].
+The project retains the Lightning/Hydra classifier structure and uses one dataset in two forms: complete photographs for detection and their annotated sign regions for classification. Classification answers which category a supplied rectangle contains; detection must also find that rectangle. MTSD supplies both real scenes and manually annotated boxes [2]. No synthetic training images or second traffic-sign dataset are used in the final experiments.
 
 1.1 Research Questions
 
@@ -30,7 +30,7 @@ Two additional repositories were reviewed during finalisation [5,6]. The first i
 
 2.1 Real Data, Annotations and EDA
 
-GTSRB supplies 500 training and 150 validation crops per class, plus 2,820 official test crops in total. Training and validation use different sign tracks. Eight exact train/test pairs were found in one stop-sign training track; all 30 images in that track were removed before sampling. The three classifier experiments are unchanged by the new detection study.
+The classifiers use 2,563 training crops, 445 validation crops and 425 test crops cut from the prepared MTSD scenes. Crop splits are inherited from source photographs and similarity groups, never assigned independently. Each crop retains source-image identity, rectangle, category and hash. Training crop counts are stop 498, no entry 546, yield 576, speed 30 478 and speed 50 465. Resizing a small real crop does not create new image detail.
 
 For detection, the authorised MTSD v2 fully annotated release is used. Its annotation ZIP matches the supplied MD5. Original selected image members pass ZIP CRC32 and have recorded SHA256 digests. Range downloads retrieve only the selected images; full image-archive MD5 verification is not claimed. No signs are drawn or pasted into generated scenes.
 
@@ -52,27 +52,27 @@ Following annotation review, all 2,706 prepared scenes and 3,433 target boxes we
 
 2.3 Models, Preprocessing and Training
 
-The classifier study fine-tunes all parameters of three ImageNet-pretrained models for five epochs using 128-pixel RGB crops, ImageNet normalisation, AdamW, learning rate 0.0003, weight decay 0.0001, batch size 16 and seed 42. Training uses small rotations and colour jitter, without horizontal flipping. Checkpoints and the classifier architecture are selected by validation macro-F1.
+The classifier study fine-tunes all parameters of three ImageNet-pretrained models for five epochs on Apple MPS, using 128-pixel RGB crops, ImageNet normalisation, AdamW, learning rate 0.0003, weight decay 0.0001, batch size 16 and seed 42. Training uses small rotations and colour jitter without horizontal flipping. Checkpoints and architecture are selected by validation macro-F1. Test scoring and forward latency use CPU. ImageNet/COCO initial weights are transfer learning, not additional project traffic-sign datasets.
 
-The detector is YOLO11n with a new five-class output head, initialised from general pretrained weights. Initial runs compare 416 and 640 pixels for five epochs each, with batch size 8, AdamW, learning rate 0.001, weight decay 0.0005 and seed 42. The first ten backbone blocks are frozen to reduce CPU training cost. Flips, mosaic and copy-paste are disabled; small rotations, translations, scaling and colour changes are applied to real scenes. Preparation caps the longest image side at 1,280 pixels; training letterboxes images to the chosen input size.
+YOLO11n starts from general pretrained weights with a new five-class head. Initial CPU runs compare 416/640 inputs for five epochs, batch 8, AdamW, learning rate 0.001, weight decay 0.0005 and seed 42; ten backbone blocks are frozen. Real scenes receive small rotation, translation, scaling and colour changes, not flips, mosaic or copy-paste. Prepared scenes preserve aspect ratio at up to 1,280 pixels, then are letterboxed for training.
 
-An additional 15-epoch fine-tuning run starts from the selected 640-pixel checkpoint, with five frozen blocks and learning rate 0.0005. It uses Apple M1 MPS acceleration; initial runs use CPU. Training durations are not a controlled hardware-speed comparison. This is a validation-led extension, not another same-start architecture comparison.
+A further 15-epoch run starts from the selected 640 checkpoint, with five frozen blocks, learning rate 0.0005 and Apple M1 MPS. This validation-led extension changes initialization, budget and hardware; durations are not a controlled speed comparison.
 
 Small objects are addressed using SAHI overlapping 640-pixel inference tiles, including a whole-image pass, 20% overlap and class-aware NMS at IoU 0.7. Whole versus tiled mode is selected on 356 internal validation scenes using mAP50:95. A confidence of 0.343 is selected by validation F1. Tiling changes inference, not training-image counts, and cannot reconstruct detail lost in the 1,280-pixel preparation.
 
 2.4 Metrics and Their Selection
 
-Accuracy is the fraction of correctly classified crops. Precision measures how often a predicted category is correct; recall measures how many actual members are found. F1 = 2PR/(P+R). Macro-F1 weights categories equally and is useful when test supports differ. It selects the classifier. A confusion matrix shows the individual category errors; it is not itself an accuracy score.
+Crop accuracy is the fraction correct. Precision measures how often a predicted category is correct; recall measures the fraction of actual members found. F1 = 2PR/(P+R). Macro-F1 weights unequal-support categories equally and selects the classifier. Confusion matrices expose individual category errors.
 
-Detector IoU is intersection area divided by union area of a predicted and true rectangle. mAP@0.50 averages class average precision with IoU at least 0.50. mAP@0.50:0.95 averages ten IoU thresholds and tests tighter localisation, so it selects detector settings. These metrics consider missed objects and false detections; crop accuracy does not. Fixed-threshold precision, recall and F1 additionally describe a particular deployed operating point.
+Detector IoU is box-intersection area divided by union area. mAP50 averages class average precision at IoU >=0.50; mAP50:95 averages ten IoU thresholds, tests tighter localisation and selects detector settings. Unlike crop accuracy, these scores account for misses and false detections. Fixed-threshold P/R/F1 describe one operating point.
 
 3. Experiments and Results
 
-3.1 GTSRB Classifier Comparison
+3.1 Mapillary Classifier Comparison
 
-<table><tr><td>Model</td><td>Val F1</td><td>Test acc.</td><td>Macro P</td><td>Macro R</td><td>Macro F1</td></tr><tr><td>ResNet-18</td><td>1.0000</td><td>99.89%</td><td>0.9992</td><td>0.9992</td><td>0.9992</td></tr><tr><td>MobileNetV3-Small</td><td>0.9920</td><td>95.04%</td><td>0.9582</td><td>0.9588</td><td>0.9581</td></tr><tr><td>EfficientNet-B0</td><td>0.9920</td><td>99.47%</td><td>0.9960</td><td>0.9945</td><td>0.9952</td></tr></table>
+<table><tr><td>Model</td><td>Val F1</td><td>Test acc.</td><td>Macro P</td><td>Macro R</td><td>Macro F1</td></tr><tr><td>ResNet-18</td><td>0.9619</td><td>96.94%</td><td>0.9695</td><td>0.9686</td><td>0.9687</td></tr><tr><td>MobileNetV3-Small</td><td>0.9463</td><td>95.76%</td><td>0.9564</td><td>0.9551</td><td>0.9557</td></tr><tr><td>EfficientNet-B0</td><td>0.9477</td><td>96.47%</td><td>0.9643</td><td>0.9634</td><td>0.9633</td></tr></table>
 
-ResNet-18 is selected by validation, not test accuracy. It correctly predicts 2,817 of 2,820 test crops. Its three errors confuse the two speed-limit categories. Smaller parameter counts do not automatically imply faster CPU execution: measured crop forward times are retained in the classifier results. These figures are not road-scene accuracy.
+ResNet-18 is selected by validation, not test accuracy. It correctly predicts 412 of 425 annotated test crops. The saved confusion matrix and per-image predictions identify the errors. The majority-training-label baseline scores 23.53% accuracy. Parameter counts and measured CPU forward times are retained with results. These are not scene-detection accuracy scores.
 
 3.2 Controlled Detector Comparison
 
@@ -82,7 +82,7 @@ Selected before test evaluation: yolo11n_640_finetuned. The two initial resoluti
 
 <table><tr><td>Inference mode</td><td>Val mAP50</td><td>Val mAP50:95</td><td>Mean ms/scene</td></tr><tr><td>whole</td><td>0.3209</td><td>0.2198</td><td>51.5</td></tr><tr><td>sliced</td><td>0.4859</td><td>0.3379</td><td>410.5</td></tr></table>
 
-The same selected checkpoint and validation scenes are used above with fixed-square preprocessing. Tiling improves aggregate validation mAP50:95 from 0.2198 to 0.3379, at approximately eight times the image-read/detector processing cost. Training-validator figures above use its validation preprocessing and should not be mistaken for this controlled inference-mode comparison.
+Same checkpoint, validation scenes and fixed-square preprocessing: tiling improves mAP50:95 from 0.2198 to 0.3379 at about eight times the read/detector cost. Training-validator preprocessing differs, so its scores are separate from this controlled mode comparison.
 
 <hr/>
 
@@ -94,9 +94,9 @@ On 332 selected held-out scenes, detector mAP@0.50 is 0.4839 and mAP@0.50:0.95 i
 
 3.4 Detector Labels versus Crop Refinement
 
-<table><tr><td>Pipeline</td><td>Precision</td><td>Recall</td><td>F1</td><td>TP / FP / FN</td></tr><tr><td>Detector only</td><td>0.5811</td><td>0.4635</td><td>0.5157</td><td>197 / 142 / 228</td></tr><tr><td>Detector + crop model</td><td>0.6519</td><td>0.5200</td><td>0.5785</td><td>221 / 118 / 204</td></tr></table>
+<table><tr><td>Pipeline</td><td>Precision</td><td>Recall</td><td>F1</td><td>TP / FP / FN</td></tr><tr><td>Detector only</td><td>0.5811</td><td>0.4635</td><td>0.5157</td><td>197 / 142 / 228</td></tr><tr><td>Detector + crop model</td><td>0.6726</td><td>0.5365</td><td>0.5969</td><td>228 / 111 / 197</td></tr></table>
 
-These counts use validation-selected confidence 0.343, IoU 0.50 and one-to-one same-class matches. GTSRB-trained ResNet ONNX refinement changes labels, not boxes, and cannot recover missed signs. It improves F1 on this held-out subset; the default remains the predeclared detector-only pipeline rather than switching after inspecting test scores. On the 229 class-agnostically matched boxes, crop accuracy is 96.51%; missed signs are excluded from that conditional metric.
+These counts use validation-selected confidence 0.343, IoU 0.50 and one-to-one same-class matches. The new Mapillary-trained ONNX classifier changes labels, not boxes, and cannot recover misses. The predeclared application default remains detector-only; no test-driven switch is made. On 229 class-agnostically matched accepted boxes, refined crop accuracy is 99.56%. That conditional score excludes missed signs. Ground-truth crop accuracy and predicted-box accuracy have different inputs.
 
 <img src="../demo/mtsd/-2k5fP6nR3RmS7FfzwPNxg_detector.jpg" style="max-width:100%"/>
 
@@ -104,7 +104,7 @@ Figure 2. Actual processed held-out road scene. The demo selects early examples 
 
 3.5 Processing Time
 
-The warm PyTorch-detector-plus-ONNX-classifier pipeline averages 422.98 ms per scene, with median 420.31 ms and 95th percentile 447.69 ms. Timing includes image reading, detector preprocessing/inference/NMS and crop inference; loading models, scoring and output encoding are excluded. Measurements use the recorded macOS CPU system, two PyTorch threads and two classifier ONNX threads. This is not a continuous-video real-time guarantee.
+The warm PyTorch-detector-plus-ONNX-classifier pipeline averages 435.35 ms per scene, with median 433.19 ms and 95th percentile 463.24 ms. Timing includes image reading, detector preprocessing/inference/NMS and crop inference; loading models, scoring and output encoding are excluded. Measurements use the recorded macOS CPU system, two PyTorch threads and two classifier ONNX threads. This is not a continuous-video real-time guarantee.
 
 <hr/>
 
@@ -114,7 +114,7 @@ The warm PyTorch-detector-plus-ONNX-classifier pipeline averages 422.98 ms per s
 
 ONNX is an exported model format, not a third neural architecture. The selected detector is exported with opset 17, fixed batch size 1 and 640-pixel input. ONNX model structure checks pass. Raw outputs on three real test images are compared numerically with PyTorch; the largest absolute difference is 0.000793. Preprocessing and non-maximum suppression are still provided by the application, not embedded in the graph.
 
-Actual exported-detector inference is also evaluated on all 332 local test scenes: ONNX mAP50 is 0.4839, compared with 0.4839 for PyTorch. Framework/runtime timings are reported separately because thread defaults and implementations differ. The existing classifier experiment additionally compares float32 with dense-layer-only dynamic INT8; convolution layers remain float32. This is not full-detector quantisation or pruning, and reduced precision is not assumed to be faster.
+Actual ONNX detection on all 332 local test scenes gives mAP50 0.4839, versus PyTorch 0.4839. The new classifier float32 and dense-only dynamic INT8 exports both score 96.94% on 425 crops. CPU forward means are 10.15/10.11 ms (10 warm-ups, 50 repeats), with sizes 44.708/44.705 MB. No convincing speed/compression gain is established. Convolutions stay float32; this is not detector quantisation or pruning.
 
 4.2 Versioning and Execution
 
@@ -128,14 +128,14 @@ The localhost interface preserves original predictions separately from pending, 
 
 4.4 Difficulties and Limits
 
-The main difficulties were acquiring real full scenes, protecting splits, preserving label meaning and finding small signs. The mentor identified apparently missing labels and tiny targets. Source-level comparison showed the nearby omitted signs were unsupported categories, while the two speed-50 targets shrink to about 14 pixels at preparation and 7 at whole-scene input. Numbered source views fix report readability; tiled inference measurably improves aggregate detection but does not solve every tiny sign. Near-perfect crop accuracy does not imply reliable scene detection.
+The main difficulties were acquiring real scenes, protecting splits, preserving labels and finding small signs. The mentor identified apparently missing labels and tiny targets. Source comparison showed nearby omitted signs were unsupported categories; the reviewed speed-50 targets shrink to about 14 pixels at preparation and 7 at whole-scene input. Numbered views fix report readability; tiling measurably improves aggregate detection but does not solve every tiny sign. The final revision retrains all crop models on Mapillary instead of reusing earlier cross-dataset scores.
 
-The study uses selected positive scenes, excluded difficult targets, one seed per initial run and a modest CPU budget. Difference hashes do not establish independent physical signs. Unsupported sign categories are not detected intentionally, and false alarms on sign-free journeys remain unmeasured. The real-image gallery is qualitative evidence, not a labelled real-video benchmark. Improvements include more training, broader difficult-scene coverage, repeated seeds and independent real-road video evaluation.
+The study uses selected positive scenes, excludes difficult targets and uses one seed per run. Hashes do not prove physical-sign independence. The protected holdout was inspected in earlier project development, so this is not an external blind evaluation. Unsupported categories and false alarms on sign-free journeys remain unmeasured. The gallery is qualitative evidence, not a moving-video benchmark. More training, difficult scenes, repeated seeds and independent real-road evaluation are needed.
 
 5. Conclusion
 
-The project now uses real cropped and full-scene data, compares three classifiers and detector settings, saves actual annotated output, and verifies exported detector inference. The principal results are 99.89% GTSRB crop accuracy and 0.4839 held-out local scene mAP50. They answer different questions and must not be combined into one percentage. The implementation supports inspection and further experiments; it does not establish autonomous-driving reliability.
+One Mapillary dataset now supports the complete detection, crop-classification and human-review workflow. The study compares three classifiers and detector settings, saves actual output and verifies ONNX inference. The selected classifier scores 96.94% on 425 annotated crops; local detector mAP50 is 0.4839. These answer different questions. The tool supports human inspection, not autonomous-driving reliability.
 
 References and Evidence
 
-[1] Stallkamp et al., GTSRB, IJCNN 2011; Houben et al., GTSDB, IJCNN 2013. github.com/houbensebastian/GermanTrafficSignBenchmarks. [2] Ertler et al., MTSD, ECCV 2020. mapillary.com/dataset/trafficsign. [3] Tabernik and Skocaj, IEEE T-ITS 2019. vicos.si/resources/dfg/. [4] Akyon et al., SAHI, ICIP 2022. github.com/obss/sahi. [5] github.com/ayushgayakwad/road-sign-recognition. [6] github.com/pedramebd/traffic-sign-detection-recognition. Repositories reviewed 28 October 2026. Evidence: report/gtsrb_results/, mtsd_results/, mtsd_onnx_results/, mtsd_annotation_review/, review_workflow.md.
+[1] Stallkamp et al., GTSRB, IJCNN 2011; Houben et al., GTSDB, IJCNN 2013 (related work only, not project data). [2] Ertler et al., MTSD, ECCV 2020. mapillary.com/dataset/trafficsign. [3] Tabernik and Skocaj, IEEE T-ITS 2019. vicos.si/resources/dfg/. [4] Akyon et al., SAHI, ICIP 2022. github.com/obss/sahi. [5] github.com/ayushgayakwad/road-sign-recognition. [6] github.com/pedramebd/traffic-sign-detection-recognition. Repositories reviewed 28 October 2026. Evidence: report/mtsd_classifier_results/, mtsd_results/, mtsd_onnx_results/, mtsd_annotation_review/, review_workflow.md.

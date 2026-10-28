@@ -52,7 +52,8 @@ def main():
     parser.add_argument('--model', type=Path, help='Override with exported detector ONNX to verify deployment.')
     parser.add_argument('--output-dir', type=Path, default=PROJECT / 'report/mtsd_results')
     parser.add_argument('--demo-dir', type=Path, default=PROJECT / 'demo/mtsd')
-    parser.add_argument('--classifier-dir', type=Path, default=PROJECT / 'models/gtsrb')
+    parser.add_argument('--classifier-dir', type=Path, default=PROJECT / 'models/mtsd_classifier')
+    parser.add_argument('--split', choices=['val', 'test'], default='test')
     parser.add_argument('--confidence', type=float)
     args = parser.parse_args()
     if args.output_dir.exists() and any(args.output_dir.iterdir()):
@@ -79,7 +80,7 @@ def main():
         annotations = list(csv.DictReader(stream))
     gt = {}
     for row in annotations:
-        if row['split'] == 'test':
+        if row['split'] == args.split:
             gt.setdefault(row['image_path'], []).append(row)
     first_path = args.data_dir / next(iter(gt))
     detector.predict(str(first_path), imgsz=size, device='cpu', conf=0.001, iou=0.7, rect=False, verbose=False)
@@ -156,7 +157,8 @@ def main():
         return {'samples':len(actual), 'accuracy':float(np.mean(np.array(actual)==np.array(predicted))) if actual else None,
                 'classification_report':classification_report(actual,predicted,labels=list(range(5)),target_names=classes,zero_division=0,output_dict=True),
                 'confusion_matrix':confusion_matrix(actual,predicted,labels=list(range(5))).tolist()}
-    results = {'model_format':model_path.suffix,'test_images':len(gt),'classes':classes,
+    results = {'model_format':model_path.suffix,'split':args.split,'test_images':len(gt),'classes':classes,
+               'classifier_metadata':json.loads((args.classifier_dir/'metadata.json').read_text()),
                'inference_mode':detector.mode,
                'detection':{'mAP50':float(metrics.box.map50),'mAP50_95':float(metrics.box.map),
                             'precision_at_max_f1':float(metrics.box.mp),'recall_at_max_f1':float(metrics.box.mr),
@@ -169,7 +171,7 @@ def main():
                          'throughput_images_per_second':len(timings)/sum(timings),'scope':'Warm image read, detector preprocess/inference/NMS, ONNX crop classification. Excludes model loading, metric computation and output encoding; not continuous-video FPS.'},
                'hardware':{'platform':platform.platform(),'device':'cpu','torch_threads':2,'classifier_onnx_threads':2,
                            'detector_onnx_threads':'ONNX Runtime default through Ultralytics' if model_path.suffix=='.onnx' else None},
-               'test_scope':summary['split_policy'], 'limitations':'Selected nonpanoramic positive scenes; difficult target scenes excluded. Crop classifier was trained on GTSRB, not the global MTSD domain. No real-time driving claim.'}
+               'test_scope':summary['split_policy'], 'limitations':'Selected nonpanoramic positive scenes; difficult target scenes excluded. Detector and classifier use Mapillary only, with crops inheriting scene splits. Tiny crops and predicted-box shifts remain difficult. Holdout inspected in earlier development; no blind external or real-time driving claim.'}
     (args.output_dir / 'evaluation.json').write_text(json.dumps(results,indent=2))
     (args.output_dir / 'predictions.json').write_text(json.dumps(predictions,indent=2))
     print(json.dumps(results,indent=2))

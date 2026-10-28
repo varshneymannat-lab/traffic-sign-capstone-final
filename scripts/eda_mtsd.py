@@ -113,7 +113,7 @@ Official training scenes supply internal training/validation. The selected offic
 
 These are the first five retained training crops per category, enlarged with nearest-neighbour sampling; enlargement does not add detail. Original crop sizes and source keys are recorded in example_provenance.json. Many signs occupy a small part of a large road scene. Blur, shadows, viewing angle, and international text variants are visible.
 
-The global MTSD speed labels identify the displayed number and sign family. The application does not infer or convert national speed units from the shape alone. GTSRB speed examples come from the German benchmark; no claim is made that every global round 30/50 sign uses km/h.
+The global MTSD speed labels identify the displayed number and sign family. The application does not infer or convert national speed units from the shape alone; no claim is made that every global round 30/50 sign uses km/h. Both full-scene detection and annotated-crop classification use this Mapillary subset.
 
 ![Category counts and object-size proxy](distribution_and_sign_size.png)
 

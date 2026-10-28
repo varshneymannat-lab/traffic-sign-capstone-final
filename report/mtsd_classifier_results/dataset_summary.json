@@ -1,0 +1,45 @@
+{
+  "dataset": "Mapillary Traffic Sign Dataset v2 fully annotated",
+  "source_annotations_sha256": "06b0fe946f6d61ea7a8cd656ad5c82793cc257bec9d9b696ebb60d4e7312bf9b",
+  "source_scenes": 2706,
+  "crops": 3433,
+  "split_counts": {
+    "test": 425,
+    "train": 2563,
+    "val": 445
+  },
+  "class_counts": {
+    "no_entry": {
+      "test": 87,
+      "train": 546,
+      "val": 102
+    },
+    "speed_limit_30": {
+      "test": 79,
+      "train": 478,
+      "val": 73
+    },
+    "speed_limit_50": {
+      "test": 76,
+      "train": 465,
+      "val": 82
+    },
+    "stop": {
+      "test": 83,
+      "train": 498,
+      "val": 87
+    },
+    "yield": {
+      "test": 100,
+      "train": 576,
+      "val": 101
+    }
+  },
+  "split_policy": "Inherit existing protected scene/group split; no independent crop split",
+  "crop_policy": "Ground-truth rectangles from prepared, aspect-preserved 1280px-longest-side scenes; floor left/top, ceil right/bottom, clamp to image; lossless PNG crops",
+  "limitations": [
+    "Small source signs remain low-resolution after resizing for the classifier.",
+    "Conditional crop accuracy is not end-to-end detection accuracy.",
+    "This fixed holdout has been inspected during earlier project development; it is not an external blind evaluation."
+  ]
+}

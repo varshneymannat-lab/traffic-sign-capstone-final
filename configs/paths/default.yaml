@@ -1,5 +1,5 @@
 root_dir: ${hydra:runtime.cwd}
-data_dir: ${paths.root_dir}/data/gtsrb
+data_dir: ${paths.root_dir}/data/mtsd_crops
 log_dir: ${paths.root_dir}/logs
 output_dir: ${paths.root_dir}/outputs
 model_dir: ${paths.root_dir}/models
