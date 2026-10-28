@@ -175,8 +175,8 @@ stages:
       nfiles: 6
     - path: scripts/build_final_report.py
       hash: md5
-      md5: f47e17601f521c56364451c98a6c48d7
-      size: 26021
+      md5: 438f19270fa131d273a09fe962684503
+      size: 26147
     outs:
     - path: report/detector_comparison.json
       hash: md5
@@ -184,16 +184,16 @@ stages:
       size: 6754
     - path: report/technical_report.html
       hash: md5
-      md5: 6be5e73c1ec1544b4dca696e5ae818a0
-      size: 18969
+      md5: a461254e73aa8b0d36d95134e19569c2
+      size: 19108
     - path: report/technical_report.md
       hash: md5
-      md5: 4076828b10b689b51a72134244ac8682
-      size: 17883
+      md5: 21d684d34ad8c4107ee6ada17b51cc70
+      size: 18000
     - path: report/technical_report.pdf
       hash: md5
-      md5: e770ae7a87c4e705d073c91b67372512
-      size: 1149319
+      md5: 92cc28ed0f73ef1d14715a2655b547e2
+      size: 1149346
   classifier_report:
     cmd: python scripts/build_classifier_results.py
     deps:
@@ -567,8 +567,8 @@ stages:
       nfiles: 3
     - path: src/detect_signs.py
       hash: md5
-      md5: aed854033e52a8ca362401b6b44f7705
-      size: 7219
+      md5: 524f9c7fff4407cc9f0b6f38e2047373
+      size: 7232
     outs:
     - path: demo/mtsd_gallery/processed
       hash: md5

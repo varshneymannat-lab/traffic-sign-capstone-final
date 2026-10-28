@@ -1,0 +1,3 @@
+defaults:
+  - mtsd_crops
+  - _self_

@@ -43,7 +43,7 @@ def annotate_frame(detector, frame, image_size, confidence, classifier=None):
     return frame,detections
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description='Detect five supported signs in real images or videos using the trained detector.')
     parser.add_argument('input',type=Path)
     parser.add_argument('--model',type=Path,default=Path('models/mtsd/detector.onnx'))
@@ -54,7 +54,7 @@ def main():
     parser.add_argument('--refine',action='store_true',help='Optionally classify accepted boxes using the Mapillary ONNX crop classifier; boxes and missed signs are unchanged.')
     parser.add_argument('--classifier-dir',type=Path,default=Path('models/mtsd_classifier'))
     parser.add_argument('--inference-mode',choices=['whole','sliced'],help='Defaults to the validation-selected mode in model metadata.')
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     if not args.input.is_file() or not args.model.is_file():
         parser.error('Input and trained model must exist. Restore DVC artifacts or run training/export first.')
     if args.confidence is not None and not 0 < args.confidence < 1:

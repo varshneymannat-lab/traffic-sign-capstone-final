@@ -1,6 +1,8 @@
-Traffic Sign Detection and Classification<br/>Using Real Road Images
+Real-Time Traffic Sign Detection<br/>and Classification
 
 Mannat Varshney | Revised 28 October 2026
+
+Real-time operation is the project goal, not a verified road-video performance claim. Measured speed is reported in Section 3.5.
 
 Abstract
 

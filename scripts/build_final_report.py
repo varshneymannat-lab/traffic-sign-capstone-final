@@ -75,8 +75,9 @@ def main():
     def page():
         story.append(PageBreak())
         sections.append('<hr/>')
-    text('Traffic Sign Detection and Classification<br/>Using Real Road Images','Title')
+    text('Real-Time Traffic Sign Detection<br/>and Classification','Title')
     text('Mannat Varshney | Revised 28 October 2026','BodyText')
+    text('Real-time operation is the project goal, not a verified road-video performance claim. Measured speed is reported in Section 3.5.','BodyText')
     heading('Abstract')
     text(f'This project develops a five-category traffic-sign detection and classification system using only the Mapillary Traffic Sign Dataset (MTSD). Real annotated crops compare pretrained ResNet-18, MobileNetV3-Small and EfficientNet-B0. Full road scenes train a lightweight YOLO11n detector. Both tasks inherit the same protected scene split: {dataset["split_images"]["train"]:,} training, {dataset["split_images"]["val"]} validation and {dataset["split_images"]["test"]} local test scenes. The selected classifier achieves {chosen["test"]["accuracy"]*100:.2f}% accuracy on 425 annotated test crops. Detector mAP@0.50 is {detection["detection"]["mAP50"]:.4f} and mAP@0.50:0.95 is {detection["detection"]["mAP50_95"]:.4f}. Actual ONNX inference is checked. Crop accuracy, scene detection quality and processing speed are reported separately.')
     heading('1. Introduction and Motivation')
@@ -160,12 +161,12 @@ def main():
     def footer(canvas,doc):
         canvas.setFont('Helvetica',8)
         canvas.setFillColor(colors.HexColor('#53605e'))
-        canvas.drawString(46,27,'Traffic Sign Detection and Classification Using Real Road Images')
+        canvas.drawString(46,27,'Real-Time Traffic Sign Detection and Classification')
         canvas.drawRightString(A4[0]-46,27,str(doc.page))
-    SimpleDocTemplate(str(report/'technical_report.pdf'),pagesize=A4,leftMargin=46,rightMargin=46,topMargin=42,bottomMargin=43,title='Traffic Sign Detection and Classification Using Real Road Images',author='Mannat Varshney').build(story,onFirstPage=footer,onLaterPages=footer)
+    SimpleDocTemplate(str(report/'technical_report.pdf'),pagesize=A4,leftMargin=46,rightMargin=46,topMargin=42,bottomMargin=43,title='Real-Time Traffic Sign Detection and Classification',author='Mannat Varshney').build(story,onFirstPage=footer,onLaterPages=footer)
     content='\n\n'.join(sections)
     (report/'technical_report.md').write_text(content)
-    (report/'technical_report.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><title>Traffic Sign Capstone Technical Report</title><style>body{font:16px/1.6 Arial,sans-serif;max-width:920px;margin:40px auto;padding:0 20px;color:#202923}table{border-collapse:collapse;width:100%;margin:16px 0}td{padding:8px;border-bottom:1px solid #cfd8d1}tr:first-child{background:#e8eeeb;font-weight:bold}hr{margin:40px 0}img{display:block;margin:20px auto}</style><body>'+''.join('<div>'+part+'</div>' for part in sections)+'</body></html>')
+    (report/'technical_report.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><title>Real-Time Traffic Sign Detection and Classification</title><style>body{font:16px/1.6 Arial,sans-serif;max-width:920px;margin:40px auto;padding:0 20px;color:#202923}table{border-collapse:collapse;width:100%;margin:16px 0}td{padding:8px;border-bottom:1px solid #cfd8d1}tr:first-child{background:#e8eeeb;font-weight:bold}hr{margin:40px 0}img{display:block;margin:20px auto}</style><body>'+''.join('<div>'+part+'</div>' for part in sections)+'</body></html>')
     public_comparison={k:v for k,v in comparison.items() if k not in {'selected_checkpoint'}}
     public_comparison['experiments']=[{k:v for k,v in row.items() if k!='checkpoint'} for row in comparison['experiments']]
     (report/'detector_comparison.json').write_text(json.dumps(public_comparison,indent=2))

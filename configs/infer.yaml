@@ -1,0 +1,15 @@
+defaults:
+  - data: traffic_signs
+  - paths: default
+  - _self_
+
+input_video: demo/mtsd_gallery/input.mp4
+output_video: outputs/annotated_sample.mp4
+yolo_model: models/mtsd/detector.onnx
+classifier_dir: models/mtsd_classifier
+refine: false
+device: cpu
+conf_threshold: null
+image_size: null
+inference_mode: null
+max_frames: null
