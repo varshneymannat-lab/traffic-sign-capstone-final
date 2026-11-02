@@ -1,27 +1,27 @@
 {
   "archive": "artifacts/inference_models.zip",
-  "bytes": 55677929,
-  "sha256": "b5b2193d895a3d829b058c12fab9569388a66f8af21567062c9d92ce23dbbcc4",
+  "bytes": 55673608,
+  "sha256": "6a276042a5b4e7538496a8f5d3804d20c259b6426b04dce229692ca93146daab",
   "files": {
-    "models/mtsd/detector.onnx": {
-      "sha256": "333ed784e2d480dabe55e95defb5ecbf9f15e6019fa09a29b1338263a3161df4",
-      "bytes": 10568442
+    "models/mtsd_revision/detector.onnx": {
+      "sha256": "7a59ce6415ae4eea88670262edce46263918a2a84f2d987d13093dd1f28b3ae6",
+      "bytes": 10568380
     },
-    "models/mtsd/detector.pt": {
-      "sha256": "a39df11ef0f540132d62b797441a1e942003bf091bfa83c16569f8c319d15fda",
-      "bytes": 5469530
+    "models/mtsd_revision/detector.pt": {
+      "sha256": "ccb32955014398c9dfbc8cd02c369fb0223674b6e12a8565243e68ee56eae1d5",
+      "bytes": 5468762
     },
-    "models/mtsd/metadata.json": {
-      "sha256": "637ec7ee4306a1339c179c97eecc1cbdb9b977a40bf6ad12d0805d4f6b4490b8",
-      "bytes": 1502
+    "models/mtsd_revision/metadata.json": {
+      "sha256": "9a87bebcaa814836a4700297a769c744ad7010b02ad1a7925e9e696f0fbbe8a4",
+      "bytes": 1517
     },
-    "models/mtsd_classifier/classifier.onnx": {
-      "sha256": "5960213c3328c118e775ed741fbe2cc471fc57c2736ea654b832986b3ed00d27",
+    "models/mtsd_classifier_original/classifier.onnx": {
+      "sha256": "fd8a9a13796fee9a5ab2425a07805caa4524e1ab481f24b5e0b8b4e3200513be",
       "bytes": 44708253
     },
-    "models/mtsd_classifier/metadata.json": {
-      "sha256": "f37cd115cc94431ae978aa5cdb1f2e56cdae3c5bfd4b91e3a48120955ba0ce01",
-      "bytes": 1861
+    "models/mtsd_classifier_original/metadata.json": {
+      "sha256": "5c6d138d7e85c926f01b86d4469915ec29a60b0c2e900a16ef537597296b1f86",
+      "bytes": 1972
     }
   },
   "scope": "Selected inference models only; classifier training checkpoints and full data remain DVC-managed."

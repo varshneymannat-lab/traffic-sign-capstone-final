@@ -44,3 +44,32 @@ def test_prepare_rejects_group_leakage(tmp_path):
     pd.DataFrame(rows).to_csv(tmp_path / "annotations_split.csv", index=False)
     with pytest.raises(ValueError, match="group crosses"):
         prepare(tmp_path, tmp_path / "crops")
+
+
+def test_original_crops_use_normalized_boxes_and_preserve_groups(tmp_path):
+    source, originals = tmp_path / "prepared", tmp_path / "originals"
+    source.mkdir()
+    originals.mkdir()
+    Image.new("RGB", (400, 200), (10, 80, 30)).save(originals / "scene.jpg")
+    rows = [{"image_path": "images/val/scene.jpg", "image_key": "scene", "split": "val",
+             "official_split": "train", "group_id": 7, "sign_label": "stop",
+             "x_center": 0.5, "y_center": 0.5, "box_width": 0.25, "box_height": 0.5}]
+    pd.DataFrame(rows).to_csv(source / "annotations_split.csv", index=False)
+    destination = tmp_path / "original_crops"
+    prepare(source, destination, originals)
+    frame = pd.read_csv(destination / "processed/annotations_split.csv")
+    row = frame.iloc[0]
+    assert (row.split, row.group_id, row.source_image_key) == ("val", 7, "scene")
+    assert (row.source_width, row.source_height) == (400, 200)
+    assert row.source_crop_xyxy == "[150, 50, 250, 150]"
+    with Image.open(destination / "raw" / row.image_path) as image:
+        assert image.size == (100, 100)
+
+
+def test_original_crops_fail_before_writing_when_source_missing(tmp_path):
+    rows = [{"image_key": "missing", "group_id": 1, "split": "train"}]
+    pd.DataFrame(rows).to_csv(tmp_path / "annotations_split.csv", index=False)
+    destination = tmp_path / "crops"
+    with pytest.raises(ValueError, match="Missing original"):
+        prepare(tmp_path, destination, tmp_path / "originals")
+    assert not destination.exists()

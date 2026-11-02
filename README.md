@@ -38,7 +38,7 @@ These are the five trained Mapillary categories. The exact g1 source labels are 
 The project keeps the original detection-and-classification design:
 
 1. **Detection stage:** a lightweight YOLO11n detector finds supported signs in full Mapillary scenes, using overlapping tiles to help locate small objects.
-2. **Classification stage:** an optional ResNet-18 classifier refines labels using cropped sign regions. It changes accepted labels, not boxes, and cannot recover missed detections.
+2. **Classification stage:** an optional ResNet-18 classifier refines labels using sign crops. The selected model is trained on crops taken from original-resolution photographs. It changes accepted labels, not boxes, and cannot recover missed detections.
 
 The detector already predicts categories. The default is detector-only; `refine=true` in the video configuration enables the second stage. Experiment design, model comparisons, metric selection and results are presented in the technical report.
 
@@ -126,7 +126,7 @@ python3 -m pip install -r requirements-recorded.txt
 ## Train
 
 ```bash
-python3 -m src.train
+python3 -m src.train paths.data_dir=data/mtsd_crops_original
 ```
 
 Training requires authorised, prepared Mapillary data. Settings are stored in `configs/` and `pipelines/detection/`. The technical report describes the recorded training experiments and comparison procedure.
@@ -140,14 +140,13 @@ tensorboard --logdir outputs
 ## Evaluate
 
 ```bash
-python3 -m src.eval ckpt_path=models/mtsd_classifier/classifier.ckpt
+python3 -m src.eval ckpt_path=models/mtsd_classifier_original/classifier.ckpt paths.data_dir=data/mtsd_crops_original
 ```
 
 Evaluation commands are shown below. Metric definitions, selection rationale and results are in the technical report.
 
 ```bash
-python3 scripts/evaluate_detector.py
-python3 scripts/evaluate_detector.py --model models/mtsd/detector.onnx --output-dir report/mtsd_onnx_results --demo-dir demo/mtsd_onnx
+python3 scripts/evaluate_detector.py --comparison outputs/mtsd_revision_release/comparison.json --model models/mtsd_revision/detector.onnx --classifier-dir models/mtsd_classifier_original --original-images data/raw/mtsd/mtsd_v2_fully_annotated/images --output-dir outputs/my_evaluation --demo-dir outputs/my_evaluation_examples
 ```
 
 Evaluation needs authorised prepared data and recorded models. Use new result destinations rather than overwrite existing evaluations.
@@ -155,14 +154,14 @@ Evaluation needs authorised prepared data and recorded models. Use new result de
 ## Export ONNX
 
 ```bash
-python3 -m src.export_onnx ckpt_path=models/mtsd_classifier/classifier.ckpt output_path=outputs/new_export/traffic_sign_classifier.onnx
+python3 -m src.export_onnx ckpt_path=models/mtsd_classifier_original/classifier.ckpt output_path=outputs/new_export/traffic_sign_classifier.onnx
 ```
 
-The recorded selected-model export and verification use:
+The selected-model export and verification scripts accept explicit source and destination folders:
 
 ```bash
-python3 scripts/export_selected.py
-python3 scripts/export_detector.py
+python3 scripts/export_selected.py --help
+python3 scripts/export_detector.py --help
 ```
 
 ONNX is an exported model format, not another architecture. Export validation and optimisation findings are documented in the technical report.
@@ -183,6 +182,8 @@ The lower-level command also accepts still images:
 python3 -m src.detect_signs path/to/input.jpg --output-dir outputs/my_image
 python3 -m src.predict_image demo/mtsd_crops/stop.png
 ```
+
+For a prepared still image with its corresponding original photograph, `--refine --original-image path/to/original.jpg` maps accepted boxes back to original pixels for classification. The files must show the same uncropped scene. For video, refinement uses the incoming frame pixels; it cannot access detail absent from that video.
 
 ## DVC Pipeline
 

@@ -1,25 +1,95 @@
 {
-  "selected_experiment": "yolo11n_640_finetuned",
+  "selected_experiment": "unfrozen_640_additional_10_epochs",
   "selected_image_size": 640,
-  "selection_rule": "Highest validation mAP50:95; smaller resolution breaks exact ties. No test predictions used.",
-  "settings": {
-    "seed": 42,
-    "model": "yolo11n.pt",
-    "image_sizes": [
-      416,
-      640
-    ],
-    "epochs": 5,
-    "batch_size": 8,
-    "threads": 2,
-    "device": "cpu",
-    "freeze_backbone_layers": 10,
-    "learning_rate": 0.001,
-    "weight_decay": 0.0005,
-    "selection_metric": "validation_mAP50_95",
-    "deployment_confidence": 0.25,
-    "deployment_iou": 0.7
-  },
+  "selection_rule": "Higher CPU validation mAP50:95; retain baseline on a tie. No new test scores select the model.",
+  "experiments": [
+    {
+      "name": "baseline_640_finetuned",
+      "image_size": 640,
+      "validation": {
+        "precision": 0.5774967802317164,
+        "recall": 0.323070656797592,
+        "mAP50": 0.33978245722736294,
+        "mAP50_95": 0.23024345750622885,
+        "per_class_AP50": [
+          0.521626435996082,
+          0.2648412998467036,
+          0.3996037433094377,
+          0.2489377726053709,
+          0.2639030343792204
+        ],
+        "per_class_AP50_95": [
+          0.35859664585991,
+          0.16107289546236034,
+          0.2638552701707008,
+          0.17603305785600643,
+          0.19165941818216664
+        ],
+        "class_indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "training_seconds": 2213.371057458,
+      "parameter_count": 2590815,
+      "phase": "additional validation-led fine-tuning, not a new architecture",
+      "initialization": "yolo11n_640",
+      "settings": {
+        "epochs": 15,
+        "batch_size": 8,
+        "freeze_backbone_layers": 5,
+        "learning_rate": 0.0005,
+        "weight_decay": 0.0005,
+        "seed": 42,
+        "initialization": "validation-selected initial detector checkpoint",
+        "selection_metric": "validation_mAP50_95"
+      },
+      "hardware": {
+        "platform": "macOS-26.6.2-arm64-arm-64bit",
+        "training_device": "mps",
+        "validation_device": "cpu",
+        "torch_threads": 2
+      },
+      "checkpoint_sha256": "a39df11ef0f540132d62b797441a1e942003bf091bfa83c16569f8c319d15fda"
+    },
+    {
+      "name": "unfrozen_640_additional_10_epochs",
+      "image_size": 640,
+      "validation": {
+        "precision": 0.5921170614039258,
+        "recall": 0.3465926643783168,
+        "mAP50": 0.39158466549308424,
+        "mAP50_95": 0.2654358325543323,
+        "per_class_AP50": [
+          0.5895828777177375,
+          0.33014803995796616,
+          0.4512202739467899,
+          0.2524197321834829,
+          0.3345524036594446
+        ],
+        "per_class_AP50_95": [
+          0.40942460437911177,
+          0.19994183994176845,
+          0.2910798190016174,
+          0.18523067461881898,
+          0.24150222483034497
+        ],
+        "class_indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "training_seconds": 1788.607065833,
+      "parameter_count": 2590815,
+      "checkpoint_sha256": "ccb32955014398c9dfbc8cd02c369fb0223674b6e12a8565243e68ee56eae1d5"
+    }
+  ],
   "dataset": {
     "source": "MTSD v2 fully annotated, selected real scenes",
     "classes": [
@@ -102,7 +172,8 @@
     "image_preprocessing": "RGB; longest side <=1280 pixels; JPEG quality 95. Boxes normalized from original annotation coordinates.",
     "selection": "At most 500 official-training and 70 official-validation image keys per class, sampled before inspecting model predictions; all five target boxes retained in each selected scene."
   },
-  "experiments": [
+  "scope": "Same YOLO11n architecture and protected data; additional training/unfreezing changes training budget, not a controlled architecture comparison.",
+  "baseline_training_history": [
     {
       "name": "yolo11n_416",
       "image_size": 416,
@@ -220,12 +291,5 @@
         "torch_threads": 2
       }
     }
-  ],
-  "hardware": {
-    "platform": "macOS-26.6.2-arm64-arm-64bit",
-    "device": "cpu",
-    "threads": 2
-  },
-  "note": "Same small detector at two input resolutions; not two different detector architectures. Three classifier architectures are compared separately.",
-  "refinement_note": "Initial resolution comparison completed first. Additional phase uses its validation-selected checkpoint. Final selection among recorded candidates uses validation mAP50:95 only."
+  ]
 }

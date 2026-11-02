@@ -1,0 +1,7400 @@
+{
+  "experiment": "ResNet-18 source-crop resolution ablation",
+  "selection_rule": "Higher validation macro-F1; retain baseline on a tie. Test results do not choose the crop source.",
+  "selected_crop_source": "original_resolution",
+  "prepared_1280": {
+    "validation": {
+      "samples": 445,
+      "accuracy": 0.9617977528089887,
+      "macro_precision": 0.9635980133656374,
+      "macro_recall": 0.9609680701335513,
+      "macro_f1": 0.961926539449653,
+      "per_class": {
+        "stop": {
+          "precision": 0.9876543209876543,
+          "recall": 0.9195402298850575,
+          "f1-score": 0.9523809523809523,
+          "support": 87.0
+        },
+        "no_entry": {
+          "precision": 0.9252336448598131,
+          "recall": 0.9705882352941176,
+          "f1-score": 0.9473684210526315,
+          "support": 102.0
+        },
+        "yield": {
+          "precision": 0.9705882352941176,
+          "recall": 0.9801980198019802,
+          "f1-score": 0.9753694581280788,
+          "support": 101.0
+        },
+        "speed_limit_30": {
+          "precision": 0.958904109589041,
+          "recall": 0.958904109589041,
+          "f1-score": 0.958904109589041,
+          "support": 73.0
+        },
+        "speed_limit_50": {
+          "precision": 0.975609756097561,
+          "recall": 0.975609756097561,
+          "f1-score": 0.975609756097561,
+          "support": 82.0
+        },
+        "accuracy": 0.9617977528089887,
+        "macro avg": {
+          "precision": 0.9635980133656374,
+          "recall": 0.9609680701335513,
+          "f1-score": 0.961926539449653,
+          "support": 445.0
+        },
+        "weighted avg": {
+          "precision": 0.962537459474905,
+          "recall": 0.9617977528089887,
+          "f1-score": 0.9618000833156117,
+          "support": 445.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          80,
+          5,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          99,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          99,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          70,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          80
+        ]
+      ],
+      "predictions": [
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        }
+      ]
+    },
+    "test": {
+      "samples": 425,
+      "accuracy": 0.9694117647058823,
+      "macro_precision": 0.9695209790209789,
+      "macro_recall": 0.9686180184912961,
+      "macro_f1": 0.9686859800665373,
+      "per_class": {
+        "stop": {
+          "precision": 1.0,
+          "recall": 0.927710843373494,
+          "f1-score": 0.9625,
+          "support": 83.0
+        },
+        "no_entry": {
+          "precision": 0.9340659340659341,
+          "recall": 0.9770114942528736,
+          "f1-score": 0.9550561797752809,
+          "support": 87.0
+        },
+        "yield": {
+          "precision": 0.99,
+          "recall": 0.99,
+          "f1-score": 0.99,
+          "support": 100.0
+        },
+        "speed_limit_30": {
+          "precision": 0.9625,
+          "recall": 0.9746835443037974,
+          "f1-score": 0.9685534591194969,
+          "support": 79.0
+        },
+        "speed_limit_50": {
+          "precision": 0.961038961038961,
+          "recall": 0.9736842105263158,
+          "f1-score": 0.9673202614379085,
+          "support": 76.0
+        },
+        "accuracy": 0.9694117647058823,
+        "macro avg": {
+          "precision": 0.9695209790209789,
+          "recall": 0.9686180184912961,
+          "f1-score": 0.9686859800665373,
+          "support": 425.0
+        },
+        "weighted avg": {
+          "precision": 0.9702122289475231,
+          "recall": 0.9694117647058823,
+          "f1-score": 0.9694340018356958,
+          "support": 425.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          77,
+          5,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          85,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          99,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          77,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          74
+        ]
+      ],
+      "predictions": [
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        }
+      ]
+    }
+  },
+  "original_resolution": {
+    "validation": {
+      "samples": 445,
+      "accuracy": 0.9932584269662922,
+      "macro_precision": 0.9933497632982549,
+      "macro_recall": 0.9922216973704927,
+      "macro_f1": 0.9927356406792909,
+      "per_class": {
+        "stop": {
+          "precision": 0.9885057471264368,
+          "recall": 0.9885057471264368,
+          "f1-score": 0.9885057471264368,
+          "support": 87.0
+        },
+        "no_entry": {
+          "precision": 0.9902912621359223,
+          "recall": 1.0,
+          "f1-score": 0.9951219512195122,
+          "support": 102.0
+        },
+        "yield": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 101.0
+        },
+        "speed_limit_30": {
+          "precision": 1.0,
+          "recall": 0.9726027397260274,
+          "f1-score": 0.9861111111111112,
+          "support": 73.0
+        },
+        "speed_limit_50": {
+          "precision": 0.9879518072289156,
+          "recall": 1.0,
+          "f1-score": 0.9939393939393939,
+          "support": 82.0
+        },
+        "accuracy": 0.9932584269662922,
+        "macro avg": {
+          "precision": 0.9933497632982549,
+          "recall": 0.9922216973704927,
+          "f1-score": 0.9927356406792909,
+          "support": 445.0
+        },
+        "weighted avg": {
+          "precision": 0.9933073189452475,
+          "recall": 0.9932584269662922,
+          "f1-score": 0.9932395066034418,
+          "support": 445.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          86,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          102,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          101,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          71,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          82
+        ]
+      ],
+      "predictions": [
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        }
+      ]
+    },
+    "test": {
+      "samples": 425,
+      "accuracy": 0.9952941176470588,
+      "macro_precision": 0.9952915108710705,
+      "macro_recall": 0.9952915108710705,
+      "macro_f1": 0.9952915108710705,
+      "per_class": {
+        "stop": {
+          "precision": 0.9879518072289156,
+          "recall": 0.9879518072289156,
+          "f1-score": 0.9879518072289156,
+          "support": 83.0
+        },
+        "no_entry": {
+          "precision": 0.9885057471264368,
+          "recall": 0.9885057471264368,
+          "f1-score": 0.9885057471264368,
+          "support": 87.0
+        },
+        "yield": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 100.0
+        },
+        "speed_limit_30": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 79.0
+        },
+        "speed_limit_50": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 76.0
+        },
+        "accuracy": 0.9952941176470588,
+        "macro avg": {
+          "precision": 0.9952915108710705,
+          "recall": 0.9952915108710705,
+          "f1-score": 0.9952915108710705,
+          "support": 425.0
+        },
+        "weighted avg": {
+          "precision": 0.9952941176470588,
+          "recall": 0.9952941176470588,
+          "f1-score": 0.9952941176470588,
+          "support": 425.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          82,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          86,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          100,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          79,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          76
+        ]
+      ],
+      "predictions": [
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "stop",
+          "predicted": "stop"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "speed_limit_50",
+          "predicted": "speed_limit_50"
+        },
+        {
+          "actual": "speed_limit_30",
+          "predicted": "speed_limit_30"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        },
+        {
+          "actual": "yield",
+          "predicted": "yield"
+        },
+        {
+          "actual": "no_entry",
+          "predicted": "no_entry"
+        }
+      ]
+    }
+  },
+  "training_settings": {
+    "epochs": 5,
+    "batch_size": 16,
+    "training_seed": 42,
+    "classes": [
+      "stop",
+      "no_entry",
+      "yield",
+      "speed_limit_30",
+      "speed_limit_50"
+    ],
+    "pretrained": true,
+    "image_size": 128,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "optimizer": "AdamW",
+    "checkpoint_selection": "Highest validation macro-F1 within each run",
+    "augmentation": "Resize, ColorJitter, RandomRotation(8 degrees); no horizontal flipping",
+    "annotation_sha256": "d59a25e1eabdc987c82e1eb16d4de4d544092dd60c1a4db2ec891863baca69d6",
+    "split_counts": {
+      "no_entry": {
+        "test": 87,
+        "train": 546,
+        "val": 102
+      },
+      "speed_limit_30": {
+        "test": 79,
+        "train": 478,
+        "val": 73
+      },
+      "speed_limit_50": {
+        "test": 76,
+        "train": 465,
+        "val": 82
+      },
+      "stop": {
+        "test": 83,
+        "train": 498,
+        "val": 87
+      },
+      "yield": {
+        "test": 100,
+        "train": 576,
+        "val": 101
+      }
+    },
+    "hardware": {
+      "platform": "macOS-26.6.2-arm64-arm-64bit",
+      "training_device": "mps",
+      "evaluation_device": "cpu",
+      "torch_threads": 2
+    },
+    "selection_rule": "Highest validation macro-F1, then lower CPU latency for an exact tie. Test scores do not select the model.",
+    "evaluation_scope": "validation only; test untouched",
+    "latency_scope": "Single-image forward pass after warm-up, excluding image loading and preprocessing. Not full video speed."
+  },
+  "split_identity_verified": true,
+  "median_crop_width": {
+    "prepared": 17.0,
+    "original": 44.0
+  },
+  "limitations": [
+    "Single seed and short fixed training budget.",
+    "Both inputs are derived from the same Mapillary dataset.",
+    "Supplied annotated-crop scores do not measure end-to-end detection.",
+    "Held-out scenes were inspected in prior development; not a blind external test."
+  ]
+}

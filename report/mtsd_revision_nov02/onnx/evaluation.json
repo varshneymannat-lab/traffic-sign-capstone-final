@@ -1,0 +1,323 @@
+{
+  "model_format": ".onnx",
+  "split": "test",
+  "test_images": 332,
+  "classes": [
+    "stop",
+    "no_entry",
+    "yield",
+    "speed_limit_30",
+    "speed_limit_50"
+  ],
+  "classifier_metadata": {
+    "architecture": "resnet18",
+    "classes": [
+      "stop",
+      "no_entry",
+      "yield",
+      "speed_limit_30",
+      "speed_limit_50"
+    ],
+    "image_size": 128,
+    "normalization_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "normalization_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "selection": "Highest validation macro-F1, then lower CPU latency for an exact tie. Test scores do not select the model.",
+    "scope": "Mapillary annotated-crop classifier, not an object detector",
+    "dataset": {
+      "dataset": "Mapillary Traffic Sign Dataset v2 fully annotated",
+      "source_annotations_sha256": "06b0fe946f6d61ea7a8cd656ad5c82793cc257bec9d9b696ebb60d4e7312bf9b",
+      "source_scenes": 2706,
+      "crops": 3433,
+      "split_counts": {
+        "test": 425,
+        "train": 2563,
+        "val": 445
+      },
+      "class_counts": {
+        "no_entry": {
+          "test": 87,
+          "train": 546,
+          "val": 102
+        },
+        "speed_limit_30": {
+          "test": 79,
+          "train": 478,
+          "val": 73
+        },
+        "speed_limit_50": {
+          "test": 76,
+          "train": 465,
+          "val": 82
+        },
+        "stop": {
+          "test": 83,
+          "train": 498,
+          "val": 87
+        },
+        "yield": {
+          "test": 100,
+          "train": 576,
+          "val": 101
+        }
+      },
+      "split_policy": "Inherit existing protected scene/group split; no independent crop split",
+      "crop_policy": "Ground-truth rectangles from original-resolution photographs; normalized boxes mapped to source dimensions; floor left/top, ceil right/bottom, clamp to image; lossless PNG crops",
+      "original_images": "data/raw/mtsd/mtsd_v2_fully_annotated/images",
+      "limitations": [
+        "Small source signs may still lack detail; crop resizing cannot restore missing information.",
+        "Conditional crop accuracy is not end-to-end detection accuracy.",
+        "This fixed holdout has been inspected during earlier project development; it is not an external blind evaluation."
+      ]
+    }
+  },
+  "inference_mode": "sliced",
+  "detection": {
+    "mAP50": 0.5475410627826262,
+    "mAP50_95": 0.37338514712156207,
+    "precision_at_max_f1": 0.670435214781056,
+    "recall_at_max_f1": 0.4743310920172223,
+    "per_class_AP50": [
+      0.7255403063081778,
+      0.4629276697084944,
+      0.6461777172637806,
+      0.3951844401714607,
+      0.5078751804612174
+    ],
+    "per_class_AP50_95": [
+      0.5119068277310755,
+      0.27077025390351517,
+      0.415064142665962,
+      0.29297728578332644,
+      0.3762072255239314
+    ],
+    "class_indices": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "fixed_threshold": {
+    "confidence": 0.46046046046046046,
+    "iou": 0.5,
+    "detector_only": {
+      "tp": 216,
+      "fp": 140,
+      "fn": 209,
+      "precision": 0.6067415730337079,
+      "recall": 0.508235294117647,
+      "f1": 0.5531370038412291
+    },
+    "detector_plus_classifier": {
+      "tp": 255,
+      "fp": 101,
+      "fn": 170,
+      "precision": 0.7162921348314607,
+      "recall": 0.6,
+      "f1": 0.6530089628681178
+    }
+  },
+  "matched_box_classification": {
+    "matching": "Class-agnostic one-to-one maximum-IoU assignment, IoU >=0.5; missed signs excluded only from this crop metric.",
+    "detector_labels": {
+      "samples": 255,
+      "accuracy": 0.803921568627451,
+      "classification_report": {
+        "stop": {
+          "precision": 0.8524590163934426,
+          "recall": 0.8666666666666667,
+          "f1-score": 0.859504132231405,
+          "support": 60.0
+        },
+        "no_entry": {
+          "precision": 0.8,
+          "recall": 0.8205128205128205,
+          "f1-score": 0.810126582278481,
+          "support": 39.0
+        },
+        "yield": {
+          "precision": 1.0,
+          "recall": 0.9821428571428571,
+          "f1-score": 0.990990990990991,
+          "support": 56.0
+        },
+        "speed_limit_30": {
+          "precision": 0.6521739130434783,
+          "recall": 0.6382978723404256,
+          "f1-score": 0.6451612903225806,
+          "support": 47.0
+        },
+        "speed_limit_50": {
+          "precision": 0.6792452830188679,
+          "recall": 0.6792452830188679,
+          "f1-score": 0.6792452830188679,
+          "support": 53.0
+        },
+        "accuracy": 0.803921568627451,
+        "macro avg": {
+          "precision": 0.7967756424911577,
+          "recall": 0.7973730999363274,
+          "f1-score": 0.797005655768465,
+          "support": 255.0
+        },
+        "weighted avg": {
+          "precision": 0.8039204505750982,
+          "recall": 0.803921568627451,
+          "f1-score": 0.8038559246407916,
+          "support": 255.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          52,
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          7,
+          32,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          55,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          30,
+          17
+        ],
+        [
+          1,
+          0,
+          0,
+          16,
+          36
+        ]
+      ]
+    },
+    "refined_labels": {
+      "samples": 255,
+      "accuracy": 1.0,
+      "classification_report": {
+        "stop": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 60.0
+        },
+        "no_entry": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 39.0
+        },
+        "yield": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 56.0
+        },
+        "speed_limit_30": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 47.0
+        },
+        "speed_limit_50": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 53.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 255.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 255.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          60,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          39,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          56,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          47,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          53
+        ]
+      ]
+    }
+  },
+  "crop_source": "original photographs; mapped from prepared scene coordinates",
+  "timing": {
+    "mean_ms": 425.0235379307224,
+    "median_ms": 419.575999500001,
+    "p95_ms": 535.7977878,
+    "detector_and_scene_read_mean_ms": 398.9380784698795,
+    "crop_read_and_classification_mean_ms": 26.085459460842863,
+    "throughput_images_per_second": 2.3528108698840984,
+    "scope": "Warm image read, detector preprocess/inference/NMS, ONNX crop classification. Excludes model loading, metric computation and output encoding; not continuous-video FPS."
+  },
+  "hardware": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "device": "cpu",
+    "torch_threads": 2,
+    "classifier_onnx_threads": 2,
+    "detector_onnx_threads": "ONNX Runtime default through Ultralytics"
+  },
+  "test_scope": "Official train -> internal group train/validation. Selected official validation -> final local test, never tuning. Hidden official test is unused.",
+  "limitations": "Selected nonpanoramic positive scenes; difficult target scenes excluded. Detector and classifier use Mapillary only, with crops inheriting scene splits. Tiny crops and predicted-box shifts remain difficult. Holdout inspected in earlier development; no blind external or real-time driving claim."
+}

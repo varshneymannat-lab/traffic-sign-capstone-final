@@ -1,6 +1,6 @@
 {
   "input": "demo/mtsd_gallery/input.mp4",
-  "model": "models/mtsd/detector.onnx",
+  "model": "models/mtsd_revision/detector.onnx",
   "classes": [
     "stop",
     "no_entry",
@@ -11,10 +11,10 @@
   "frames": 200,
   "pipeline": "detector_only",
   "inference_mode": "sliced",
-  "elapsed_seconds": 167.041701834,
-  "processed_frames_per_second": 1.1973058092927762,
+  "elapsed_seconds": 71.46306016599999,
+  "processed_frames_per_second": 2.798648693960549,
   "timing_scope": "Includes decoding, prediction, annotation and output encoding; excludes model/backend construction and CSV/JSON serialization.",
-  "confidence": 0.3433433433433433,
+  "confidence": 0.46046046046046046,
   "image_size": 640,
   "hardware": "macOS-26.6.2-arm64-arm-64bit",
   "note": "Output playback rate is not processing speed. Performance depends on scene and hardware."

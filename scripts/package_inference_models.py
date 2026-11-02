@@ -8,8 +8,8 @@ import zipfile
 
 def main():
     project=Path(__file__).resolve().parents[1]
-    files=['models/mtsd/detector.onnx','models/mtsd/detector.pt','models/mtsd/metadata.json',
-           'models/mtsd_classifier/classifier.onnx','models/mtsd_classifier/metadata.json']
+    files=['models/mtsd_revision/detector.onnx','models/mtsd_revision/detector.pt','models/mtsd_revision/metadata.json',
+           'models/mtsd_classifier_original/classifier.onnx','models/mtsd_classifier_original/metadata.json']
     manifest={name:{'sha256':hashlib.sha256((project/name).read_bytes()).hexdigest(),
                     'bytes':(project/name).stat().st_size} for name in files}
     output=project/'artifacts'

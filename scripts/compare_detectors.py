@@ -28,8 +28,11 @@ def main():
     parser.add_argument('--data-dir', type=Path, default=PROJECT / 'data/mtsd')
     parser.add_argument('--config', type=Path, default=PROJECT / 'pipelines/detection/experiment.yaml')
     parser.add_argument('--output-dir', type=Path, default=PROJECT / 'outputs/mtsd_detection')
+    parser.add_argument('--device', choices=['auto','cpu','mps'], help='Override the recorded training device; auto uses MPS when available, otherwise CPU.')
     args = parser.parse_args()
     config = OmegaConf.load(args.config)
+    if args.device is not None:
+        config.device = ('mps' if torch.backends.mps.is_available() else 'cpu') if args.device == 'auto' else args.device
     if args.output_dir.exists() and any(args.output_dir.iterdir()):
         parser.error('Use a new output directory to preserve previous experiments.')
     args.output_dir.mkdir(parents=True, exist_ok=True)

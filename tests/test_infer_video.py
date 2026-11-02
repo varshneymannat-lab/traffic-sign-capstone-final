@@ -20,7 +20,7 @@ def test_original_config_name_inherits_mapillary_categories():
     with initialize_config_dir(config_dir=directory, version_base="1.3"):
         cfg = compose(config_name="infer")
     assert cfg.data.sign_classes == ["stop", "no_entry", "yield", "speed_limit_30", "speed_limit_50"]
-    assert cfg.yolo_model == "models/mtsd/detector.onnx"
+    assert cfg.yolo_model == "models/mtsd_revision/detector.onnx"
 
 
 def test_argument_adapter_preserves_metadata_defaults():

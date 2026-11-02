@@ -5,8 +5,8 @@ defaults:
 
 input_video: demo/mtsd_gallery/input.mp4
 output_video: outputs/annotated_sample.mp4
-yolo_model: models/mtsd/detector.onnx
-classifier_dir: models/mtsd_classifier
+yolo_model: models/mtsd_revision/detector.onnx
+classifier_dir: models/mtsd_classifier_original
 refine: false
 device: cpu
 conf_threshold: null

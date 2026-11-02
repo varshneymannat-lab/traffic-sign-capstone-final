@@ -14,7 +14,7 @@ from torchvision import transforms
 def main():
     parser = argparse.ArgumentParser(description="Classify a photograph of a single traffic sign using the exported ONNX model.")
     parser.add_argument("image", type=Path)
-    parser.add_argument("--model-dir", type=Path, default=Path("models/mtsd_classifier"))
+    parser.add_argument("--model-dir", type=Path, default=Path("models/mtsd_classifier_original"))
     parser.add_argument("--box", nargs=4, type=int, metavar=("X1", "Y1", "X2", "Y2"))
     args = parser.parse_args()
     metadata = json.loads((args.model_dir / "metadata.json").read_text())

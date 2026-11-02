@@ -21,7 +21,7 @@ def crop_bounds(row, width, height):
     return left, top, right, bottom
 
 
-def prepare(source, destination):
+def prepare(source, destination, original_images=None):
     annotations = source / "annotations_split.csv"
     scenes = pd.read_csv(annotations)
     if scenes.groupby("image_key").split.nunique().max() != 1:
@@ -30,10 +30,18 @@ def prepare(source, destination):
         raise ValueError("A protected scene group crosses splits")
     if destination.exists() and any(destination.iterdir()):
         raise ValueError("Use an empty destination to preserve existing datasets")
+    if original_images is not None:
+        missing = [str(original_images / f"{key}.jpg") for key in scenes.image_key.unique()
+                   if not (original_images / f"{key}.jpg").is_file()]
+        if missing:
+            raise ValueError(f"Missing original photographs: {missing[:3]}")
     rows = []
     for index, row in enumerate(scenes.itertuples(index=False)):
-        with Image.open(source / row.image_path) as scene:
+        scene_path = (original_images / f"{row.image_key}.jpg"
+                      if original_images is not None else source / row.image_path)
+        with Image.open(scene_path) as scene:
             scene = scene.convert("RGB")
+            source_width, source_height = scene.size
             bounds = crop_bounds(row, *scene.size)
             crop = scene.crop(bounds)
         relative = Path("images") / row.split / f"{row.image_key}_{index:05d}.png"
@@ -43,6 +51,8 @@ def prepare(source, destination):
         rows.append({"image_path": relative.as_posix(), "sign_label": row.sign_label,
                      "split": row.split, "group_id": row.group_id,
                      "source_image_key": row.image_key, "source_image_path": row.image_path,
+                     "crop_source_path": str(scene_path),
+                     "source_width": source_width, "source_height": source_height,
                      "official_split": row.official_split,
                      "xmin": 0, "ymin": 0, "xmax": crop.width, "ymax": crop.height,
                      "source_crop_xyxy": json.dumps(bounds),
@@ -57,8 +67,11 @@ def prepare(source, destination):
                "split_counts": frame.groupby("split").size().to_dict(),
                "class_counts": frame.groupby(["split", "sign_label"]).size().unstack(fill_value=0).to_dict(),
                "split_policy": "Inherit existing protected scene/group split; no independent crop split",
-               "crop_policy": "Ground-truth rectangles from prepared, aspect-preserved 1280px-longest-side scenes; floor left/top, ceil right/bottom, clamp to image; lossless PNG crops",
-               "limitations": ["Small source signs remain low-resolution after resizing for the classifier.",
+               "crop_policy": ("Ground-truth rectangles from original-resolution photographs" if original_images is not None
+                               else "Ground-truth rectangles from prepared, aspect-preserved 1280px-longest-side scenes")
+                              + "; normalized boxes mapped to source dimensions; floor left/top, ceil right/bottom, clamp to image; lossless PNG crops",
+               "original_images": str(original_images) if original_images is not None else None,
+               "limitations": ["Small source signs may still lack detail; crop resizing cannot restore missing information.",
                                "Conditional crop accuracy is not end-to-end detection accuracy.",
                                "This fixed holdout has been inspected during earlier project development; it is not an external blind evaluation."]}
     (destination / "dataset_summary.json").write_text(json.dumps(summary, indent=2))
@@ -69,5 +82,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, default=Path("data/mtsd"))
     parser.add_argument("--output", type=Path, default=Path("data/mtsd_crops"))
+    parser.add_argument("--original-images", type=Path,
+                        help="Crop original <image_key>.jpg files instead of prepared scenes; retain the same scene split.")
     args = parser.parse_args()
-    prepare(args.source, args.output)
+    prepare(args.source, args.output, args.original_images)

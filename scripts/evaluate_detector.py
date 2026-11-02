@@ -15,6 +15,7 @@ from scipy.optimize import linear_sum_assignment
 from sklearn.metrics import classification_report, confusion_matrix
 import torch
 from ultralytics import YOLO
+from ultralytics.utils.plotting import Annotator
 from ultralytics.models.yolo.detect.val import DetectionValidator
 from ultralytics.utils.metrics import DetMetrics, box_iou
 
@@ -22,6 +23,7 @@ PROJECT = Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(PROJECT))
 from src.utils.onnx_classifier import CropClassifier
 from src.utils.scene_detector import SceneDetector
+from src.utils.crop_geometry import map_box_to_source
 
 
 def count_matches(pred_classes, true_classes, overlap):
@@ -55,6 +57,8 @@ def main():
     parser.add_argument('--classifier-dir', type=Path, default=PROJECT / 'models/mtsd_classifier')
     parser.add_argument('--split', choices=['val', 'test'], default='test')
     parser.add_argument('--confidence', type=float)
+    parser.add_argument('--original-images', type=Path,
+                        help='Use raw <image_key>.jpg photographs for classifier crops; detector scenes and splits stay unchanged.')
     args = parser.parse_args()
     if args.output_dir.exists() and any(args.output_dir.iterdir()):
         parser.error('Use a new results directory to preserve previous evaluations.')
@@ -86,6 +90,7 @@ def main():
     detector.predict(str(first_path), imgsz=size, device='cpu', conf=0.001, iou=0.7, rect=False, verbose=False)
     classifier(np.zeros((64,64,3),dtype=np.uint8))
     direct, refined, predictions, timings = [], [], [], []
+    detector_timings, refinement_timings = [], []
     actual, before, after = [], [], []
     preview_counts = {c:0 for c in classes}
     for number, (relative, targets) in enumerate(sorted(gt.items())):
@@ -95,6 +100,7 @@ def main():
             raise ValueError('Could not read image: '+relative)
         h,w = image.shape[:2]
         result = detector.predict(image, imgsz=size, device='cpu', conf=0.001, iou=0.7, max_det=100, rect=False, verbose=False)[0]
+        detector_elapsed = time.perf_counter()-start
         boxes = result.boxes.xyxy.cpu()
         pred_classes = result.boxes.cls.cpu()
         scores = result.boxes.conf.cpu()
@@ -111,17 +117,30 @@ def main():
         accepted_scores = scores[keep]
         updated_classes = accepted_classes.clone()
         crop_scores = []
+        refinement_start = time.perf_counter()
+        crop_image = image
+        if args.original_images is not None and len(accepted_boxes):
+            original_path = args.original_images / (targets[0]['image_key'] + '.jpg')
+            crop_image = cv2.imread(str(original_path),cv2.IMREAD_COLOR | cv2.IMREAD_IGNORE_ORIENTATION)
+            if crop_image is None:
+                raise ValueError('Cannot read original photograph: '+str(original_path))
         for i, box in enumerate(accepted_boxes):
-            x1,y1,x2,y2 = box.round().int().tolist()
-            x1,y1,x2,y2 = max(0,x1),max(0,y1),min(w,x2),min(h,y2)
+            if args.original_images is not None:
+                x1,y1,x2,y2 = map_box_to_source(box.tolist(), (w,h), (crop_image.shape[1],crop_image.shape[0]))
+            else:
+                x1,y1,x2,y2 = box.round().int().tolist()
+                x1,y1,x2,y2 = max(0,x1),max(0,y1),min(w,x2),min(h,y2)
             if x2 <= x1 or y2 <= y1:
                 crop_scores.append(None)
                 continue
-            label, probability = classifier(image[y1:y2,x1:x2])
+            label, probability = classifier(crop_image[y1:y2,x1:x2])
             updated_classes[i] = label
             crop_scores.append(probability)
-        elapsed = time.perf_counter()-start
+        refinement_elapsed = time.perf_counter()-refinement_start
+        elapsed = detector_elapsed + refinement_elapsed
         timings.append(elapsed)
+        detector_timings.append(detector_elapsed)
+        refinement_timings.append(refinement_elapsed)
         accepted_overlap = overlap[:,keep]
         direct.append(fixed_metrics(accepted_classes,gt_classes,accepted_overlap))
         refined.append(fixed_metrics(updated_classes,gt_classes,accepted_overlap))
@@ -143,11 +162,11 @@ def main():
         if any(preview_counts[c] < 2 for c in present):
             for mode, labels in [('detector',accepted_classes),('refined',updated_classes)]:
                 annotated = image.copy()
+                annotator=Annotator(annotated,line_width=4)
                 for box,label,score in zip(accepted_boxes,labels,accepted_scores):
                     x1,y1,x2,y2 = box.round().int().tolist()
-                    cv2.rectangle(annotated,(x1,y1),(x2,y2),(30,210,80),2)
-                    cv2.putText(annotated,f'{classes[int(label)]} {float(score):.2f}',(max(0,x1),max(18,y1-6)),cv2.FONT_HERSHEY_SIMPLEX,.55,(30,210,80),2)
-                cv2.imwrite(str(args.demo_dir / (Path(relative).stem+'_'+mode+'.jpg')),annotated)
+                    annotator.box_label((x1,y1,x2,y2),f'{classes[int(label)]} {float(score):.2f}',color=(25,120,60),txt_color=(255,255,255))
+                cv2.imwrite(str(args.demo_dir / (Path(relative).stem+'_'+mode+'.jpg')),annotator.result())
             for category in present:
                 preview_counts[category] += 1
         if (number+1) % 50 == 0:
@@ -167,7 +186,10 @@ def main():
                'fixed_threshold':{'confidence':args.confidence,'iou':0.5,'detector_only':aggregate_counts(direct),'detector_plus_classifier':aggregate_counts(refined)},
                'matched_box_classification':{'matching':'Class-agnostic one-to-one maximum-IoU assignment, IoU >=0.5; missed signs excluded only from this crop metric.',
                                              'detector_labels':crop_record(before),'refined_labels':crop_record(after)},
+               'crop_source': 'original photographs; mapped from prepared scene coordinates' if args.original_images else 'prepared detector scenes',
                'timing':{'mean_ms':float(np.mean(timings)*1000),'median_ms':float(np.median(timings)*1000),'p95_ms':float(np.percentile(timings,95)*1000),
+                         'detector_and_scene_read_mean_ms':float(np.mean(detector_timings)*1000),
+                         'crop_read_and_classification_mean_ms':float(np.mean(refinement_timings)*1000),
                          'throughput_images_per_second':len(timings)/sum(timings),'scope':'Warm image read, detector preprocess/inference/NMS, ONNX crop classification. Excludes model loading, metric computation and output encoding; not continuous-video FPS.'},
                'hardware':{'platform':platform.platform(),'device':'cpu','torch_threads':2,'classifier_onnx_threads':2,
                            'detector_onnx_threads':'ONNX Runtime default through Ultralytics' if model_path.suffix=='.onnx' else None},

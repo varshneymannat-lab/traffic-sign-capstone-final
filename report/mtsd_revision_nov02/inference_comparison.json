@@ -1,0 +1,20 @@
+[
+  {
+    "inference_mode": "whole",
+    "validation_images": 356,
+    "mAP50": 0.36901502153045057,
+    "mAP50_95": 0.2548356300135051,
+    "confidence": 0.21621621621621623,
+    "validation_macro_f1_at_grid_point": 0.44776853714114717,
+    "mean_read_and_detector_ms": 51.5360376741573
+  },
+  {
+    "inference_mode": "sliced",
+    "validation_images": 356,
+    "mAP50": 0.5443312060515886,
+    "mAP50_95": 0.38197135496807477,
+    "confidence": 0.46046046046046046,
+    "validation_macro_f1_at_grid_point": 0.5726182896576988,
+    "mean_read_and_detector_ms": 411.3210496320228
+  }
+]

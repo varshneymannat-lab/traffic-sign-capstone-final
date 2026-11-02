@@ -31,3 +31,17 @@ def test_refinement_preserves_original_detector_label():
     assert records[0]['detector_class']=='stop'
     assert records[0]['class']=='no_entry'
     assert records[0]['classifier_confidence']==.7
+
+
+def test_refinement_maps_to_original_image_without_moving_output_box():
+    box=SimpleNamespace(cls=torch.tensor([0]),conf=torch.tensor([.8]),xyxy=torch.tensor([[10.,20.,30.,40.]]))
+    class Detector:
+        def predict(self,frame,**kwargs):
+            return [SimpleNamespace(boxes=[box])]
+    def classifier(crop):
+        assert crop.shape[:2]==(50,80)
+        assert (crop==123).all()
+        return 1,.7
+    _,records=annotate_frame(Detector(),np.zeros((80,100,3),dtype=np.uint8),640,.25,
+                            classifier,np.full((200,400,3),123,dtype=np.uint8))
+    assert [records[0][k] for k in ['xmin','ymin','xmax','ymax']]==[10,20,30,40]

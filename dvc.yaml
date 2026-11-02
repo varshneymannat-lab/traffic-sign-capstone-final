@@ -1,4 +1,131 @@
 stages:
+  prepare_original_crops:
+    cmd: python scripts/prepare_mtsd_crops.py --original-images data/raw/mtsd/mtsd_v2_fully_annotated/images --output data/mtsd_crops_original
+    deps:
+      - scripts/prepare_mtsd_crops.py
+      - data/mtsd
+      - data/raw/mtsd/mtsd_v2_fully_annotated
+    outs:
+      - data/mtsd_crops_original
+
+  compare_original_crops:
+    cmd: python scripts/compare_classifiers.py --data-dir data/mtsd_crops_original --output-dir outputs/mtsd_original_crop_validation_nov02 --epochs 5 --image-size 128 --batch-size 16 --threads 2 --seed 42 --device auto --architectures resnet18 --validation-only
+    deps:
+      - scripts/compare_classifiers.py
+      - src/train.py
+      - src/data
+      - src/models
+      - configs/train.yaml
+      - configs/model
+      - configs/data/mtsd_crops.yaml
+      - configs/paths
+      - configs/logger
+      - configs/callbacks
+      - configs/trainer
+      - data/mtsd_crops_original
+    outs:
+      - outputs/mtsd_original_crop_validation_nov02
+
+  export_original_classifier:
+    cmd: python scripts/export_selected.py --comparison-dir outputs/mtsd_original_crop_validation_nov02 --data-dir data/mtsd_crops_original --output-dir models/mtsd_classifier_original --report-dir report/mtsd_revision_nov02/classifier
+    deps:
+      - scripts/export_selected.py
+      - src/data
+      - src/models
+      - outputs/mtsd_original_crop_validation_nov02
+      - data/mtsd_crops_original
+    outs:
+      - models/mtsd_classifier_original
+    metrics:
+      - report/mtsd_revision_nov02/classifier/onnx_verification.json:
+          cache: false
+
+  evaluate_crop_resolution:
+    cmd: python scripts/evaluate_crop_resolution.py --comparison-dir outputs/mtsd_original_crop_validation_nov02 --data-dir data/mtsd_crops_original --output-dir report/mtsd_revision_nov02
+    deps:
+      - scripts/evaluate_crop_resolution.py
+      - scripts/compare_classifiers.py
+      - src/data
+      - src/models
+      - src/utils/video_pipeline.py
+      - outputs/mtsd_original_crop_validation_nov02
+      - data/mtsd_crops_original
+      - data/mtsd_crops
+      - report/mtsd_classifier_results/comparison.json
+    outs:
+      - report/mtsd_revision_nov02/crop_resolution_comparison.json:
+          cache: false
+      - report/mtsd_revision_nov02/paired_crop_predictions.csv:
+          cache: false
+      - report/mtsd_revision_nov02/original_crop_test_confusion.png:
+          cache: false
+
+  finetune_revision_detector:
+    cmd: python scripts/compare_detectors.py --config pipelines/detection/original_detail_revision.yaml --output-dir outputs/mtsd_detection_nov02 --device auto
+    deps:
+      - scripts/compare_detectors.py
+      - pipelines/detection/original_detail_revision.yaml
+      - models/mtsd
+      - data/mtsd
+    outs:
+      - outputs/mtsd_detection_nov02
+
+  select_revision_detector:
+    cmd:
+      - python scripts/select_revision_detector.py
+      - python scripts/select_operating_point.py --comparison-dir outputs/mtsd_revision_release
+    deps:
+      - scripts/select_revision_detector.py
+      - scripts/select_operating_point.py
+      - scripts/evaluate_detector.py
+      - src/utils/scene_detector.py
+      - outputs/mtsd_detection
+      - outputs/mtsd_detection_nov02
+      - data/mtsd
+    outs:
+      - outputs/mtsd_revision_release
+
+  export_revision_detector:
+    cmd: python scripts/export_detector.py --comparison outputs/mtsd_revision_release/comparison.json --output-dir models/mtsd_revision
+    deps:
+      - scripts/export_detector.py
+      - outputs/mtsd_revision_release
+      - data/mtsd
+    outs:
+      - models/mtsd_revision
+
+  evaluate_revision_detector:
+    cmd:
+      - python scripts/evaluate_detector.py --comparison outputs/mtsd_revision_release/comparison.json --model models/mtsd_revision/detector.pt --classifier-dir models/mtsd_classifier_original --original-images data/raw/mtsd/mtsd_v2_fully_annotated/images --output-dir report/mtsd_revision_nov02/detection --demo-dir demo/mtsd_revision
+      - python scripts/evaluate_detector.py --comparison outputs/mtsd_revision_release/comparison.json --model models/mtsd_revision/detector.onnx --classifier-dir models/mtsd_classifier_original --original-images data/raw/mtsd/mtsd_v2_fully_annotated/images --output-dir report/mtsd_revision_nov02/onnx --demo-dir demo/mtsd_revision_onnx
+      - python scripts/record_revision_release.py
+    deps:
+      - scripts/evaluate_detector.py
+      - scripts/record_revision_release.py
+      - src/utils/crop_geometry.py
+      - src/utils/scene_detector.py
+      - src/utils/onnx_classifier.py
+      - outputs/mtsd_revision_release
+      - models/mtsd_revision
+      - models/mtsd_classifier_original
+      - data/mtsd
+      - data/raw/mtsd/mtsd_v2_fully_annotated
+    outs:
+      - report/mtsd_revision_nov02/detection:
+          cache: false
+      - report/mtsd_revision_nov02/onnx:
+          cache: false
+      - report/mtsd_revision_nov02/release_results.json:
+          cache: false
+      - report/mtsd_revision_nov02/detector_validation.json:
+          cache: false
+      - report/mtsd_revision_nov02/inference_comparison.json:
+          cache: false
+      - demo/mtsd_revision:
+          cache: false
+      - demo/mtsd_revision_onnx:
+          cache: false
+
   prepare_crops:
     cmd: python scripts/prepare_mtsd_crops.py
     deps:
@@ -153,6 +280,7 @@ stages:
       - python scripts/evaluate_detector.py --model models/mtsd/detector.onnx --output-dir report/mtsd_onnx_results --demo-dir demo/mtsd_onnx
     deps:
       - scripts/evaluate_detector.py
+      - src/utils/crop_geometry.py
       - src/utils/onnx_classifier.py
       - src/utils/scene_detector.py
       - outputs/mtsd_detection
@@ -173,8 +301,8 @@ stages:
     cmd: python scripts/package_inference_models.py
     deps:
       - scripts/package_inference_models.py
-      - models/mtsd
-      - models/mtsd_classifier
+      - models/mtsd_revision
+      - models/mtsd_classifier_original
     outs:
       - artifacts/inference_models.zip:
           cache: false
@@ -196,7 +324,9 @@ stages:
     cmd: python -m src.detect_signs demo/mtsd_gallery/input.mp4 --output-dir demo/mtsd_gallery/processed
     deps:
       - src/detect_signs.py
-      - models/mtsd
+      - models/mtsd_revision
+      - src/utils/scene_detector.py
+      - src/utils/crop_geometry.py
       - demo/mtsd_gallery/input.mp4
     outs:
       - demo/mtsd_gallery/processed:
@@ -216,6 +346,9 @@ stages:
     cmd: python scripts/build_final_report.py
     deps:
       - scripts/build_final_report.py
+      - report/mtsd_revision_nov02
+      - models/mtsd_revision/metadata.json
+      - outputs/mtsd_revision_release
       - report/mtsd_classifier_results
       - report/mtsd_results
       - report/mtsd_onnx_results

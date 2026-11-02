@@ -1,0 +1,18 @@
+{
+  "dataset": "Mapillary Traffic Sign Dataset v2 fully annotated",
+  "detector_comparison": "report/mtsd_revision_nov02/detector_validation.json",
+  "inference_comparison": "report/mtsd_revision_nov02/inference_comparison.json",
+  "evaluation": "report/mtsd_revision_nov02/detection/evaluation.json",
+  "onnx_evaluation": "report/mtsd_revision_nov02/onnx/evaluation.json",
+  "detector_dir": "models/mtsd_revision",
+  "classifier_dir": "models/mtsd_classifier_original",
+  "crop_resolution_comparison": "report/mtsd_revision_nov02/crop_resolution_comparison.json",
+  "default_pipeline": "detector only; crop refinement is optional",
+  "refinement_crop_policy": "Corresponding original photograph; boxes mapped from prepared scene coordinates.",
+  "video_scope": "Gallery inference uses the actual incoming video pixels, not an unavailable raw-photo side channel.",
+  "selected_model_sha256": {
+    "models/mtsd_revision/detector.onnx": "7a59ce6415ae4eea88670262edce46263918a2a84f2d987d13093dd1f28b3ae6",
+    "models/mtsd_classifier_original/classifier.onnx": "fd8a9a13796fee9a5ab2425a07805caa4524e1ab481f24b5e0b8b4e3200513be"
+  },
+  "limitations": "Previously inspected local holdout; selected positive scenes; no independent continuous-road or safety validation."
+}

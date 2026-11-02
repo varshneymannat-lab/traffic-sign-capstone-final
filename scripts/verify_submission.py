@@ -21,13 +21,16 @@ def main():
     audit=json.loads((ROOT/'report/mtsd_annotation_review/audit.json').read_text())
     if audit['mismatched_scenes']:
         raise ValueError('Unresolved source annotation mismatch.')
-    evaluations=[json.loads((ROOT/'report'/name/'evaluation.json').read_text())
-                 for name in ['mtsd_results','mtsd_onnx_results']]
+    release_path=ROOT/'report/mtsd_revision_nov02/release_results.json'
+    release=json.loads(release_path.read_text()) if release_path.exists() else None
+    evaluation_paths=[release['evaluation'],release['onnx_evaluation']] if release else ['report/mtsd_results/evaluation.json','report/mtsd_onnx_results/evaluation.json']
+    evaluations=[json.loads((ROOT/name).read_text()) for name in evaluation_paths]
     if not all(e['test_images']==332 for e in evaluations):
         raise ValueError('Test results do not cover all held-out scenes.')
     if abs(evaluations[0]['detection']['mAP50']-evaluations[1]['detection']['mAP50'])>1e-3:
         raise ValueError('Exported detection result differs unexpectedly.')
-    classifier=json.loads((ROOT/'report/mtsd_classifier_results/onnx_verification.json').read_text())
+    classifier_path='report/mtsd_revision_nov02/classifier/onnx_verification.json' if release else 'report/mtsd_classifier_results/onnx_verification.json'
+    classifier=json.loads((ROOT/classifier_path).read_text())
     if classifier['sessions']['float32']['test_samples']!=425:
         raise ValueError('Classifier export was not evaluated on all Mapillary test crops.')
     comparison=json.loads((ROOT/'report/mtsd_classifier_results/comparison.json').read_text())
@@ -54,13 +57,15 @@ def main():
     with tempfile.TemporaryDirectory(prefix='capstone-bundle-check-') as temporary:
         folder=Path(temporary)
         count=restore(ROOT/'artifacts/inference_models.zip',folder)
-        metadata=json.loads((folder/'models/mtsd_classifier/metadata.json').read_text())
+        classifier_dir=folder/(release['classifier_dir'] if release else 'models/mtsd_classifier')
+        detector_dir=folder/(release['detector_dir'] if release else 'models/mtsd')
+        metadata=json.loads((classifier_dir/'metadata.json').read_text())
         if metadata['dataset']['dataset']!='Mapillary Traffic Sign Dataset v2 fully annotated':
             raise ValueError('Packaged classifier does not use the final Mapillary dataset.')
         subprocess.run([sys.executable,'-m','src.predict_image','demo/mtsd_crops/stop.png',
-                        '--model-dir',str(folder/'models/mtsd_classifier')],cwd=ROOT,check=True)
+                        '--model-dir',str(classifier_dir)],cwd=ROOT,check=True)
         subprocess.run([sys.executable,'-m','src.detect_signs',
-                        'demo/mtsd_gallery/input.mp4','--model',str(folder/'models/mtsd/detector.onnx'),
+                        'demo/mtsd_gallery/input.mp4','--model',str(detector_dir/'detector.onnx'),
                         '--output-dir',str(folder/'inference'),'--max-frames','2'],cwd=ROOT,check=True)
         smoke=json.loads((folder/'inference/summary.json').read_text())
         if smoke['frames']!=2:

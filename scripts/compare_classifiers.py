@@ -83,6 +83,9 @@ def main():
     parser.add_argument("--from-scratch", action="store_true")
     parser.add_argument("--image-size", type=int, default=128)
     parser.add_argument("--device", choices=["auto", "cpu", "mps"], default="auto")
+    parser.add_argument("--architectures", nargs="+", choices=["resnet18", "mobilenet_v3_small", "efficientnet_b0"],
+                        default=["resnet18", "mobilenet_v3_small", "efficientnet_b0"])
+    parser.add_argument("--validation-only", action="store_true", help="Leave the test split unevaluated during development.")
     args = parser.parse_args()
     training_device = ("mps" if torch.backends.mps.is_available() else "cpu") if args.device == "auto" else args.device
     if min(args.epochs, args.batch_size, args.threads, args.latency_repeats, args.image_size) < 1:
@@ -121,9 +124,12 @@ def main():
         "split_counts": annotations.groupby(["split", "sign_label"]).size().unstack(fill_value=0).to_dict(),
         "hardware": {"platform": platform.platform(), "training_device": training_device, "evaluation_device": "cpu", "torch_threads": args.threads},
         "selection_rule": "Highest validation macro-F1, then lower CPU latency for an exact tie. Test scores do not select the model.",
+        "evaluation_scope": "validation only; test untouched" if args.validation_only else "validation and test",
         "latency_scope": "Single-image forward pass after warm-up, excluding image loading and preprocessing. Not full video speed.",
     }
     for architecture, config in variants.items():
+        if architecture not in args.architectures:
+            continue
         run = output / architecture
         command = [sys.executable, "-m", "src.train", f"model={config}",
                    f"paths.data_dir={json.dumps(str(data_dir))}",
@@ -149,7 +155,7 @@ def main():
         data = TrafficSignDataModule(str(data_dir), str(annotations_path), args.image_size, args.batch_size, 0, args.classes)
         data.setup()
         validation = evaluate(model, data.val_dataloader(), args.classes)
-        test = evaluate(model, data.test_dataloader(), args.classes)
+        test = None if args.validation_only else evaluate(model, data.test_dataloader(), args.classes)
         result = {"architecture": architecture, "validation": validation, "test": test,
                   "parameter_count": sum(p.numel() for p in model.parameters()),
                   "checkpoint_bytes": checkpoint.stat().st_size,
@@ -157,7 +163,9 @@ def main():
                   "cpu_latency_ms": latency(model, args.image_size, args.latency_repeats),
                   "settings": common}
         (run / "evaluation.json").write_text(json.dumps(result, indent=2))
-        save_confusion(test, args.classes, run / "test_confusion_matrix.png", architecture)
+        save_confusion(validation, args.classes, run / "validation_confusion_matrix.png", architecture + " validation")
+        if test is not None:
+            save_confusion(test, args.classes, run / "test_confusion_matrix.png", architecture)
         all_results.append(result)
         print(f"Finished {architecture}; validation macro-F1={validation['macro_f1']:.4f}", flush=True)
     selected = max(all_results, key=lambda item: (item["validation"]["macro_f1"], -item["cpu_latency_ms"]))["architecture"]
@@ -167,7 +175,7 @@ def main():
         writer.writeheader()
         for item in all_results:
             writer.writerow({"architecture": item["architecture"], "validation_macro_f1": item["validation"]["macro_f1"],
-                             **{f"test_{key}": item["test"][key] for key in ["accuracy", "macro_precision", "macro_recall", "macro_f1"]},
+                             **{f"test_{key}": item["test"][key] if item["test"] is not None else "" for key in ["accuracy", "macro_precision", "macro_recall", "macro_f1"]},
                              **{key: item[key] for key in ["parameter_count", "cpu_latency_ms", "training_seconds"]}})
     print(f"Selected using validation results: {selected}")
     print(f"Comparison saved to {output}")

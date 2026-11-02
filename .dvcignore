@@ -2,3 +2,4 @@ logs/tensorboard/
 data/mtsd/labels/*.cache
 .venv/
 __pycache__/
+**/.DS_Store
