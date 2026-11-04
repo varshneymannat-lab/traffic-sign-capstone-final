@@ -14,7 +14,7 @@ The source is the fully annotated Mapillary Traffic Sign Dataset v2, not generat
 | speed limit 30 | 436 | 65 | 70 |
 | speed limit 50 | 427 | 73 | 70 |
 
-There are 2018 training, 356 validation and 332 test scenes. A scene may contain multiple categories, so category counts do not sum to scene totals. All five target boxes in each retained photograph are included.
+There are 2018 training, 356 validation and 332 test scenes. A scene may contain multiple categories, so category counts do not sum to scene totals. All source boxes belonging to the five selected categories are retained in each selected photograph; a photograph does not necessarily contain five signs.
 
 ## Split and Duplicate Checks
 

@@ -1,16 +1,16 @@
 {
   "conclusion": "success",
-  "verified_on": "2026-10-28",
+  "verified_on": "2026-11-04",
   "environment": "GitHub Actions ubuntu-latest",
-  "run_url": "https://github.com/varshneymannat-lab/traffic-sign-capstone-final/actions/runs/40288335988",
-  "run_id": 40288335988,
-  "verified_commit": "7e4a9763dcc1baf5cfabad6446edad8f4e6b94c2",
-  "completed_at": "2026-10-26T07:52:57Z",
-  "container_job_id": 121457232757,
+  "run_url": "https://github.com/varshneymannat-lab/traffic-sign-capstone-final/actions/runs/41420610068",
+  "run_id": 41420610068,
+  "verified_commit": "8cf89e7733c62d697a26a51496c236eaced05cb1",
+  "completed_at": "2026-11-02T09:46:48Z",
+  "container_job_id": 125194972013,
   "checks": {
     "docker_build": "success",
     "container_pytest": "success",
     "two_frame_onnx_inference": "success"
   },
-  "scope": "Verified by public GitHub run and jobs APIs. This historical published commit passed build, tests and actual inference. Review-interface local checks are in review_verification.json. Attribute CI coverage to each run's exact commit, not to later changes. Full training was not repeated inside Docker. Docker remains unavailable locally."
+  "scope": "Verified from the public GitHub run and job steps for this exact commit. Later revisions require their own CI evidence. Full training was not repeated inside Docker. Local file and inference checks are recorded separately under outputs/verification/."
 }

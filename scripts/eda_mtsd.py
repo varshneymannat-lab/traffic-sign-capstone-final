@@ -101,7 +101,7 @@ The source is the fully annotated Mapillary Traffic Sign Dataset v2, not generat
 | --- | ---: | ---: | ---: |
 {rows}
 
-There are {summary['split_images']['train']} training, {summary['split_images']['val']} validation and {summary['split_images']['test']} test scenes. A scene may contain multiple categories, so category counts do not sum to scene totals. All five target boxes in each retained photograph are included.
+There are {summary['split_images']['train']} training, {summary['split_images']['val']} validation and {summary['split_images']['test']} test scenes. A scene may contain multiple categories, so category counts do not sum to scene totals. All source boxes belonging to the five selected categories are retained in each selected photograph; a photograph does not necessarily contain five signs.
 
 ## Split and Duplicate Checks
 

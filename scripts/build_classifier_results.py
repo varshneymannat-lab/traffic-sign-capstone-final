@@ -53,6 +53,10 @@ def main():
         records.append({"file": f"{category}.png", "source_scene": row.source_image_key,
                         "source_crop": row.image_path, "split": "test", "actual": category,
                         "predicted": row.predicted_label,
+                        "prediction_model": "Prepared-crop ResNet-18 baseline",
+                        "prediction_record": "report/mtsd_classifier_results/comparison.json",
+                        "crop_source": "Prepared 1280-pixel-longest-side scene",
+                        "scope": "Stored baseline prediction, not a prediction from the default original-source classifier. The models can disagree on this small prepared crop.",
                         "selection": "First saved test crop per class, not selected for correctness"})
     (demo / "provenance.json").write_text(json.dumps(records, indent=2))
     learning = {}

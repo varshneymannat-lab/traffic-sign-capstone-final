@@ -155,8 +155,8 @@ stages:
       nfiles: 11
     - path: report/container_verification.json
       hash: md5
-      md5: 9f6139296442bf1a3821d2882ba522a2
-      size: 863
+      md5: c7c593aa22a29511a21610c91e421298
+      size: 777
     - path: report/mtsd_annotation_review
       hash: md5
       md5: 30c082bd4af212cab0d4334a7e0fcc32.dir
@@ -169,8 +169,8 @@ stages:
       nfiles: 13
     - path: report/mtsd_eda
       hash: md5
-      md5: a767eb745c816de49538b19c9462f91e.dir
-      size: 4847516
+      md5: 4189aaeee581613e05a27f75b071ef3c.dir
+      size: 4847607
       nfiles: 14
     - path: report/mtsd_onnx_results
       hash: md5
@@ -189,8 +189,8 @@ stages:
       nfiles: 19
     - path: scripts/build_final_report.py
       hash: md5
-      md5: 59dedb4e70fce37a3f704e78b86d1fe8
-      size: 28091
+      md5: 89b4bdae7d200c7da861752ccfcad21f
+      size: 28308
     outs:
     - path: report/detector_comparison.json
       hash: md5
@@ -198,16 +198,16 @@ stages:
       size: 8579
     - path: report/technical_report.html
       hash: md5
-      md5: ed14f9c413ee9af5c22a1d9c5c207378
-      size: 19370
+      md5: 6204852c3e18867488adf51d1afdaa38
+      size: 19587
     - path: report/technical_report.md
       hash: md5
-      md5: 0259cb24efc1a360385895eae01db6be
-      size: 18235
+      md5: 7ebf6c0cacccee65ca4a533b46cc8e7f
+      size: 18452
     - path: report/technical_report.pdf
       hash: md5
-      md5: bb44a6977107e2c62713f68562e95bc5
-      size: 1149501
+      md5: d9ac6061f3f16e473771fbefc85d0580
+      size: 1149629
   classifier_report:
     cmd: python scripts/build_classifier_results.py
     deps:
@@ -227,13 +227,13 @@ stages:
       size: 1162
     - path: scripts/build_classifier_results.py
       hash: md5
-      md5: 27f272d501290703b0109bfac9f63da3
-      size: 5216
+      md5: 284bdf49689420ee2ea48e84878d34c8
+      size: 5651
     outs:
     - path: demo/mtsd_crops
       hash: md5
-      md5: 0a28d4f0debc0d3af5c410d54f187b1a.dir
-      size: 6260
+      md5: e470c09c4756b6e245c5f4e3bd7b643d.dir
+      size: 8035
       nfiles: 6
     - path: report/mtsd_classifier_results/baseline.json
       hash: md5
@@ -368,8 +368,8 @@ stages:
       size: 18952
     - path: scripts/eda_mtsd.py
       hash: md5
-      md5: 6160ee1fc0a8d758549c81c77e05a064
-      size: 9706
+      md5: 63e6eba9b76a91f9a3c63165af540986
+      size: 9797
     - path: scripts/review_mtsd_annotations.py
       hash: md5
       md5: 1722fe0cdbe7ec47977e4352e7c25126
@@ -382,8 +382,8 @@ stages:
       nfiles: 6
     - path: report/mtsd_eda
       hash: md5
-      md5: a767eb745c816de49538b19c9462f91e.dir
-      size: 4847516
+      md5: 4189aaeee581613e05a27f75b071ef3c.dir
+      size: 4847607
       nfiles: 14
   train_detectors:
     cmd:

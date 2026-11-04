@@ -183,6 +183,8 @@ python3 -m src.detect_signs path/to/input.jpg --output-dir outputs/my_image
 python3 -m src.predict_image demo/mtsd_crops/stop.png
 ```
 
+The single-crop command uses the selected original-source classifier. The bundled `demo/mtsd_crops/` images and their stored predictions belong to the earlier prepared-crop baseline. Its [provenance record](demo/mtsd_crops/provenance.json) identifies that model; a new prediction can differ. Running an example verifies inference execution, not prediction correctness.
+
 For a prepared still image with its corresponding original photograph, `--refine --original-image path/to/original.jpg` maps accepted boxes back to original pixels for classification. The files must show the same uncropped scene. For video, refinement uses the incoming frame pixels; it cannot access detail absent from that video.
 
 ## DVC Pipeline
@@ -221,4 +223,4 @@ docker run --rm traffic-sign-capstone
 docker run --rm traffic-sign-capstone python -m pytest -q
 ```
 
-The default command restores models and processes two actual frames. [Commit 449ef7a passed Docker build, container tests and ONNX smoke inference](https://github.com/varshneymannat-lab/traffic-sign-capstone-final/actions/runs/40690970167). Later revisions need their own CI result; full retraining inside Docker is not established. The final repository remains the required template fork. Mapillary images, pretrained weights and dependencies have separate licence terms; distributed notices and attribution are retained.
+The default command restores models and processes two actual frames. [Commit 8cf89e7 passed Docker build, container tests and ONNX smoke inference](https://github.com/varshneymannat-lab/traffic-sign-capstone-final/actions/runs/41420610068). Later revisions need their own CI result; full retraining inside Docker is not established. The final repository remains the required template fork. Mapillary images, pretrained weights and dependencies have separate licence terms; distributed notices and attribution are retained.

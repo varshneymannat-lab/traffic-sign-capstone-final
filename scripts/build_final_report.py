@@ -88,7 +88,7 @@ def main():
         story.append(PageBreak())
         sections.append('<hr/>')
     text('Real-Time Traffic Sign Detection<br/>and Classification','Title')
-    text('Mannat Varshney | Revised 2 November 2026','BodyText')
+    text('Mannat Varshney | Revised 4 November 2026','BodyText')
     text('Real-time operation is the project goal, not a verified road-video performance claim. Measured speed is reported in Section 3.5.','BodyText')
     heading('Abstract')
     text(f'This project develops a five-category traffic-sign detection and classification system using only the Mapillary Traffic Sign Dataset (MTSD). Annotated crops compare ResNet-18, MobileNetV3-Small and EfficientNet-B0; a source-resolution ablation tests preserving original crop detail. Road scenes train YOLO11n. Both tasks inherit the same scene split: {dataset["split_images"]["train"]:,} training, {dataset["split_images"]["val"]} validation and {dataset["split_images"]["test"]} local test scenes. The selected classifier achieves {final_crop["accuracy"]*100:.2f}% on 425 supplied test crops. Detector mAP50 is {detection["detection"]["mAP50"]:.4f} and mAP50:95 is {detection["detection"]["mAP50_95"]:.4f}. Crop classification, full-scene detection and processing speed are evaluated separately, including actual ONNX inference.')
@@ -134,7 +134,7 @@ def main():
     text(f'Validation selects {NAMES[chosen["architecture"]]} for the prepared-crop baseline: {correct}/425 correct test labels. The majority-training-label baseline scores {json.loads((report/"mtsd_classifier_results/baseline.json").read_text())["accuracy"]*100:.2f}%. Confusion matrices, predictions, parameters and CPU forward times are saved. These are crop, not scene-detection scores.')
     if crop_revision:
         table([['ResNet crop source','Val macro-F1','Test accuracy','Test macro-F1']]+[[label,f'{r["validation"]["macro_f1"]:.4f}',f'{r["test"]["accuracy"]*100:.2f}%',f'{r["test"]["macro_f1"]:.4f}'] for label,r in [('Prepared 1280',crop_revision['prepared_1280']),('Original photograph',crop_revision['original_resolution'])]],[180,100,100,103])
-        text('Original-source crops are selected by validation. Median crop width rises from 17 to 44 pixels; 423/425 test crops are correct. This is one-seed crop-source evidence, not improved detector recall or a new dataset.','BodyText')
+        text('Original-source crops are selected by validation. Median crop width rises from 17 to 44 pixels; 423/425 test crops are correct. This is one-seed crop-source evidence, not improved detector recall or a new dataset. The bundled prepared-crop stop example is predicted as no entry by the selected original-source classifier; its stored stop prediction belongs to the earlier baseline. Example execution is not correctness validation.','BodyText')
     text('3.2 Detector Training and Inference','Heading2')
     training_rows=comparison['experiments']
     if crop_revision:
@@ -168,7 +168,7 @@ def main():
     text('The project uses Git for code, DVC for data/model versions, TensorBoard for training curves, Hydra for classifier configuration, and Lightning for the classifier loop. Detection settings are in pipelines/detection/. The image/video command writes annotated media, CSV detections and measured timing. Dataset terms apply separately from code; temporary authorised download links are not committed. Restoring licensed data requires authorised artifact access or regeneration from an authorised download.')
     container_record=report/'container_verification.json'
     if container_record.exists() and json.loads(container_record.read_text()).get('conclusion')=='success':
-        text('Published Mapillary-only commit 449ef7a passes Docker build, container tests and two-frame ONNX inference in Actions run 40690970167. Full retraining inside Docker is unverified; later revisions require their own CI evidence. The submission is a fork of Vladimir-125/lightning-hydra-template with its MIT notice and history. No shared DVC remote is configured; full training needs authorised data/cache access.')
+        text('Published Mapillary-only commit 8cf89e7 passes Docker build, container tests and two-frame ONNX inference in Actions run 41420610068. Full retraining inside Docker is unverified; later revisions require their own CI evidence. The submission is a fork of Vladimir-125/lightning-hydra-template with its MIT notice and history. No shared DVC remote is configured; full training needs authorised data/cache access.')
     else:
         text('A Docker recipe and automated build/test workflow define the execution environment. Local Docker execution is not verified because Docker is unavailable on this machine; CI build status must be checked after upload. The final submission repository is a verified fork of Vladimir-125/lightning-hydra-template, with the upstream MIT notice and initial template commit preserved. Remote artifact access must be documented separately from the source repository.')
     text('4.3 Application and Software Verification','Heading2')

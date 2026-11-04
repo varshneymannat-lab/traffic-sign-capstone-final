@@ -62,8 +62,10 @@ def main():
         metadata=json.loads((classifier_dir/'metadata.json').read_text())
         if metadata['dataset']['dataset']!='Mapillary Traffic Sign Dataset v2 fully annotated':
             raise ValueError('Packaged classifier does not use the final Mapillary dataset.')
-        subprocess.run([sys.executable,'-m','src.predict_image','demo/mtsd_crops/stop.png',
-                        '--model-dir',str(classifier_dir)],cwd=ROOT,check=True)
+        crop_process=subprocess.run([sys.executable,'-m','src.predict_image','demo/mtsd_crops/stop.png',
+                        '--model-dir',str(classifier_dir)],cwd=ROOT,check=True,capture_output=True,text=True)
+        crop_prediction=json.loads(crop_process.stdout)
+        print(crop_process.stdout,end='')
         subprocess.run([sys.executable,'-m','src.detect_signs',
                         'demo/mtsd_gallery/input.mp4','--model',str(detector_dir/'detector.onnx'),
                         '--output-dir',str(folder/'inference'),'--max-frames','2'],cwd=ROOT,check=True)
@@ -79,6 +81,10 @@ def main():
             'fresh_bundle_inference_frames':smoke['frames'],
             'classifier_test_crops_per_architecture':425,
             'fresh_bundle_mapillary_crop_inference':True,
+            'fresh_bundle_crop_example':{'image':'demo/mtsd_crops/stop.png','actual':'stop',
+                                        'predicted':crop_prediction['predicted_class'],
+                                        'correct':crop_prediction['predicted_class']=='stop',
+                                        'scope':'Execution check on a prepared-crop baseline example; not the original-source classifier accuracy test.'},
             'tensorboard_event_files':len(list((ROOT/'outputs').rglob('events.out.tfevents.*'))),
             'files':{p:{'bytes':(ROOT/p).stat().st_size,'sha256':hashlib.sha256((ROOT/p).read_bytes()).hexdigest()} for p in files},
             'scope':'Local file and inference checks. Not a Docker run, fresh dependency installation, full retraining or GitHub publication verification.'}

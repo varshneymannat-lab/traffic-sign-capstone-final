@@ -6,7 +6,11 @@
     "split": "test",
     "actual": "stop",
     "predicted": "stop",
-    "selection": "First saved test crop per class, not selected for correctness"
+    "selection": "First saved test crop per class, not selected for correctness",
+    "prediction_model": "Prepared-crop ResNet-18 baseline",
+    "prediction_record": "report/mtsd_classifier_results/comparison.json",
+    "crop_source": "Prepared 1280-pixel-longest-side scene",
+    "scope": "Stored baseline prediction, not a prediction from the default original-source classifier. The models can disagree on this small prepared crop."
   },
   {
     "file": "no_entry.png",
@@ -15,7 +19,11 @@
     "split": "test",
     "actual": "no_entry",
     "predicted": "no_entry",
-    "selection": "First saved test crop per class, not selected for correctness"
+    "selection": "First saved test crop per class, not selected for correctness",
+    "prediction_model": "Prepared-crop ResNet-18 baseline",
+    "prediction_record": "report/mtsd_classifier_results/comparison.json",
+    "crop_source": "Prepared 1280-pixel-longest-side scene",
+    "scope": "Stored baseline prediction, not a prediction from the default original-source classifier. The models can disagree on this small prepared crop."
   },
   {
     "file": "yield.png",
@@ -24,7 +32,11 @@
     "split": "test",
     "actual": "yield",
     "predicted": "yield",
-    "selection": "First saved test crop per class, not selected for correctness"
+    "selection": "First saved test crop per class, not selected for correctness",
+    "prediction_model": "Prepared-crop ResNet-18 baseline",
+    "prediction_record": "report/mtsd_classifier_results/comparison.json",
+    "crop_source": "Prepared 1280-pixel-longest-side scene",
+    "scope": "Stored baseline prediction, not a prediction from the default original-source classifier. The models can disagree on this small prepared crop."
   },
   {
     "file": "speed_limit_30.png",
@@ -33,7 +45,11 @@
     "split": "test",
     "actual": "speed_limit_30",
     "predicted": "speed_limit_30",
-    "selection": "First saved test crop per class, not selected for correctness"
+    "selection": "First saved test crop per class, not selected for correctness",
+    "prediction_model": "Prepared-crop ResNet-18 baseline",
+    "prediction_record": "report/mtsd_classifier_results/comparison.json",
+    "crop_source": "Prepared 1280-pixel-longest-side scene",
+    "scope": "Stored baseline prediction, not a prediction from the default original-source classifier. The models can disagree on this small prepared crop."
   },
   {
     "file": "speed_limit_50.png",
@@ -42,6 +58,10 @@
     "split": "test",
     "actual": "speed_limit_50",
     "predicted": "speed_limit_50",
-    "selection": "First saved test crop per class, not selected for correctness"
+    "selection": "First saved test crop per class, not selected for correctness",
+    "prediction_model": "Prepared-crop ResNet-18 baseline",
+    "prediction_record": "report/mtsd_classifier_results/comparison.json",
+    "crop_source": "Prepared 1280-pixel-longest-side scene",
+    "scope": "Stored baseline prediction, not a prediction from the default original-source classifier. The models can disagree on this small prepared crop."
   }
 ]

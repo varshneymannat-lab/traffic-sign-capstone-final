@@ -1,6 +1,6 @@
 Real-Time Traffic Sign Detection<br/>and Classification
 
-Mannat Varshney | Revised 2 November 2026
+Mannat Varshney | Revised 4 November 2026
 
 Real-time operation is the project goal, not a verified road-video performance claim. Measured speed is reported in Section 3.5.
 
@@ -80,7 +80,7 @@ Validation selects ResNet-18 for the prepared-crop baseline: 412/425 correct tes
 
 <table><tr><td>ResNet crop source</td><td>Val macro-F1</td><td>Test accuracy</td><td>Test macro-F1</td></tr><tr><td>Prepared 1280</td><td>0.9619</td><td>96.94%</td><td>0.9687</td></tr><tr><td>Original photograph</td><td>0.9927</td><td>99.53%</td><td>0.9953</td></tr></table>
 
-Original-source crops are selected by validation. Median crop width rises from 17 to 44 pixels; 423/425 test crops are correct. This is one-seed crop-source evidence, not improved detector recall or a new dataset.
+Original-source crops are selected by validation. Median crop width rises from 17 to 44 pixels; 423/425 test crops are correct. This is one-seed crop-source evidence, not improved detector recall or a new dataset. The bundled prepared-crop stop example is predicted as no entry by the selected original-source classifier; its stored stop prediction belongs to the earlier baseline. Example execution is not correctness validation.
 
 3.2 Detector Training and Inference
 
@@ -128,7 +128,7 @@ Actual ONNX detection on all 332 local test scenes gives mAP50 0.5475, versus Py
 
 The project uses Git for code, DVC for data/model versions, TensorBoard for training curves, Hydra for classifier configuration, and Lightning for the classifier loop. Detection settings are in pipelines/detection/. The image/video command writes annotated media, CSV detections and measured timing. Dataset terms apply separately from code; temporary authorised download links are not committed. Restoring licensed data requires authorised artifact access or regeneration from an authorised download.
 
-Published Mapillary-only commit 449ef7a passes Docker build, container tests and two-frame ONNX inference in Actions run 40690970167. Full retraining inside Docker is unverified; later revisions require their own CI evidence. The submission is a fork of Vladimir-125/lightning-hydra-template with its MIT notice and history. No shared DVC remote is configured; full training needs authorised data/cache access.
+Published Mapillary-only commit 8cf89e7 passes Docker build, container tests and two-frame ONNX inference in Actions run 41420610068. Full retraining inside Docker is unverified; later revisions require their own CI evidence. The submission is a fork of Vladimir-125/lightning-hydra-template with its MIT notice and history. No shared DVC remote is configured; full training needs authorised data/cache access.
 
 4.3 Application and Software Verification
 
